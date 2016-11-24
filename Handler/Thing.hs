@@ -9,6 +9,7 @@ import qualified ElmSupport as Elm
 
 postThingsR :: Handler Value
 postThingsR = do
+    corsSupport
     thing <- (requireJsonBody :: Handler Thing)
     maybeUserId <- maybeAuthId
     insertedThing <- runDB $ Bzl.getThingEntity =<< Bzl.insertThing maybeUserId thing
@@ -24,7 +25,9 @@ thingsElmProg = Elm.EmbeddedElm {
 
 getThingsR :: Handler TypedContent
 getThingsR =  selectRep $ do
-   provideRep $ fmap thingEntitiesToJSON $ runDB $ Bzl.findAllThings
+   provideRep $ do
+           corsSupport 
+           fmap thingEntitiesToJSON $ runDB $ Bzl.findAllThings
    provideRep $  defaultLayout $ do
            let elmProg = thingsElmProg
            addScript $ StaticR js_elm_app_js
@@ -34,7 +37,9 @@ getThingsR =  selectRep $ do
 
 getThingR :: ThingId -> Handler TypedContent
 getThingR thingId = selectRep $ do        
-   provideRep $ fmap toJSON $ runDB $ Bzl.getThing thingId
+   provideRep $ do
+        corsSupport
+        fmap toJSON $ runDB $ Bzl.getThing thingId
    provideRepType typeHtml 
         $ fmap asHtml 
         $ redirect 
@@ -42,7 +47,7 @@ getThingR thingId = selectRep $ do
 
 putThingR :: ThingId -> Handler Value
 putThingR thingId = do
-   addHeader "Access-Control-Allow-Origin" "*"  -- support for CORS
+   corsSupport  -- support for CORS
    thing <- (requireJsonBody :: Handler Thing)
    maybeUserId <- maybeAuthId
    runDB $ Bzl.replaceThing maybeUserId thingId thing 
@@ -51,18 +56,21 @@ putThingR thingId = do
 -- support for CORS, needed for elm-reactor test developement
 optionsThingR :: ThingId -> Handler RepPlain
 optionsThingR _ = do
-    addHeader "Access-Control-Allow-Origin" "*"
-    addHeader "Access-Control-Allow-Methods" "GET, PUT, OPTIONS"
+    corsSupport
+    addHeader "Access-Control-Allow-Methods" "GET, PUT, DELETE, OPTIONS"
     return $ RepPlain $ toContent ("" :: Text)
 
 deleteThingR :: ThingId -> Handler Value
 deleteThingR thingId = do
+   corsSupport
    runDB $ Bzl.deleteThing thingId
    return $ object [ 
             "status" .= ("success" :: Text),
             "id" .= thingId
           ]
 
+
+-- helpers
 thingEntityToJSON :: Maybe (Entity Thing) -> Value
 thingEntityToJSON mthingEntity = case mthingEntity of
    Just thingEntity ->
@@ -75,3 +83,12 @@ thingEntityToJSON mthingEntity = case mthingEntity of
 
 thingEntitiesToJSON :: [Entity Thing] -> Value
 thingEntitiesToJSON things = toJSON $ map (thingEntityToJSON . Just) things
+
+corsSupport :: Handler ()
+corsSupport = do
+    isDev <- isDevelopment
+    if isDev  
+     then do 
+            addHeader "Access-Control-Allow-Origin" "*"
+            addHeader "Access-Control-Allow-Headers" "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+     else return ()

@@ -1,11 +1,18 @@
 
-* refactor into 2 projects yesod-thing and elm-thing with master project
-* think of creating app structure and override xyz.program
-* Root Module:  Thing, Reuse
-* add User backend/frontend
-* duplicate post is not failing
-* review main.elm, make all reusable model data constructors private
-* html encoding of name /desc
+Elm
+* think if override xyz.program would not help
+* make all reusable model data constructors private
+* desc needs to be text area 
+* model - product or coproduct - seems like product is more flexible choice
 
-crud-ex-backend-yesod
-crud-ex-frontend-elm
+both
+* add User backend/frontend
+* duplicate post - better error handling
+* server based configuration of elm programs 
+
+Yesod
+* install wai-cors and configure middleware
+
+
+readme: 
+export YESOD_APP_ENV=DEV to enable cors / elm-ractor 

@@ -15,6 +15,8 @@ import qualified Yesod.Core.Unsafe as Unsafe
 import qualified Data.CaseInsensitive as CI
 import qualified Data.Text.Encoding as TE
 
+import           System.Environment
+
 -- | The foundation datatype for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
 -- starts running, such as database connections. Every handler will have
@@ -246,6 +248,13 @@ instance HasHttpManager App where
 
 unsafeHandler :: App -> Handler a -> IO a
 unsafeHandler = Unsafe.fakeHandlerGetLogger appLogger
+
+-- added checks env variable to know it this is 'DEV'
+isDevelopment :: Handler Bool
+isDevelopment = do
+   env <- liftIO $ fmap pack $ getEnv "YESOD_APP_ENV"
+   -- liftIO $ print $ "GOT " ++ (env :: Text)
+   return $ env == ("DEV" :: Text)
 
 -- Note: Some functionality previously present in the scaffolding has been
 -- moved to documentation in the Wiki. Following are some hopefully helpful
