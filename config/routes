@@ -1,0 +1,12 @@
+/static StaticR Static appStatic
+/auth   AuthR   Auth   getAuth
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET
+/profile ProfileR GET
+
+
+/things          ThingsR  GET POST
+/things/#ThingId ThingR   GET PUT DELETE OPTIONS

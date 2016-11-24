@@ -1,0 +1,19 @@
+User
+    ident Text
+    password Text Maybe
+    UniqueUser ident
+    deriving Typeable
+Email
+    email Text
+    userId UserId Maybe
+    verkey Text Maybe
+    UniqueEmail email
+Thing json -- Adding "json" causes ToJSON and FromJSON instances to be derived.
+    name Text
+    description Text
+    userId UserId Maybe
+    UniqueName name
+    deriving Eq
+    deriving Show
+
+ -- By default this file is used in Model.hs (which is imported by Foundation.hs)

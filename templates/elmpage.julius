@@ -1,0 +1,4 @@
+$(function() {
+     var node = document.getElementById("#{rawJS $ Elm.elmDivId elmProg}");
+     var app = Elm.#{rawJS $ Elm.programName elmProg}.embed(node);
+});

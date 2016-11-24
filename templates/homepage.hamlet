@@ -1,0 +1,21 @@
+<div .masthead>
+    <div .container>
+        <div .row>
+            <h2 .header>
+                Example Crud Application using Yesod backend and Elm frontend.
+
+<div .container>
+    <div .bs-docs-section>
+        <div .row>
+            <div .col-lg-12>
+                <div .page-header>
+                    <p>
+                        CRUD template/example application uses an entity called a Thing.  
+                        <br> See: <a href=@{ThingsR} > Things </a>
+                    <p> 
+                        Goals
+                        <ul>
+                            <li> Web API 
+                            <li> Elm code reuse between CRUDs
+                            <li> Elm internal dispatch using hash URL fragments 
+  

@@ -1,0 +1,11 @@
+
+* refactor into 2 projects yesod-thing and elm-thing with master project
+* think of creating app structure and override xyz.program
+* Root Module:  Thing, Reuse
+* add User backend/frontend
+* duplicate post is not failing
+* review main.elm, make all reusable model data constructors private
+* html encoding of name /desc
+
+crud-ex-backend-yesod
+crud-ex-frontend-elm
