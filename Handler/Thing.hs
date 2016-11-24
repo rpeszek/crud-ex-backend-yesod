@@ -27,7 +27,7 @@ getThingsR =  selectRep $ do
    provideRep $ fmap thingEntitiesToJSON $ runDB $ Bzl.findAllThings
    provideRep $  defaultLayout $ do
            let elmProg = thingsElmProg
-           addScript $ StaticR js_elm_things_js
+           addScript $ StaticR js_elm_app_js
            setTitle "Things"
            $(widgetFile "elmpage")
 
