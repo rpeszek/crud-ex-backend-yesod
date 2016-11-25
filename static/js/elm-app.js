@@ -5898,6 +5898,107 @@ var _NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required = F3(
 			decoder);
 	});
 
+var _benthepoet$elm_purecss$Pure$prefix = 'pure';
+var _benthepoet$elm_purecss$Pure$purify = function (classes) {
+	var parts = A2(_elm_lang$core$List_ops['::'], _benthepoet$elm_purecss$Pure$prefix, classes);
+	return A2(_elm_lang$core$String$join, '-', parts);
+};
+var _benthepoet$elm_purecss$Pure$button = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['button']));
+var _benthepoet$elm_purecss$Pure$buttonActive = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['button', 'active']));
+var _benthepoet$elm_purecss$Pure$buttonDisabled = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['button', 'disabled']));
+var _benthepoet$elm_purecss$Pure$buttonPrimary = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['button', 'primary']));
+var _benthepoet$elm_purecss$Pure$checkbox = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['checkbox']));
+var _benthepoet$elm_purecss$Pure$controlGroup = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['control', 'group']));
+var _benthepoet$elm_purecss$Pure$form = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['form']));
+var _benthepoet$elm_purecss$Pure$formAligned = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['form', 'aligned']));
+var _benthepoet$elm_purecss$Pure$formStacked = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['form', 'stacked']));
+var _benthepoet$elm_purecss$Pure$grid = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['g']));
+var _benthepoet$elm_purecss$Pure$group = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['group']));
+var _benthepoet$elm_purecss$Pure$img = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['img']));
+var _benthepoet$elm_purecss$Pure$input = function (options) {
+	return _benthepoet$elm_purecss$Pure$purify(
+		A2(_elm_lang$core$List_ops['::'], 'input', options));
+};
+var _benthepoet$elm_purecss$Pure$inputRounded = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['input-rounded']));
+var _benthepoet$elm_purecss$Pure$menu = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu']));
+var _benthepoet$elm_purecss$Pure$menuAllowHover = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'allow', 'hover']));
+var _benthepoet$elm_purecss$Pure$menuChildren = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'children']));
+var _benthepoet$elm_purecss$Pure$menuDisabled = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'disabled']));
+var _benthepoet$elm_purecss$Pure$menuHasChildren = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'has', 'children']));
+var _benthepoet$elm_purecss$Pure$menuHeading = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'heading']));
+var _benthepoet$elm_purecss$Pure$menuHorizontal = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'horizontal']));
+var _benthepoet$elm_purecss$Pure$menuItem = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'item']));
+var _benthepoet$elm_purecss$Pure$menuLink = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'link']));
+var _benthepoet$elm_purecss$Pure$menuList = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'list']));
+var _benthepoet$elm_purecss$Pure$menuSelected = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'selected']));
+var _benthepoet$elm_purecss$Pure$menuScrollable = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['menu', 'scrollable']));
+var _benthepoet$elm_purecss$Pure$radio = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['radio']));
+var _benthepoet$elm_purecss$Pure$table = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['table']));
+var _benthepoet$elm_purecss$Pure$tableBordered = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['table', 'bordered']));
+var _benthepoet$elm_purecss$Pure$tableStriped = _benthepoet$elm_purecss$Pure$purify(
+	_elm_lang$core$Native_List.fromArray(
+		['table', 'striped']));
+var _benthepoet$elm_purecss$Pure$unit = function (options) {
+	return _benthepoet$elm_purecss$Pure$purify(
+		A2(_elm_lang$core$List_ops['::'], 'u', options));
+};
+
 //import Native.Json //
 
 var _elm_lang$virtual_dom$Native_VirtualDom = function() {
@@ -10428,13 +10529,190 @@ var _elm_lang$html$Html_Attributes$classList = function (list) {
 };
 var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
 
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$errorBox = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$class('error')
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElementLink = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'left-marging-medium', _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElement = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonSet = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'top-padding-medium', _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLongContent = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'pure-u-21-24', _1: true},
+				{ctor: '_Tuple2', _0: 'long-text', _1: true},
+				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readContent = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'pure-u-21-24', _1: true},
+				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLabel = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'pure-u-3-24', _1: true},
+				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readGrid = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$class(_benthepoet$elm_purecss$Pure$grid)
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formButtons = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$class('pure-controls')
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formRowDefault = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$class(_benthepoet$elm_purecss$Pure$controlGroup)
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formDefault = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$form, _1: true},
+				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$formAligned, _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$lBox = 'l-box';
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$lBox, _1: true},
+				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$button, _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$classList(
+		_elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$lBox, _1: true},
+				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$button, _1: true},
+				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$buttonPrimary, _1: true}
+			]))
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$stdStyle = 'std';
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textInputDefault = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$class(_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$stdStyle)
+	]);
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textAreaDefault = _elm_lang$core$Native_List.fromArray(
+	[
+		_elm_lang$html$Html_Attributes$class(_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$stdStyle)
+	]);
+
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt = function (txt) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$errorBox,
+		_elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$html$Html$text(txt)
+			]));
+};
+var _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewError = function (model) {
+	var _p0 = model.err;
+	if (_p0.ctor === 'Just') {
+		return _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt(_p0._0._0);
+	} else {
+		return A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[]),
+			_elm_lang$core$Native_List.fromArray(
+				[]));
+	}
+};
+
+var _elm_lang$elm_architecture_tutorial$Routing_View$viewRouteErr = function (maybeErr) {
+	var _p0 = maybeErr;
+	if (_p0.ctor === 'Nothing') {
+		return _elm_lang$core$Native_List.fromArray(
+			[]);
+	} else {
+		return _elm_lang$core$Native_List.fromArray(
+			[
+				_elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt(_p0._0)
+			]);
+	}
+};
+var _elm_lang$elm_architecture_tutorial$Routing_View$viewRoute = function (route) {
+	var header = function () {
+		var _p1 = route;
+		switch (_p1.ctor) {
+			case 'ListThingsR':
+				return 'Things List';
+			case 'CreateThingR':
+				return 'Create New Thing';
+			case 'ViewThingR':
+				return 'Thing View';
+			default:
+				return 'Thing Edit';
+		}
+	}();
+	return _elm_lang$core$Native_List.fromArray(
+		[
+			A2(
+			_elm_lang$html$Html$div,
+			_elm_lang$core$Native_List.fromArray(
+				[]),
+			_elm_lang$core$Native_List.fromArray(
+				[
+					A2(
+					_elm_lang$html$Html$h1,
+					_elm_lang$core$Native_List.fromArray(
+						[]),
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html$text(header)
+						]))
+				]))
+		]);
+};
 var _elm_lang$elm_architecture_tutorial$Routing_View$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
 			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[]));
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			_elm_lang$elm_architecture_tutorial$Routing_View$viewRoute(model.route),
+			_elm_lang$elm_architecture_tutorial$Routing_View$viewRouteErr(model.err)));
 };
 
 var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode_ops[':='], 'keyCode', _elm_lang$core$Json_Decode$int);
@@ -10538,73 +10816,37 @@ var _elm_lang$html$Html_Events$Options = F2(
 		return {stopPropagation: a, preventDefault: b};
 	});
 
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewError = function (model) {
-	var _p0 = model.err;
-	if (_p0.ctor === 'Just') {
-		return A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$style(
-					_elm_lang$core$Native_List.fromArray(
-						[
-							{ctor: '_Tuple2', _0: 'color', _1: 'red'}
-						]))
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html$text(_p0._0._0)
-				]));
-	} else {
-		return A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[]),
-			_elm_lang$core$Native_List.fromArray(
-				[]));
-	}
-};
-
 var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewButtons = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
+		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formButtons,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
+				_elm_lang$html$Html$button,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$SaveRequest)
+						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
-						A2(
-						_elm_lang$html$Html$button,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$SaveRequest)
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Save')
-							]))
+						_elm_lang$html$Html$text('Save')
 					])),
 				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
+				_elm_lang$html$Html$button,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$CancelRequest)
+						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
-						A2(
-						_elm_lang$html$Html$button,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$CancelRequest)
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Cancel')
-							]))
+						_elm_lang$html$Html$text('Cancel')
 					]))
 			]));
 };
@@ -10612,115 +10854,127 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewError = _elm_lang$el
 
 var _elm_lang$elm_architecture_tutorial$Thing_Edit_View$view = function (model) {
 	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
+		_elm_lang$html$Html$form,
+		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formDefault,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
-				_elm_lang$html$Html$div,
+				_elm_lang$html$Html$fieldset,
 				_elm_lang$core$Native_List.fromArray(
 					[]),
 				_elm_lang$core$Native_List.fromArray(
 					[
 						A2(
-						_elm_lang$html$Html$input,
+						_elm_lang$html$Html$div,
+						_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formRowDefault,
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html_Attributes$type$('text'),
-								_elm_lang$html$Html_Attributes$value(model.model.name),
-								_elm_lang$html$Html_Events$onInput(
-								function (_p0) {
-									return _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$InnerMsg(
-										_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$NameChange(_p0));
-								})
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[]))
-					])),
-				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
-				_elm_lang$core$Native_List.fromArray(
-					[
+								A2(
+								_elm_lang$html$Html$label,
+								_elm_lang$core$Native_List.fromArray(
+									[]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Name')
+									])),
+								A2(
+								_elm_lang$html$Html$input,
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textInputDefault,
+									_elm_lang$core$Native_List.fromArray(
+										[
+											_elm_lang$html$Html_Attributes$type$('text'),
+											_elm_lang$html$Html_Attributes$value(model.model.name),
+											_elm_lang$html$Html_Events$onInput(
+											function (_p0) {
+												return _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$InnerMsg(
+													_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$NameChange(_p0));
+											})
+										])),
+								_elm_lang$core$Native_List.fromArray(
+									[]))
+							])),
 						A2(
-						_elm_lang$html$Html$input,
+						_elm_lang$html$Html$div,
+						_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formRowDefault,
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$html$Html_Attributes$type$('text'),
-								_elm_lang$html$Html_Attributes$value(model.model.description),
-								_elm_lang$html$Html_Events$onInput(
-								function (_p1) {
-									return _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$InnerMsg(
-										_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$DescriptionChange(_p1));
-								})
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[]))
-					])),
-				_elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewButtons(model),
-				_elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewError(model)
+								A2(
+								_elm_lang$html$Html$label,
+								_elm_lang$core$Native_List.fromArray(
+									[]),
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html$text('Description')
+									])),
+								A2(
+								_elm_lang$html$Html$textarea,
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textAreaDefault,
+									_elm_lang$core$Native_List.fromArray(
+										[
+											_elm_lang$html$Html_Attributes$value(model.model.description),
+											_elm_lang$html$Html_Events$onInput(
+											function (_p1) {
+												return _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$InnerMsg(
+													_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$DescriptionChange(_p1));
+											})
+										])),
+								_elm_lang$core$Native_List.fromArray(
+									[]))
+							])),
+						_elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewButtons(model),
+						_elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewError(model)
+					]))
 			]));
 };
 
 var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
+		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonSet,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
+				_elm_lang$html$Html$button,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$EditRequest)
+						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
-						A2(
-						_elm_lang$html$Html$button,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$EditRequest)
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Edit')
-							]))
+						_elm_lang$html$Html$text('Edit')
 					])),
 				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
+				_elm_lang$html$Html$button,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$DeleteRequest)
+						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
-						A2(
-						_elm_lang$html$Html$button,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$DeleteRequest)
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Delete')
-							]))
+						_elm_lang$html$Html$text('Delete')
 					])),
 				A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[]),
+				_elm_lang$html$Html$button,
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$CancelRequest)
+						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
-						A2(
-						_elm_lang$html$Html$button,
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$CancelRequest)
-							]),
-						_elm_lang$core$Native_List.fromArray(
-							[
-								_elm_lang$html$Html$text('Cancel')
-							]))
+						_elm_lang$html$Html$text('Cancel')
 					]))
 			]));
 };
@@ -10729,48 +10983,46 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewError = _elm_lang$el
 var _elm_lang$elm_architecture_tutorial$Thing_Read_View$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
+		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readGrid,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
 				_elm_lang$html$Html$div,
+				_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLabel,
 				_elm_lang$core$Native_List.fromArray(
-					[]),
+					[
+						_elm_lang$html$Html$text('Name:')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readContent,
 				_elm_lang$core$Native_List.fromArray(
 					[
 						_elm_lang$html$Html$text(model.model.name)
 					])),
 				A2(
 				_elm_lang$html$Html$div,
+				_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLabel,
 				_elm_lang$core$Native_List.fromArray(
-					[]),
+					[
+						_elm_lang$html$Html$text('Description:')
+					])),
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLongContent,
 				_elm_lang$core$Native_List.fromArray(
 					[
 						_elm_lang$html$Html$text(model.model.description)
 					])),
-				_elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons(model),
-				_elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewError(model)
+				_elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewError(model),
+				_elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons(model)
 			]));
 };
 
 var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewError = function (model) {
 	var _p0 = model.err;
 	if (_p0.ctor === 'Just') {
-		return A2(
-			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html_Attributes$style(
-					_elm_lang$core$Native_List.fromArray(
-						[
-							{ctor: '_Tuple2', _0: 'color', _1: 'red'}
-						]))
-				]),
-			_elm_lang$core$Native_List.fromArray(
-				[
-					_elm_lang$html$Html$text(_p0._0._0)
-				]));
+		return _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt(_p0._0._0);
 	} else {
 		return A2(
 			_elm_lang$html$Html$div,
@@ -10784,35 +11036,23 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewListElement = F2(
 	function (elementView, element) {
 		return A2(
 			_elm_lang$html$Html$div,
-			_elm_lang$core$Native_List.fromArray(
-				[]),
+			_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElement,
 			_elm_lang$core$Native_List.fromArray(
 				[
+					elementView(element.entity),
 					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[]),
+					_elm_lang$html$Html$a,
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElementLink,
+						_elm_lang$core$Native_List.fromArray(
+							[
+								_elm_lang$html$Html_Events$onClick(
+								_elm_lang$elm_architecture_tutorial$Reuse_List_Message$ViewRequest(element.id))
+							])),
 					_elm_lang$core$Native_List.fromArray(
 						[
-							elementView(element.entity)
-						])),
-					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[]),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							A2(
-							_elm_lang$html$Html$button,
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html_Events$onClick(
-									_elm_lang$elm_architecture_tutorial$Reuse_List_Message$ViewRequest(element.id))
-								]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('View')
-								]))
+							_elm_lang$html$Html$text('(view)')
 						]))
 				]));
 	});
@@ -10824,23 +11064,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewList = F2(
 				[]),
 			_elm_lang$core$Native_List.fromArray(
 				[
-					A2(
-					_elm_lang$html$Html$div,
-					_elm_lang$core$Native_List.fromArray(
-						[]),
-					_elm_lang$core$Native_List.fromArray(
-						[
-							A2(
-							_elm_lang$html$Html$button,
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_List_Message$CreateRequest)
-								]),
-							_elm_lang$core$Native_List.fromArray(
-								[
-									_elm_lang$html$Html$text('Create')
-								]))
-						])),
+					_elm_lang$elm_architecture_tutorial$Reuse_List_View$viewError(listModel),
 					A2(
 					_elm_lang$html$Html$div,
 					_elm_lang$core$Native_List.fromArray(
@@ -10849,19 +11073,30 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewList = F2(
 						_elm_lang$core$List$map,
 						_elm_lang$elm_architecture_tutorial$Reuse_List_View$viewListElement(elementView),
 						listModel.elements)),
-					_elm_lang$elm_architecture_tutorial$Reuse_List_View$viewError(listModel)
+					A2(
+					_elm_lang$html$Html$div,
+					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonSet,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							A2(
+							_elm_lang$html$Html$button,
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary,
+								_elm_lang$core$Native_List.fromArray(
+									[
+										_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_List_Message$CreateRequest)
+									])),
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html$text('Create New')
+								]))
+						]))
 				]));
 	});
 
 var _elm_lang$elm_architecture_tutorial$Thing_List_View$viewThing = function (thing) {
-	return A2(
-		_elm_lang$html$Html$div,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Native_List.fromArray(
-			[
-				_elm_lang$html$Html$text(thing.name)
-			]));
+	return _elm_lang$html$Html$text(thing.name);
 };
 var _elm_lang$elm_architecture_tutorial$Thing_List_View$view = _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewList(_elm_lang$elm_architecture_tutorial$Thing_List_View$viewThing);
 
@@ -10965,3 +11200,4 @@ for (var publicModule in Elm)
 }
 
 }).call(this);
+

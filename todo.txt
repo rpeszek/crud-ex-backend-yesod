@@ -1,17 +1,20 @@
 
 Elm
 * think if override xyz.program would not help
-* make all reusable model data constructors private
-* desc needs to be text area 
-* model - product or coproduct - seems like product is more flexible choice
+* make all model data constructors private
+* model - product or coproduct? - seems like product is more flexible choice
+* rethink views and styling
 
-both
+Both
 * add User backend/frontend
+* has-many relationship example
 * duplicate post - better error handling
-* server based configuration of elm programs 
+* server based configuration of elm programs
+* list pagination 
 
 Yesod
 * install wai-cors and configure middleware
+* nicer code for JSON
 
 
 readme: 
