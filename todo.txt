@@ -3,7 +3,8 @@ Elm
 * think if override xyz.program would not help
 * make all model data constructors private
 * model - product or coproduct? - seems like product is more flexible choice
-* rethink views and styling
+* keep rethinking views and styling
+* required field validation
 
 Both
 * add User backend/frontend

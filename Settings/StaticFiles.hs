@@ -15,5 +15,5 @@ import Yesod.Static (staticFiles)
 -- If the identifier is not available, you may use:
 --
 --     StaticFile ["js", "script.js"] []
--- TODO needs recompile when static files change 6
+-- TODO needs recompile when static files change
 staticFiles (appStaticDir compileTimeAppSettings)
