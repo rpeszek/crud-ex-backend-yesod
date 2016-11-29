@@ -1,13 +1,13 @@
 {-# LANGUAGE DeriveGeneric #-} 
-module ElmSupport.AppSettings where
+module FrontendSupport.AppSettings where
 
 import ClassyPrelude.Yesod
 import Data.Aeson ()
 import GHC.Generics ()
 
-data ElmAppSettings = ElmAppSettings {
+data AppConfig = AppConfig {
       todo :: Bool
   } deriving (Show, Generic)
 
-instance FromJSON ElmAppSettings
-instance ToJSON ElmAppSettings
+instance FromJSON AppConfig
+instance ToJSON AppConfig

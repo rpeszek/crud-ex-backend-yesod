@@ -3,8 +3,8 @@ module Handler.Thing where
 import Import
 import Text.Julius (RawJS (..))
 import qualified BuzLogic.Thing as Bzl
-import qualified ElmSupport.Thing.ElmRoutes as ERoute
-import qualified ElmSupport as Elm
+import qualified FrontendSupport.Thing.FrontendRoutes as ERoute
+import qualified FrontendSupport as Elm
 --TODO error handling
 
 postThingsR :: Handler Value
@@ -29,6 +29,9 @@ getThingsR =  selectRep $ do
            corsSupport 
            fmap thingEntitiesToJSON $ runDB $ Bzl.findAllThings
    provideRep $  defaultLayout $ do
+           master <- getYesod
+           let appConfig = frontendAppSettings $ appSettings master
+           liftIO $ print $ toJSON appConfig
            let elmProg = thingsElmProg
            addScript $ StaticR js_elm_app_js
            setTitle "Things"
@@ -43,7 +46,7 @@ getThingR thingId = selectRep $ do
    provideRepType typeHtml 
         $ fmap asHtml 
         $ redirect 
-        $ ThingsR :#: (ERoute.toElmUrl $ ERoute.ViewThingR thingId)
+        $ ThingsR :#: (ERoute.toHashUrlFragment $ ERoute.ViewThingR thingId)
 
 putThingR :: ThingId -> Handler Value
 putThingR thingId = do

@@ -1,4 +1,7 @@
 $(function() {
      var node = document.getElementById("#{rawJS $ Elm.elmDivId elmProg}");
-     var app = Elm.#{rawJS $ Elm.programName elmProg}.embed(node);
+     //TODO temporary fix to allow new Elm functionality
+     var conf = #{toJSON appConfig} 
+
+     var app = Elm.#{rawJS $ Elm.programName elmProg}.embed(node, conf);
 });

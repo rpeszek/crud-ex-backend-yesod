@@ -8219,6 +8219,844 @@ return {
 var _elm_lang$dom$Dom_LowLevel$onWindow = _elm_lang$dom$Native_Dom.onWindow;
 var _elm_lang$dom$Dom_LowLevel$onDocument = _elm_lang$dom$Native_Dom.onDocument;
 
+var _elm_lang$html$Html_App$programWithFlags = _elm_lang$virtual_dom$VirtualDom$programWithFlags;
+var _elm_lang$html$Html_App$program = function (app) {
+	return _elm_lang$html$Html_App$programWithFlags(
+		_elm_lang$core$Native_Utils.update(
+			app,
+			{
+				init: function (_p0) {
+					return app.init;
+				}
+			}));
+};
+var _elm_lang$html$Html_App$beginnerProgram = function (_p1) {
+	var _p2 = _p1;
+	return _elm_lang$html$Html_App$programWithFlags(
+		{
+			init: function (_p3) {
+				return A2(
+					_elm_lang$core$Platform_Cmd_ops['!'],
+					_p2.model,
+					_elm_lang$core$Native_List.fromArray(
+						[]));
+			},
+			update: F2(
+				function (msg, model) {
+					return A2(
+						_elm_lang$core$Platform_Cmd_ops['!'],
+						A2(_p2.update, msg, model),
+						_elm_lang$core$Native_List.fromArray(
+							[]));
+				}),
+			view: _p2.view,
+			subscriptions: function (_p4) {
+				return _elm_lang$core$Platform_Sub$none;
+			}
+		});
+};
+var _elm_lang$html$Html_App$map = _elm_lang$virtual_dom$VirtualDom$map;
+
+var _elm_lang$html$Html_Attributes$attribute = _elm_lang$virtual_dom$VirtualDom$attribute;
+var _elm_lang$html$Html_Attributes$contextmenu = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$attribute, 'contextmenu', value);
+};
+var _elm_lang$html$Html_Attributes$draggable = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$attribute, 'draggable', value);
+};
+var _elm_lang$html$Html_Attributes$list = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$attribute, 'list', value);
+};
+var _elm_lang$html$Html_Attributes$maxlength = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$attribute,
+		'maxlength',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$datetime = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$attribute, 'datetime', value);
+};
+var _elm_lang$html$Html_Attributes$pubdate = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$attribute, 'pubdate', value);
+};
+var _elm_lang$html$Html_Attributes$colspan = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$attribute,
+		'colspan',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$rowspan = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$attribute,
+		'rowspan',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$property = _elm_lang$virtual_dom$VirtualDom$property;
+var _elm_lang$html$Html_Attributes$stringProperty = F2(
+	function (name, string) {
+		return A2(
+			_elm_lang$html$Html_Attributes$property,
+			name,
+			_elm_lang$core$Json_Encode$string(string));
+	});
+var _elm_lang$html$Html_Attributes$class = function (name) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'className', name);
+};
+var _elm_lang$html$Html_Attributes$id = function (name) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'id', name);
+};
+var _elm_lang$html$Html_Attributes$title = function (name) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'title', name);
+};
+var _elm_lang$html$Html_Attributes$accesskey = function ($char) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'accessKey',
+		_elm_lang$core$String$fromChar($char));
+};
+var _elm_lang$html$Html_Attributes$dir = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'dir', value);
+};
+var _elm_lang$html$Html_Attributes$dropzone = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'dropzone', value);
+};
+var _elm_lang$html$Html_Attributes$itemprop = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'itemprop', value);
+};
+var _elm_lang$html$Html_Attributes$lang = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'lang', value);
+};
+var _elm_lang$html$Html_Attributes$tabindex = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'tabIndex',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$charset = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'charset', value);
+};
+var _elm_lang$html$Html_Attributes$content = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'content', value);
+};
+var _elm_lang$html$Html_Attributes$httpEquiv = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'httpEquiv', value);
+};
+var _elm_lang$html$Html_Attributes$language = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'language', value);
+};
+var _elm_lang$html$Html_Attributes$src = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'src', value);
+};
+var _elm_lang$html$Html_Attributes$height = function (value) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'height',
+		_elm_lang$core$Basics$toString(value));
+};
+var _elm_lang$html$Html_Attributes$width = function (value) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'width',
+		_elm_lang$core$Basics$toString(value));
+};
+var _elm_lang$html$Html_Attributes$alt = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'alt', value);
+};
+var _elm_lang$html$Html_Attributes$preload = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'preload', value);
+};
+var _elm_lang$html$Html_Attributes$poster = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'poster', value);
+};
+var _elm_lang$html$Html_Attributes$kind = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'kind', value);
+};
+var _elm_lang$html$Html_Attributes$srclang = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'srclang', value);
+};
+var _elm_lang$html$Html_Attributes$sandbox = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'sandbox', value);
+};
+var _elm_lang$html$Html_Attributes$srcdoc = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'srcdoc', value);
+};
+var _elm_lang$html$Html_Attributes$type$ = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'type', value);
+};
+var _elm_lang$html$Html_Attributes$value = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'value', value);
+};
+var _elm_lang$html$Html_Attributes$defaultValue = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'defaultValue', value);
+};
+var _elm_lang$html$Html_Attributes$placeholder = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'placeholder', value);
+};
+var _elm_lang$html$Html_Attributes$accept = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'accept', value);
+};
+var _elm_lang$html$Html_Attributes$acceptCharset = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'acceptCharset', value);
+};
+var _elm_lang$html$Html_Attributes$action = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'action', value);
+};
+var _elm_lang$html$Html_Attributes$autocomplete = function (bool) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'autocomplete',
+		bool ? 'on' : 'off');
+};
+var _elm_lang$html$Html_Attributes$autosave = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'autosave', value);
+};
+var _elm_lang$html$Html_Attributes$enctype = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'enctype', value);
+};
+var _elm_lang$html$Html_Attributes$formaction = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'formAction', value);
+};
+var _elm_lang$html$Html_Attributes$minlength = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'minLength',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$method = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'method', value);
+};
+var _elm_lang$html$Html_Attributes$name = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'name', value);
+};
+var _elm_lang$html$Html_Attributes$pattern = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'pattern', value);
+};
+var _elm_lang$html$Html_Attributes$size = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'size',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$for = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'htmlFor', value);
+};
+var _elm_lang$html$Html_Attributes$form = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'form', value);
+};
+var _elm_lang$html$Html_Attributes$max = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'max', value);
+};
+var _elm_lang$html$Html_Attributes$min = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'min', value);
+};
+var _elm_lang$html$Html_Attributes$step = function (n) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'step', n);
+};
+var _elm_lang$html$Html_Attributes$cols = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'cols',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$rows = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'rows',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$wrap = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'wrap', value);
+};
+var _elm_lang$html$Html_Attributes$usemap = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'useMap', value);
+};
+var _elm_lang$html$Html_Attributes$shape = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'shape', value);
+};
+var _elm_lang$html$Html_Attributes$coords = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'coords', value);
+};
+var _elm_lang$html$Html_Attributes$challenge = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'challenge', value);
+};
+var _elm_lang$html$Html_Attributes$keytype = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'keytype', value);
+};
+var _elm_lang$html$Html_Attributes$align = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'align', value);
+};
+var _elm_lang$html$Html_Attributes$cite = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'cite', value);
+};
+var _elm_lang$html$Html_Attributes$href = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'href', value);
+};
+var _elm_lang$html$Html_Attributes$target = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'target', value);
+};
+var _elm_lang$html$Html_Attributes$downloadAs = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'download', value);
+};
+var _elm_lang$html$Html_Attributes$hreflang = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'hreflang', value);
+};
+var _elm_lang$html$Html_Attributes$media = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'media', value);
+};
+var _elm_lang$html$Html_Attributes$ping = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'ping', value);
+};
+var _elm_lang$html$Html_Attributes$rel = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'rel', value);
+};
+var _elm_lang$html$Html_Attributes$start = function (n) {
+	return A2(
+		_elm_lang$html$Html_Attributes$stringProperty,
+		'start',
+		_elm_lang$core$Basics$toString(n));
+};
+var _elm_lang$html$Html_Attributes$headers = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'headers', value);
+};
+var _elm_lang$html$Html_Attributes$scope = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'scope', value);
+};
+var _elm_lang$html$Html_Attributes$manifest = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'manifest', value);
+};
+var _elm_lang$html$Html_Attributes$boolProperty = F2(
+	function (name, bool) {
+		return A2(
+			_elm_lang$html$Html_Attributes$property,
+			name,
+			_elm_lang$core$Json_Encode$bool(bool));
+	});
+var _elm_lang$html$Html_Attributes$hidden = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'hidden', bool);
+};
+var _elm_lang$html$Html_Attributes$contenteditable = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'contentEditable', bool);
+};
+var _elm_lang$html$Html_Attributes$spellcheck = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'spellcheck', bool);
+};
+var _elm_lang$html$Html_Attributes$async = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'async', bool);
+};
+var _elm_lang$html$Html_Attributes$defer = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'defer', bool);
+};
+var _elm_lang$html$Html_Attributes$scoped = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'scoped', bool);
+};
+var _elm_lang$html$Html_Attributes$autoplay = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'autoplay', bool);
+};
+var _elm_lang$html$Html_Attributes$controls = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'controls', bool);
+};
+var _elm_lang$html$Html_Attributes$loop = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'loop', bool);
+};
+var _elm_lang$html$Html_Attributes$default = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'default', bool);
+};
+var _elm_lang$html$Html_Attributes$seamless = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'seamless', bool);
+};
+var _elm_lang$html$Html_Attributes$checked = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'checked', bool);
+};
+var _elm_lang$html$Html_Attributes$selected = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'selected', bool);
+};
+var _elm_lang$html$Html_Attributes$autofocus = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'autofocus', bool);
+};
+var _elm_lang$html$Html_Attributes$disabled = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'disabled', bool);
+};
+var _elm_lang$html$Html_Attributes$multiple = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'multiple', bool);
+};
+var _elm_lang$html$Html_Attributes$novalidate = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'noValidate', bool);
+};
+var _elm_lang$html$Html_Attributes$readonly = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'readOnly', bool);
+};
+var _elm_lang$html$Html_Attributes$required = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'required', bool);
+};
+var _elm_lang$html$Html_Attributes$ismap = function (value) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'isMap', value);
+};
+var _elm_lang$html$Html_Attributes$download = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'download', bool);
+};
+var _elm_lang$html$Html_Attributes$reversed = function (bool) {
+	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'reversed', bool);
+};
+var _elm_lang$html$Html_Attributes$classList = function (list) {
+	return _elm_lang$html$Html_Attributes$class(
+		A2(
+			_elm_lang$core$String$join,
+			' ',
+			A2(
+				_elm_lang$core$List$map,
+				_elm_lang$core$Basics$fst,
+				A2(_elm_lang$core$List$filter, _elm_lang$core$Basics$snd, list))));
+};
+var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
+
+var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode_ops[':='], 'keyCode', _elm_lang$core$Json_Decode$int);
+var _elm_lang$html$Html_Events$targetChecked = A2(
+	_elm_lang$core$Json_Decode$at,
+	_elm_lang$core$Native_List.fromArray(
+		['target', 'checked']),
+	_elm_lang$core$Json_Decode$bool);
+var _elm_lang$html$Html_Events$targetValue = A2(
+	_elm_lang$core$Json_Decode$at,
+	_elm_lang$core$Native_List.fromArray(
+		['target', 'value']),
+	_elm_lang$core$Json_Decode$string);
+var _elm_lang$html$Html_Events$defaultOptions = _elm_lang$virtual_dom$VirtualDom$defaultOptions;
+var _elm_lang$html$Html_Events$onWithOptions = _elm_lang$virtual_dom$VirtualDom$onWithOptions;
+var _elm_lang$html$Html_Events$on = _elm_lang$virtual_dom$VirtualDom$on;
+var _elm_lang$html$Html_Events$onFocus = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'focus',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onBlur = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'blur',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onSubmitOptions = _elm_lang$core$Native_Utils.update(
+	_elm_lang$html$Html_Events$defaultOptions,
+	{preventDefault: true});
+var _elm_lang$html$Html_Events$onSubmit = function (msg) {
+	return A3(
+		_elm_lang$html$Html_Events$onWithOptions,
+		'submit',
+		_elm_lang$html$Html_Events$onSubmitOptions,
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onCheck = function (tagger) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'change',
+		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetChecked));
+};
+var _elm_lang$html$Html_Events$onInput = function (tagger) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'input',
+		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetValue));
+};
+var _elm_lang$html$Html_Events$onMouseOut = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseout',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseOver = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseover',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseLeave = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseleave',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseEnter = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseenter',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseUp = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mouseup',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onMouseDown = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'mousedown',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onDoubleClick = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'dblclick',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$onClick = function (msg) {
+	return A2(
+		_elm_lang$html$Html_Events$on,
+		'click',
+		_elm_lang$core$Json_Decode$succeed(msg));
+};
+var _elm_lang$html$Html_Events$Options = F2(
+	function (a, b) {
+		return {stopPropagation: a, preventDefault: b};
+	});
+
+var _elm_lang$navigation$Native_Navigation = function() {
+
+function go(n)
+{
+	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
+	{
+		if (n !== 0)
+		{
+			history.go(n);
+		}
+		callback(_elm_lang$core$Native_Scheduler.succeed(_elm_lang$core$Native_Utils.Tuple0));
+	});
+}
+
+function pushState(url)
+{
+	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
+	{
+		history.pushState({}, '', url);
+		callback(_elm_lang$core$Native_Scheduler.succeed(getLocation()));
+	});
+}
+
+function replaceState(url)
+{
+	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
+	{
+		history.replaceState({}, '', url);
+		callback(_elm_lang$core$Native_Scheduler.succeed(getLocation()));
+	});
+}
+
+function getLocation()
+{
+	var location = document.location;
+
+	return {
+		href: location.href,
+		host: location.host,
+		hostname: location.hostname,
+		protocol: location.protocol,
+		origin: location.origin,
+		port_: location.port,
+		pathname: location.pathname,
+		search: location.search,
+		hash: location.hash,
+		username: location.username,
+		password: location.password
+	};
+}
+
+
+return {
+	go: go,
+	pushState: pushState,
+	replaceState: replaceState,
+	getLocation: getLocation
+};
+
+}();
+
+var _elm_lang$navigation$Navigation$replaceState = _elm_lang$navigation$Native_Navigation.replaceState;
+var _elm_lang$navigation$Navigation$pushState = _elm_lang$navigation$Native_Navigation.pushState;
+var _elm_lang$navigation$Navigation$go = _elm_lang$navigation$Native_Navigation.go;
+var _elm_lang$navigation$Navigation$spawnPopState = function (router) {
+	return _elm_lang$core$Process$spawn(
+		A3(
+			_elm_lang$dom$Dom_LowLevel$onWindow,
+			'popstate',
+			_elm_lang$core$Json_Decode$value,
+			function (_p0) {
+				return A2(
+					_elm_lang$core$Platform$sendToSelf,
+					router,
+					_elm_lang$navigation$Native_Navigation.getLocation(
+						{ctor: '_Tuple0'}));
+			}));
+};
+var _elm_lang$navigation$Navigation_ops = _elm_lang$navigation$Navigation_ops || {};
+_elm_lang$navigation$Navigation_ops['&>'] = F2(
+	function (task1, task2) {
+		return A2(
+			_elm_lang$core$Task$andThen,
+			task1,
+			function (_p1) {
+				return task2;
+			});
+	});
+var _elm_lang$navigation$Navigation$notify = F3(
+	function (router, subs, location) {
+		var send = function (_p2) {
+			var _p3 = _p2;
+			return A2(
+				_elm_lang$core$Platform$sendToApp,
+				router,
+				_p3._0(location));
+		};
+		return A2(
+			_elm_lang$navigation$Navigation_ops['&>'],
+			_elm_lang$core$Task$sequence(
+				A2(_elm_lang$core$List$map, send, subs)),
+			_elm_lang$core$Task$succeed(
+				{ctor: '_Tuple0'}));
+	});
+var _elm_lang$navigation$Navigation$onSelfMsg = F3(
+	function (router, location, state) {
+		return A2(
+			_elm_lang$navigation$Navigation_ops['&>'],
+			A3(_elm_lang$navigation$Navigation$notify, router, state.subs, location),
+			_elm_lang$core$Task$succeed(state));
+	});
+var _elm_lang$navigation$Navigation$cmdHelp = F3(
+	function (router, subs, cmd) {
+		var _p4 = cmd;
+		switch (_p4.ctor) {
+			case 'Jump':
+				return _elm_lang$navigation$Navigation$go(_p4._0);
+			case 'New':
+				return A2(
+					_elm_lang$core$Task$andThen,
+					_elm_lang$navigation$Navigation$pushState(_p4._0),
+					A2(_elm_lang$navigation$Navigation$notify, router, subs));
+			default:
+				return A2(
+					_elm_lang$core$Task$andThen,
+					_elm_lang$navigation$Navigation$replaceState(_p4._0),
+					A2(_elm_lang$navigation$Navigation$notify, router, subs));
+		}
+	});
+var _elm_lang$navigation$Navigation$updateHelp = F2(
+	function (func, _p5) {
+		var _p6 = _p5;
+		return {
+			ctor: '_Tuple2',
+			_0: _p6._0,
+			_1: A2(_elm_lang$core$Platform_Cmd$map, func, _p6._1)
+		};
+	});
+var _elm_lang$navigation$Navigation$subscription = _elm_lang$core$Native_Platform.leaf('Navigation');
+var _elm_lang$navigation$Navigation$command = _elm_lang$core$Native_Platform.leaf('Navigation');
+var _elm_lang$navigation$Navigation$Location = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return {href: a, host: b, hostname: c, protocol: d, origin: e, port_: f, pathname: g, search: h, hash: i, username: j, password: k};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+var _elm_lang$navigation$Navigation$State = F2(
+	function (a, b) {
+		return {subs: a, process: b};
+	});
+var _elm_lang$navigation$Navigation$init = _elm_lang$core$Task$succeed(
+	A2(
+		_elm_lang$navigation$Navigation$State,
+		_elm_lang$core$Native_List.fromArray(
+			[]),
+		_elm_lang$core$Maybe$Nothing));
+var _elm_lang$navigation$Navigation$onEffects = F4(
+	function (router, cmds, subs, _p7) {
+		var _p8 = _p7;
+		var _p10 = _p8.process;
+		var stepState = function () {
+			var _p9 = {ctor: '_Tuple2', _0: subs, _1: _p10};
+			_v4_2:
+			do {
+				if (_p9._0.ctor === '[]') {
+					if (_p9._1.ctor === 'Just') {
+						return A2(
+							_elm_lang$navigation$Navigation_ops['&>'],
+							_elm_lang$core$Process$kill(_p9._1._0),
+							_elm_lang$core$Task$succeed(
+								A2(_elm_lang$navigation$Navigation$State, subs, _elm_lang$core$Maybe$Nothing)));
+					} else {
+						break _v4_2;
+					}
+				} else {
+					if (_p9._1.ctor === 'Nothing') {
+						return A2(
+							_elm_lang$core$Task$andThen,
+							_elm_lang$navigation$Navigation$spawnPopState(router),
+							function (pid) {
+								return _elm_lang$core$Task$succeed(
+									A2(
+										_elm_lang$navigation$Navigation$State,
+										subs,
+										_elm_lang$core$Maybe$Just(pid)));
+							});
+					} else {
+						break _v4_2;
+					}
+				}
+			} while(false);
+			return _elm_lang$core$Task$succeed(
+				A2(_elm_lang$navigation$Navigation$State, subs, _p10));
+		}();
+		return A2(
+			_elm_lang$navigation$Navigation_ops['&>'],
+			_elm_lang$core$Task$sequence(
+				A2(
+					_elm_lang$core$List$map,
+					A2(_elm_lang$navigation$Navigation$cmdHelp, router, subs),
+					cmds)),
+			stepState);
+	});
+var _elm_lang$navigation$Navigation$UserMsg = function (a) {
+	return {ctor: 'UserMsg', _0: a};
+};
+var _elm_lang$navigation$Navigation$Change = function (a) {
+	return {ctor: 'Change', _0: a};
+};
+var _elm_lang$navigation$Navigation$Parser = function (a) {
+	return {ctor: 'Parser', _0: a};
+};
+var _elm_lang$navigation$Navigation$makeParser = _elm_lang$navigation$Navigation$Parser;
+var _elm_lang$navigation$Navigation$Modify = function (a) {
+	return {ctor: 'Modify', _0: a};
+};
+var _elm_lang$navigation$Navigation$modifyUrl = function (url) {
+	return _elm_lang$navigation$Navigation$command(
+		_elm_lang$navigation$Navigation$Modify(url));
+};
+var _elm_lang$navigation$Navigation$New = function (a) {
+	return {ctor: 'New', _0: a};
+};
+var _elm_lang$navigation$Navigation$newUrl = function (url) {
+	return _elm_lang$navigation$Navigation$command(
+		_elm_lang$navigation$Navigation$New(url));
+};
+var _elm_lang$navigation$Navigation$Jump = function (a) {
+	return {ctor: 'Jump', _0: a};
+};
+var _elm_lang$navigation$Navigation$back = function (n) {
+	return _elm_lang$navigation$Navigation$command(
+		_elm_lang$navigation$Navigation$Jump(0 - n));
+};
+var _elm_lang$navigation$Navigation$forward = function (n) {
+	return _elm_lang$navigation$Navigation$command(
+		_elm_lang$navigation$Navigation$Jump(n));
+};
+var _elm_lang$navigation$Navigation$cmdMap = F2(
+	function (_p11, myCmd) {
+		var _p12 = myCmd;
+		switch (_p12.ctor) {
+			case 'Jump':
+				return _elm_lang$navigation$Navigation$Jump(_p12._0);
+			case 'New':
+				return _elm_lang$navigation$Navigation$New(_p12._0);
+			default:
+				return _elm_lang$navigation$Navigation$Modify(_p12._0);
+		}
+	});
+var _elm_lang$navigation$Navigation$Monitor = function (a) {
+	return {ctor: 'Monitor', _0: a};
+};
+var _elm_lang$navigation$Navigation$programWithFlags = F2(
+	function (_p13, stuff) {
+		var _p14 = _p13;
+		var _p16 = _p14._0;
+		var location = _elm_lang$navigation$Native_Navigation.getLocation(
+			{ctor: '_Tuple0'});
+		var init = function (flags) {
+			return A2(
+				_elm_lang$navigation$Navigation$updateHelp,
+				_elm_lang$navigation$Navigation$UserMsg,
+				A2(
+					stuff.init,
+					flags,
+					_p16(location)));
+		};
+		var view = function (model) {
+			return A2(
+				_elm_lang$html$Html_App$map,
+				_elm_lang$navigation$Navigation$UserMsg,
+				stuff.view(model));
+		};
+		var subs = function (model) {
+			return _elm_lang$core$Platform_Sub$batch(
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$navigation$Navigation$subscription(
+						_elm_lang$navigation$Navigation$Monitor(_elm_lang$navigation$Navigation$Change)),
+						A2(
+						_elm_lang$core$Platform_Sub$map,
+						_elm_lang$navigation$Navigation$UserMsg,
+						stuff.subscriptions(model))
+					]));
+		};
+		var update = F2(
+			function (msg, model) {
+				return A2(
+					_elm_lang$navigation$Navigation$updateHelp,
+					_elm_lang$navigation$Navigation$UserMsg,
+					function () {
+						var _p15 = msg;
+						if (_p15.ctor === 'Change') {
+							return A2(
+								stuff.urlUpdate,
+								_p16(_p15._0),
+								model);
+						} else {
+							return A2(stuff.update, _p15._0, model);
+						}
+					}());
+			});
+		return _elm_lang$html$Html_App$programWithFlags(
+			{init: init, view: view, update: update, subscriptions: subs});
+	});
+var _elm_lang$navigation$Navigation$program = F2(
+	function (parser, stuff) {
+		return A2(
+			_elm_lang$navigation$Navigation$programWithFlags,
+			parser,
+			_elm_lang$core$Native_Utils.update(
+				stuff,
+				{
+					init: function (_p17) {
+						return stuff.init;
+					}
+				}));
+	});
+var _elm_lang$navigation$Navigation$subMap = F2(
+	function (func, _p18) {
+		var _p19 = _p18;
+		return _elm_lang$navigation$Navigation$Monitor(
+			function (_p20) {
+				return func(
+					_p19._0(_p20));
+			});
+	});
+_elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/navigation', init: _elm_lang$navigation$Navigation$init, onEffects: _elm_lang$navigation$Navigation$onEffects, onSelfMsg: _elm_lang$navigation$Navigation$onSelfMsg, tag: 'fx', cmdMap: _elm_lang$navigation$Navigation$cmdMap, subMap: _elm_lang$navigation$Navigation$subMap};
+
 //import Dict, List, Maybe, Native.Scheduler //
 
 var _evancz$elm_http$Native_Http = function() {
@@ -8577,1193 +9415,6 @@ var _evancz$elm_http$Http$post = F3(
 			A2(_evancz$elm_http$Http$send, _evancz$elm_http$Http$defaultSettings, request));
 	});
 
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setModel = F2(
-	function (inner, model) {
-		return _elm_lang$core$Native_Utils.update(
-			model,
-			{model: inner});
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr = F3(
-	function (msg, err, model) {
-		return _elm_lang$core$Native_Utils.update(
-			model,
-			{
-				err: _elm_lang$core$Maybe$Just(
-					{ctor: '_Tuple2', _0: msg, _1: err})
-			});
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$initExistingModel = F2(
-	function (mId, m) {
-		return {
-			id: _elm_lang$core$Maybe$Just(mId),
-			model: m,
-			err: _elm_lang$core$Maybe$Nothing
-		};
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$initNewModel = function (m) {
-	return {id: _elm_lang$core$Maybe$Nothing, model: m, err: _elm_lang$core$Maybe$Nothing};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$ModelPlus = F3(
-	function (a, b, c) {
-		return {id: a, model: b, err: c};
-	});
-
-var _elm_lang$elm_architecture_tutorial$Thing_Model$thingJsonEncoder = function (thing) {
-	var list = _elm_lang$core$Native_List.fromArray(
-		[
-			{
-			ctor: '_Tuple2',
-			_0: 'name',
-			_1: _elm_lang$core$Json_Encode$string(thing.name)
-		},
-			{
-			ctor: '_Tuple2',
-			_0: 'description',
-			_1: _elm_lang$core$Json_Encode$string(thing.description)
-		}
-		]);
-	return _elm_lang$core$Json_Encode$object(list);
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Model$emptyThing = {name: '', description: '', userId: _elm_lang$core$Maybe$Nothing};
-var _elm_lang$elm_architecture_tutorial$Thing_Model$ThingEntity = F2(
-	function (a, b) {
-		return {id: a, entity: b};
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Model$Thing = F3(
-	function (a, b, c) {
-		return {name: a, description: b, userId: c};
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Model$thingJsonDecoder = A3(
-	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-	'userId',
-	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$nullable(_elm_lang$core$Json_Decode$int),
-	A3(
-		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-		'description',
-		_elm_lang$core$Json_Decode$string,
-		A3(
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-			'name',
-			_elm_lang$core$Json_Decode$string,
-			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_elm_lang$elm_architecture_tutorial$Thing_Model$Thing))));
-var _elm_lang$elm_architecture_tutorial$Thing_Model$thingEntityJsonDecoder = A3(
-	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-	'entity',
-	_elm_lang$elm_architecture_tutorial$Thing_Model$thingJsonDecoder,
-	A3(
-		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
-		'id',
-		_elm_lang$core$Json_Decode$int,
-		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_elm_lang$elm_architecture_tutorial$Thing_Model$ThingEntity)));
-
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$delete = function (url) {
-	var request = {
-		verb: 'DELETE',
-		headers: _elm_lang$core$Native_List.fromArray(
-			[
-				{ctor: '_Tuple2', _0: 'Content-Type', _1: 'application/json; charset=UTF-8'}
-			]),
-		url: url,
-		body: _evancz$elm_http$Http$empty
-	};
-	return A2(
-		_evancz$elm_http$Http$fromJson,
-		_elm_lang$core$Json_Decode$succeed(
-			{ctor: '_Tuple0'}),
-		A2(_evancz$elm_http$Http$send, _evancz$elm_http$Http$defaultSettings, request));
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$post = F3(
-	function (decoder, url, encoder) {
-		return A3(
-			_evancz$elm_http$Http$post,
-			decoder,
-			url,
-			_evancz$elm_http$Http$string(
-				A2(_elm_lang$core$Json_Encode$encode, 0, encoder)));
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$put = F3(
-	function (decoder, url, encoder) {
-		var request = {
-			verb: 'PUT',
-			headers: _elm_lang$core$Native_List.fromArray(
-				[
-					{ctor: '_Tuple2', _0: 'Origin', _1: 'http://localhost:8000/'},
-					{ctor: '_Tuple2', _0: 'Content-Type', _1: 'application/json; charset=UTF-8'}
-				]),
-			url: url,
-			body: _evancz$elm_http$Http$string(
-				A2(_elm_lang$core$Json_Encode$encode, 0, encoder))
-		};
-		return A2(
-			_evancz$elm_http$Http$fromJson,
-			decoder,
-			A2(_evancz$elm_http$Http$send, _evancz$elm_http$Http$defaultSettings, request));
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpPUT = {ctor: 'HttpPUT'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpGET = {ctor: 'HttpGET'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpPOST = {ctor: 'HttpPOST'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpPATCH = {ctor: 'HttpPATCH'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpDELETE = {ctor: 'HttpDELETE'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResErr = F3(
-	function (a, b, c) {
-		return {ctor: 'HttpResErr', _0: a, _1: b, _2: c};
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResOk = F2(
-	function (a, b) {
-		return {ctor: 'HttpResOk', _0: a, _1: b};
-	});
-
-var _elm_lang$elm_architecture_tutorial$ServerConfig$serverBase = '';
-
-var _elm_lang$elm_architecture_tutorial$Thing_Routes$thingR = function (tId) {
-	return A2(
-		_elm_lang$core$Basics_ops['++'],
-		_elm_lang$elm_architecture_tutorial$ServerConfig$serverBase,
-		A2(
-			_elm_lang$core$Basics_ops['++'],
-			'/things/',
-			_elm_lang$core$Basics$toString(tId)));
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Routes$thingsR = A2(_elm_lang$core$Basics_ops['++'], _elm_lang$elm_architecture_tutorial$ServerConfig$serverBase, '/things');
-
-var _elm_lang$elm_architecture_tutorial$Thing_Http$deleteThing = function (tId) {
-	var request = _elm_lang$elm_architecture_tutorial$Reuse_Http$delete(
-		_elm_lang$elm_architecture_tutorial$Thing_Routes$thingR(tId));
-	var errMsg = A2(
-		_elm_lang$core$Basics_ops['++'],
-		'Error Deleting Thing ',
-		_elm_lang$core$Basics$toString(tId));
-	return A3(
-		_elm_lang$core$Task$perform,
-		A2(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResErr, _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpDELETE, errMsg),
-		_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResOk(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpDELETE),
-		request);
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Http$postThing = function (thing) {
-	var request = A3(
-		_elm_lang$elm_architecture_tutorial$Reuse_Http$post,
-		_elm_lang$elm_architecture_tutorial$Thing_Model$thingEntityJsonDecoder,
-		_elm_lang$elm_architecture_tutorial$Thing_Routes$thingsR,
-		_elm_lang$elm_architecture_tutorial$Thing_Model$thingJsonEncoder(thing));
-	var errMsg = A2(
-		_elm_lang$core$Basics_ops['++'],
-		'Error Creating Thing ',
-		_elm_lang$core$Basics$toString(thing));
-	return A3(
-		_elm_lang$core$Task$perform,
-		A2(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResErr, _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpPOST, errMsg),
-		_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResOk(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpPOST),
-		request);
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Http$putThing = F2(
-	function (tId, thing) {
-		var request = A3(
-			_elm_lang$elm_architecture_tutorial$Reuse_Http$put,
-			_elm_lang$elm_architecture_tutorial$Thing_Model$thingJsonDecoder,
-			_elm_lang$elm_architecture_tutorial$Thing_Routes$thingR(tId),
-			_elm_lang$elm_architecture_tutorial$Thing_Model$thingJsonEncoder(thing));
-		var errMsg = A2(
-			_elm_lang$core$Basics_ops['++'],
-			'Error Saving Thing ',
-			A2(
-				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString(tId),
-				A2(
-					_elm_lang$core$Basics_ops['++'],
-					': ',
-					_elm_lang$core$Basics$toString(thing))));
-		return A3(
-			_elm_lang$core$Task$perform,
-			A2(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResErr, _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpPUT, errMsg),
-			_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResOk(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpPUT),
-			request);
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Http$getThings = function () {
-	var request = A2(
-		_evancz$elm_http$Http$get,
-		_elm_lang$core$Json_Decode$list(_elm_lang$elm_architecture_tutorial$Thing_Model$thingEntityJsonDecoder),
-		_elm_lang$elm_architecture_tutorial$Thing_Routes$thingsR);
-	var errMsg = 'Error Retrieving Things ';
-	return A3(
-		_elm_lang$core$Task$perform,
-		A2(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResErr, _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpGET, errMsg),
-		_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResOk(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpGET),
-		request);
-}();
-var _elm_lang$elm_architecture_tutorial$Thing_Http$getThing = function (tId) {
-	var request = A2(
-		_evancz$elm_http$Http$get,
-		_elm_lang$elm_architecture_tutorial$Thing_Model$thingJsonDecoder,
-		_elm_lang$elm_architecture_tutorial$Thing_Routes$thingR(tId));
-	var errMsg = A2(
-		_elm_lang$core$Basics_ops['++'],
-		'Error Retrieving Thing ',
-		_elm_lang$core$Basics$toString(tId));
-	return A3(
-		_elm_lang$core$Task$perform,
-		A2(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResErr, _elm_lang$elm_architecture_tutorial$Reuse_Http$HttpGET, errMsg),
-		_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpResOk(_elm_lang$elm_architecture_tutorial$Reuse_Http$HttpGET),
-		request);
-};
-
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$setElements = F2(
-	function (newEls, model) {
-		return _elm_lang$core$Native_Utils.update(
-			model,
-			{elements: newEls});
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$setErr = F3(
-	function (msg, err, model) {
-		return _elm_lang$core$Native_Utils.update(
-			model,
-			{
-				err: _elm_lang$core$Maybe$Just(
-					{ctor: '_Tuple2', _0: msg, _1: err})
-			});
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$emptyModelEntityList = {
-	elements: _elm_lang$core$Native_List.fromArray(
-		[]),
-	err: _elm_lang$core$Maybe$Nothing
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$ModelEntity = F2(
-	function (a, b) {
-		return {id: a, entity: b};
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$ModelEntityList = F2(
-	function (a, b) {
-		return {elements: a, err: b};
-	});
-
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug = _elm_lang$core$Debug$log;
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$UpdateConfig = F7(
-	function (a, b, c, d, e, f, g) {
-		return {innerUpdate: a, validate: b, empty: c, getModel: d, putModel: e, postModel: f, exitCmd: g};
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$PostHttpResult = function (a) {
-	return {ctor: 'PostHttpResult', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$PutHttpResult = function (a) {
-	return {ctor: 'PutHttpResult', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$GetHttpResult = function (a) {
-	return {ctor: 'GetHttpResult', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$updateEditModel = F3(
-	function (updateConf, msg, model) {
-		var _p0 = msg;
-		switch (_p0.ctor) {
-			case 'Init':
-				var _p1 = _p0._0;
-				if (_p1.ctor === 'Just') {
-					var _p2 = _p1._0;
-					return {
-						ctor: '_Tuple2',
-						_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$initExistingModel, _p2, updateConf.empty),
-						_1: A2(
-							_elm_lang$core$Platform_Cmd$map,
-							_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$GetHttpResult,
-							updateConf.getModel(_p2))
-					};
-				} else {
-					return {
-						ctor: '_Tuple2',
-						_0: _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$initNewModel(updateConf.empty),
-						_1: _elm_lang$core$Platform_Cmd$none
-					};
-				}
-			case 'GetHttpResult':
-				var _p3 = _p0._0;
-				if (_p3.ctor === 'HttpResOk') {
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-						'GetResOK ',
-						{
-							ctor: '_Tuple2',
-							_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setModel, _p3._1, model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						});
-				} else {
-					var _p4 = _p3._2;
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							'GetResErr ',
-							_elm_lang$core$Basics$toString(_p4)),
-						{
-							ctor: '_Tuple2',
-							_0: A3(
-								_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr,
-								_p3._1,
-								_elm_lang$core$Maybe$Just(_p4),
-								model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						});
-				}
-			case 'PutHttpResult':
-				var _p5 = _p0._0;
-				if (_p5.ctor === 'HttpResOk') {
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-						'PutResOk ',
-						{
-							ctor: '_Tuple2',
-							_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setModel, _p5._1, model),
-							_1: updateConf.exitCmd(model.id)
-						});
-				} else {
-					var _p6 = _p5._2;
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							'PutResErr ',
-							_elm_lang$core$Basics$toString(_p6)),
-						{
-							ctor: '_Tuple2',
-							_0: A3(
-								_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr,
-								_p5._1,
-								_elm_lang$core$Maybe$Just(_p6),
-								model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						});
-				}
-			case 'PostHttpResult':
-				var _p7 = _p0._0;
-				if (_p7.ctor === 'HttpResOk') {
-					var _p8 = _p7._1;
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-						'PostResOk ',
-						{
-							ctor: '_Tuple2',
-							_0: _elm_lang$core$Native_Utils.update(
-								model,
-								{
-									model: _p8.entity,
-									id: _elm_lang$core$Maybe$Just(_p8.id)
-								}),
-							_1: updateConf.exitCmd(model.id)
-						});
-				} else {
-					var _p9 = _p7._2;
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							'PostResErr ',
-							_elm_lang$core$Basics$toString(_p9)),
-						{
-							ctor: '_Tuple2',
-							_0: A3(
-								_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr,
-								_p7._1,
-								_elm_lang$core$Maybe$Just(_p9),
-								model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						});
-				}
-			case 'SaveRequest':
-				var _p10 = updateConf.validate(model.model);
-				if (_p10.ctor === 'Ok') {
-					var _p12 = _p10._0;
-					var _p11 = model.id;
-					if (_p11.ctor === 'Just') {
-						return A2(
-							_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-							'SaveReq ',
-							{
-								ctor: '_Tuple2',
-								_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setModel, _p12, model),
-								_1: A2(
-									_elm_lang$core$Platform_Cmd$map,
-									_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$PutHttpResult,
-									A2(updateConf.putModel, _p11._0, _p12))
-							});
-					} else {
-						return A2(
-							_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-							'CreateReq ',
-							{
-								ctor: '_Tuple2',
-								_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setModel, _p12, model),
-								_1: A2(
-									_elm_lang$core$Platform_Cmd$map,
-									_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$PostHttpResult,
-									updateConf.postModel(_p12))
-							});
-					}
-				} else {
-					return A2(
-						_elm_lang$core$Debug$log,
-						'validation err',
-						{
-							ctor: '_Tuple2',
-							_0: A3(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr, _p10._0, _elm_lang$core$Maybe$Nothing, model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						});
-				}
-			case 'CancelRequest':
-				return A2(
-					_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$debug,
-					'CancelReq',
-					{
-						ctor: '_Tuple2',
-						_0: model,
-						_1: updateConf.exitCmd(model.id)
-					});
-			default:
-				var _p13 = A2(updateConf.innerUpdate, _p0._0, model.model);
-				var newInnerModel = _p13._0;
-				var cmd = _p13._1;
-				return {
-					ctor: '_Tuple2',
-					_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setModel, newInnerModel, model),
-					_1: cmd
-				};
-		}
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$CancelRequest = {ctor: 'CancelRequest'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$SaveRequest = {ctor: 'SaveRequest'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$InnerMsg = function (a) {
-	return {ctor: 'InnerMsg', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$Init = function (a) {
-	return {ctor: 'Init', _0: a};
-};
-
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$updateThing = F2(
-	function (msg, thing) {
-		var _p0 = msg;
-		if (_p0.ctor === 'NameChange') {
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					thing,
-					{name: _p0._0}),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
-		} else {
-			return {
-				ctor: '_Tuple2',
-				_0: _elm_lang$core$Native_Utils.update(
-					thing,
-					{description: _p0._0}),
-				_1: _elm_lang$core$Platform_Cmd$none
-			};
-		}
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$validateDescription = function (thing) {
-	return _elm_lang$core$Native_Utils.eq(thing.description, '') ? _elm_lang$core$Result$Err('Please enter description') : _elm_lang$core$Result$Ok(thing);
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$validateName = function (thing) {
-	return _elm_lang$core$Native_Utils.eq(thing.name, '') ? _elm_lang$core$Result$Err('Please enter name') : _elm_lang$core$Result$Ok(thing);
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$validateThing = function (thing) {
-	return A2(
-		_elm_lang$core$Result$andThen,
-		A2(
-			_elm_lang$core$Result$andThen,
-			_elm_lang$core$Result$Ok(thing),
-			_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$validateName),
-		_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$validateDescription);
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$config = function (exitCmd) {
-	return {innerUpdate: _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$updateThing, validate: _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$validateThing, empty: _elm_lang$elm_architecture_tutorial$Thing_Model$emptyThing, getModel: _elm_lang$elm_architecture_tutorial$Thing_Http$getThing, putModel: _elm_lang$elm_architecture_tutorial$Thing_Http$putThing, postModel: _elm_lang$elm_architecture_tutorial$Thing_Http$postThing, exitCmd: exitCmd};
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$update = function (exitCmd) {
-	return _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$updateEditModel(
-		_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$config(exitCmd));
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$initModel = _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$initNewModel(_elm_lang$elm_architecture_tutorial$Thing_Model$emptyThing);
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$DescriptionChange = function (a) {
-	return {ctor: 'DescriptionChange', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$NameChange = function (a) {
-	return {ctor: 'NameChange', _0: a};
-};
-
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug = _elm_lang$core$Debug$log;
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$UpdateConfig = F5(
-	function (a, b, c, d, e) {
-		return {empty: a, getModel: b, deleteModel: c, editCommand: d, exitCmd: e};
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$DeleteHttpResult = function (a) {
-	return {ctor: 'DeleteHttpResult', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$GetHttpResult = function (a) {
-	return {ctor: 'GetHttpResult', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$updateReadModel = F3(
-	function (updateConf, msg, model) {
-		var _p0 = model.id;
-		if (_p0.ctor === 'Nothing') {
-			return A2(
-				_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-				'Model Id not set ',
-				{
-					ctor: '_Tuple2',
-					_0: A3(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr, 'No ID configured', _elm_lang$core$Maybe$Nothing, model),
-					_1: _elm_lang$core$Platform_Cmd$none
-				});
-		} else {
-			var _p7 = _p0._0;
-			var _p1 = msg;
-			switch (_p1.ctor) {
-				case 'Init':
-					var _p2 = _p1._0;
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-						'InitView ',
-						{
-							ctor: '_Tuple2',
-							_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$initExistingModel, _p2, updateConf.empty),
-							_1: A2(
-								_elm_lang$core$Platform_Cmd$map,
-								_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$GetHttpResult,
-								updateConf.getModel(_p2))
-						});
-				case 'GetHttpResult':
-					var _p3 = _p1._0;
-					if (_p3.ctor === 'HttpResOk') {
-						return A2(
-							_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-							'GetResOK ',
-							{
-								ctor: '_Tuple2',
-								_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setModel, _p3._1, model),
-								_1: _elm_lang$core$Platform_Cmd$none
-							});
-					} else {
-						var _p4 = _p3._2;
-						return A2(
-							_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								'GetResErr ',
-								_elm_lang$core$Basics$toString(_p4)),
-							{
-								ctor: '_Tuple2',
-								_0: A3(
-									_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr,
-									_p3._1,
-									_elm_lang$core$Maybe$Just(_p4),
-									model),
-								_1: _elm_lang$core$Platform_Cmd$none
-							});
-					}
-				case 'DeleteHttpResult':
-					var _p5 = _p1._0;
-					if (_p5.ctor === 'HttpResOk') {
-						return A2(
-							_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-							'DeleteResOk ',
-							{
-								ctor: '_Tuple2',
-								_0: model,
-								_1: updateConf.exitCmd(_p7)
-							});
-					} else {
-						var _p6 = _p5._2;
-						return A2(
-							_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-							A2(
-								_elm_lang$core$Basics_ops['++'],
-								'DeleteResErr ',
-								_elm_lang$core$Basics$toString(_p6)),
-							{
-								ctor: '_Tuple2',
-								_0: A3(
-									_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelPlus$setErr,
-									_p5._1,
-									_elm_lang$core$Maybe$Just(_p6),
-									model),
-								_1: _elm_lang$core$Platform_Cmd$none
-							});
-					}
-				case 'EditRequest':
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-						'EditRequest',
-						{
-							ctor: '_Tuple2',
-							_0: model,
-							_1: updateConf.editCommand(_p7)
-						});
-				case 'DeleteRequest':
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-						'DeleteRequest ',
-						{
-							ctor: '_Tuple2',
-							_0: model,
-							_1: A2(
-								_elm_lang$core$Platform_Cmd$map,
-								_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$DeleteHttpResult,
-								updateConf.deleteModel(_p7))
-						});
-				default:
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$debug,
-						'CancelReq',
-						{
-							ctor: '_Tuple2',
-							_0: model,
-							_1: updateConf.exitCmd(_p7)
-						});
-			}
-		}
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$CancelRequest = {ctor: 'CancelRequest'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$DeleteRequest = {ctor: 'DeleteRequest'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$EditRequest = {ctor: 'EditRequest'};
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$Init = function (a) {
-	return {ctor: 'Init', _0: a};
-};
-
-var _elm_lang$elm_architecture_tutorial$Thing_Read_Logic$config = F2(
-	function (editCmd, exitCmd) {
-		return {empty: _elm_lang$elm_architecture_tutorial$Thing_Model$emptyThing, getModel: _elm_lang$elm_architecture_tutorial$Thing_Http$getThing, deleteModel: _elm_lang$elm_architecture_tutorial$Thing_Http$deleteThing, editCommand: editCmd, exitCmd: exitCmd};
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Read_Logic$update = F2(
-	function (editCmd, exitCmd) {
-		return _elm_lang$elm_architecture_tutorial$Reuse_Read_Message$updateReadModel(
-			A2(_elm_lang$elm_architecture_tutorial$Thing_Read_Logic$config, editCmd, exitCmd));
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Read_Logic$initModel = {
-	id: _elm_lang$core$Maybe$Just(-1),
-	model: _elm_lang$elm_architecture_tutorial$Thing_Model$emptyThing,
-	err: _elm_lang$core$Maybe$Nothing
-};
-
-var _elm_lang$elm_architecture_tutorial$Reuse_List_Message$debug = _elm_lang$core$Debug$log;
-var _elm_lang$elm_architecture_tutorial$Reuse_List_Message$UpdateConfig = F3(
-	function (a, b, c) {
-		return {getModels: a, viewCommand: b, createCommand: c};
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_List_Message$GetHttpResult = function (a) {
-	return {ctor: 'GetHttpResult', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_List_Message$updateListModel = F3(
-	function (updateConf, msg, model) {
-		var _p0 = msg;
-		switch (_p0.ctor) {
-			case 'Init':
-				return A2(
-					_elm_lang$elm_architecture_tutorial$Reuse_List_Message$debug,
-					'InitEdit ',
-					{
-						ctor: '_Tuple2',
-						_0: _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$emptyModelEntityList,
-						_1: A2(_elm_lang$core$Platform_Cmd$map, _elm_lang$elm_architecture_tutorial$Reuse_List_Message$GetHttpResult, updateConf.getModels)
-					});
-			case 'GetHttpResult':
-				var _p1 = _p0._0;
-				if (_p1.ctor === 'HttpResOk') {
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_List_Message$debug,
-						'GetResOK ',
-						{
-							ctor: '_Tuple2',
-							_0: A2(_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$setElements, _p1._1, model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						});
-				} else {
-					var _p2 = _p1._2;
-					return A2(
-						_elm_lang$elm_architecture_tutorial$Reuse_List_Message$debug,
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							'GetResErr ',
-							_elm_lang$core$Basics$toString(_p2)),
-						{
-							ctor: '_Tuple2',
-							_0: A3(
-								_elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$setErr,
-								_p1._1,
-								_elm_lang$core$Maybe$Just(_p2),
-								model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						});
-				}
-			case 'ViewRequest':
-				return A2(
-					_elm_lang$elm_architecture_tutorial$Reuse_List_Message$debug,
-					'ViewRequest ',
-					{
-						ctor: '_Tuple2',
-						_0: model,
-						_1: updateConf.viewCommand(_p0._0)
-					});
-			default:
-				return A2(
-					_elm_lang$elm_architecture_tutorial$Reuse_List_Message$debug,
-					'CreateRequest ',
-					{ctor: '_Tuple2', _0: model, _1: updateConf.createCommand});
-		}
-	});
-var _elm_lang$elm_architecture_tutorial$Reuse_List_Message$CreateRequest = {ctor: 'CreateRequest'};
-var _elm_lang$elm_architecture_tutorial$Reuse_List_Message$ViewRequest = function (a) {
-	return {ctor: 'ViewRequest', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Reuse_List_Message$Init = {ctor: 'Init'};
-
-var _elm_lang$elm_architecture_tutorial$Thing_List_Logic$config = F2(
-	function (viewCmd, createCmd) {
-		return {getModels: _elm_lang$elm_architecture_tutorial$Thing_Http$getThings, viewCommand: viewCmd, createCommand: createCmd};
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_List_Logic$update = F2(
-	function (viewCmd, createCmd) {
-		return _elm_lang$elm_architecture_tutorial$Reuse_List_Message$updateListModel(
-			A2(_elm_lang$elm_architecture_tutorial$Thing_List_Logic$config, viewCmd, createCmd));
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_List_Logic$initModel = _elm_lang$elm_architecture_tutorial$Reuse_Model_ModelEntity$emptyModelEntityList;
-
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$initModel = {editM: _elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$initModel, readM: _elm_lang$elm_architecture_tutorial$Thing_Read_Logic$initModel, listM: _elm_lang$elm_architecture_tutorial$Thing_List_Logic$initModel};
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Model = F3(
-	function (a, b, c) {
-		return {editM: a, readM: b, listM: c};
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$UpdateConf = F5(
-	function (a, b, c, d, e) {
-		return {editExitCmd: a, readToEditCmd: b, readToExitCmd: c, listToViewCmd: d, listToCreateCmd: e};
-	});
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$List = function (a) {
-	return {ctor: 'List', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Read = function (a) {
-	return {ctor: 'Read', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Edit = function (a) {
-	return {ctor: 'Edit', _0: a};
-};
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$update = F3(
-	function (config, msg, model) {
-		var _p0 = msg;
-		switch (_p0.ctor) {
-			case 'Edit':
-				var _p1 = A3(_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$update, config.editExitCmd, _p0._0, model.editM);
-				var newInnerM = _p1._0;
-				var newCmd = _p1._1;
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{editM: newInnerM}),
-					_1: A2(_elm_lang$core$Platform_Cmd$map, _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Edit, newCmd)
-				};
-			case 'Read':
-				var _p2 = A4(_elm_lang$elm_architecture_tutorial$Thing_Read_Logic$update, config.readToEditCmd, config.readToExitCmd, _p0._0, model.readM);
-				var newInnerM = _p2._0;
-				var newCmd = _p2._1;
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{readM: newInnerM}),
-					_1: A2(_elm_lang$core$Platform_Cmd$map, _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Read, newCmd)
-				};
-			default:
-				var _p3 = A4(_elm_lang$elm_architecture_tutorial$Thing_List_Logic$update, config.listToViewCmd, config.listToCreateCmd, _p0._0, model.listM);
-				var newInnerM = _p3._0;
-				var newCmd = _p3._1;
-				return {
-					ctor: '_Tuple2',
-					_0: _elm_lang$core$Native_Utils.update(
-						model,
-						{listM: newInnerM}),
-					_1: A2(_elm_lang$core$Platform_Cmd$map, _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$List, newCmd)
-				};
-		}
-	});
-
-var _elm_lang$html$Html_App$programWithFlags = _elm_lang$virtual_dom$VirtualDom$programWithFlags;
-var _elm_lang$html$Html_App$program = function (app) {
-	return _elm_lang$html$Html_App$programWithFlags(
-		_elm_lang$core$Native_Utils.update(
-			app,
-			{
-				init: function (_p0) {
-					return app.init;
-				}
-			}));
-};
-var _elm_lang$html$Html_App$beginnerProgram = function (_p1) {
-	var _p2 = _p1;
-	return _elm_lang$html$Html_App$programWithFlags(
-		{
-			init: function (_p3) {
-				return A2(
-					_elm_lang$core$Platform_Cmd_ops['!'],
-					_p2.model,
-					_elm_lang$core$Native_List.fromArray(
-						[]));
-			},
-			update: F2(
-				function (msg, model) {
-					return A2(
-						_elm_lang$core$Platform_Cmd_ops['!'],
-						A2(_p2.update, msg, model),
-						_elm_lang$core$Native_List.fromArray(
-							[]));
-				}),
-			view: _p2.view,
-			subscriptions: function (_p4) {
-				return _elm_lang$core$Platform_Sub$none;
-			}
-		});
-};
-var _elm_lang$html$Html_App$map = _elm_lang$virtual_dom$VirtualDom$map;
-
-var _elm_lang$navigation$Native_Navigation = function() {
-
-function go(n)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		if (n !== 0)
-		{
-			history.go(n);
-		}
-		callback(_elm_lang$core$Native_Scheduler.succeed(_elm_lang$core$Native_Utils.Tuple0));
-	});
-}
-
-function pushState(url)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		history.pushState({}, '', url);
-		callback(_elm_lang$core$Native_Scheduler.succeed(getLocation()));
-	});
-}
-
-function replaceState(url)
-{
-	return _elm_lang$core$Native_Scheduler.nativeBinding(function(callback)
-	{
-		history.replaceState({}, '', url);
-		callback(_elm_lang$core$Native_Scheduler.succeed(getLocation()));
-	});
-}
-
-function getLocation()
-{
-	var location = document.location;
-
-	return {
-		href: location.href,
-		host: location.host,
-		hostname: location.hostname,
-		protocol: location.protocol,
-		origin: location.origin,
-		port_: location.port,
-		pathname: location.pathname,
-		search: location.search,
-		hash: location.hash,
-		username: location.username,
-		password: location.password
-	};
-}
-
-
-return {
-	go: go,
-	pushState: pushState,
-	replaceState: replaceState,
-	getLocation: getLocation
-};
-
-}();
-
-var _elm_lang$navigation$Navigation$replaceState = _elm_lang$navigation$Native_Navigation.replaceState;
-var _elm_lang$navigation$Navigation$pushState = _elm_lang$navigation$Native_Navigation.pushState;
-var _elm_lang$navigation$Navigation$go = _elm_lang$navigation$Native_Navigation.go;
-var _elm_lang$navigation$Navigation$spawnPopState = function (router) {
-	return _elm_lang$core$Process$spawn(
-		A3(
-			_elm_lang$dom$Dom_LowLevel$onWindow,
-			'popstate',
-			_elm_lang$core$Json_Decode$value,
-			function (_p0) {
-				return A2(
-					_elm_lang$core$Platform$sendToSelf,
-					router,
-					_elm_lang$navigation$Native_Navigation.getLocation(
-						{ctor: '_Tuple0'}));
-			}));
-};
-var _elm_lang$navigation$Navigation_ops = _elm_lang$navigation$Navigation_ops || {};
-_elm_lang$navigation$Navigation_ops['&>'] = F2(
-	function (task1, task2) {
-		return A2(
-			_elm_lang$core$Task$andThen,
-			task1,
-			function (_p1) {
-				return task2;
-			});
-	});
-var _elm_lang$navigation$Navigation$notify = F3(
-	function (router, subs, location) {
-		var send = function (_p2) {
-			var _p3 = _p2;
-			return A2(
-				_elm_lang$core$Platform$sendToApp,
-				router,
-				_p3._0(location));
-		};
-		return A2(
-			_elm_lang$navigation$Navigation_ops['&>'],
-			_elm_lang$core$Task$sequence(
-				A2(_elm_lang$core$List$map, send, subs)),
-			_elm_lang$core$Task$succeed(
-				{ctor: '_Tuple0'}));
-	});
-var _elm_lang$navigation$Navigation$onSelfMsg = F3(
-	function (router, location, state) {
-		return A2(
-			_elm_lang$navigation$Navigation_ops['&>'],
-			A3(_elm_lang$navigation$Navigation$notify, router, state.subs, location),
-			_elm_lang$core$Task$succeed(state));
-	});
-var _elm_lang$navigation$Navigation$cmdHelp = F3(
-	function (router, subs, cmd) {
-		var _p4 = cmd;
-		switch (_p4.ctor) {
-			case 'Jump':
-				return _elm_lang$navigation$Navigation$go(_p4._0);
-			case 'New':
-				return A2(
-					_elm_lang$core$Task$andThen,
-					_elm_lang$navigation$Navigation$pushState(_p4._0),
-					A2(_elm_lang$navigation$Navigation$notify, router, subs));
-			default:
-				return A2(
-					_elm_lang$core$Task$andThen,
-					_elm_lang$navigation$Navigation$replaceState(_p4._0),
-					A2(_elm_lang$navigation$Navigation$notify, router, subs));
-		}
-	});
-var _elm_lang$navigation$Navigation$updateHelp = F2(
-	function (func, _p5) {
-		var _p6 = _p5;
-		return {
-			ctor: '_Tuple2',
-			_0: _p6._0,
-			_1: A2(_elm_lang$core$Platform_Cmd$map, func, _p6._1)
-		};
-	});
-var _elm_lang$navigation$Navigation$subscription = _elm_lang$core$Native_Platform.leaf('Navigation');
-var _elm_lang$navigation$Navigation$command = _elm_lang$core$Native_Platform.leaf('Navigation');
-var _elm_lang$navigation$Navigation$Location = function (a) {
-	return function (b) {
-		return function (c) {
-			return function (d) {
-				return function (e) {
-					return function (f) {
-						return function (g) {
-							return function (h) {
-								return function (i) {
-									return function (j) {
-										return function (k) {
-											return {href: a, host: b, hostname: c, protocol: d, origin: e, port_: f, pathname: g, search: h, hash: i, username: j, password: k};
-										};
-									};
-								};
-							};
-						};
-					};
-				};
-			};
-		};
-	};
-};
-var _elm_lang$navigation$Navigation$State = F2(
-	function (a, b) {
-		return {subs: a, process: b};
-	});
-var _elm_lang$navigation$Navigation$init = _elm_lang$core$Task$succeed(
-	A2(
-		_elm_lang$navigation$Navigation$State,
-		_elm_lang$core$Native_List.fromArray(
-			[]),
-		_elm_lang$core$Maybe$Nothing));
-var _elm_lang$navigation$Navigation$onEffects = F4(
-	function (router, cmds, subs, _p7) {
-		var _p8 = _p7;
-		var _p10 = _p8.process;
-		var stepState = function () {
-			var _p9 = {ctor: '_Tuple2', _0: subs, _1: _p10};
-			_v4_2:
-			do {
-				if (_p9._0.ctor === '[]') {
-					if (_p9._1.ctor === 'Just') {
-						return A2(
-							_elm_lang$navigation$Navigation_ops['&>'],
-							_elm_lang$core$Process$kill(_p9._1._0),
-							_elm_lang$core$Task$succeed(
-								A2(_elm_lang$navigation$Navigation$State, subs, _elm_lang$core$Maybe$Nothing)));
-					} else {
-						break _v4_2;
-					}
-				} else {
-					if (_p9._1.ctor === 'Nothing') {
-						return A2(
-							_elm_lang$core$Task$andThen,
-							_elm_lang$navigation$Navigation$spawnPopState(router),
-							function (pid) {
-								return _elm_lang$core$Task$succeed(
-									A2(
-										_elm_lang$navigation$Navigation$State,
-										subs,
-										_elm_lang$core$Maybe$Just(pid)));
-							});
-					} else {
-						break _v4_2;
-					}
-				}
-			} while(false);
-			return _elm_lang$core$Task$succeed(
-				A2(_elm_lang$navigation$Navigation$State, subs, _p10));
-		}();
-		return A2(
-			_elm_lang$navigation$Navigation_ops['&>'],
-			_elm_lang$core$Task$sequence(
-				A2(
-					_elm_lang$core$List$map,
-					A2(_elm_lang$navigation$Navigation$cmdHelp, router, subs),
-					cmds)),
-			stepState);
-	});
-var _elm_lang$navigation$Navigation$UserMsg = function (a) {
-	return {ctor: 'UserMsg', _0: a};
-};
-var _elm_lang$navigation$Navigation$Change = function (a) {
-	return {ctor: 'Change', _0: a};
-};
-var _elm_lang$navigation$Navigation$Parser = function (a) {
-	return {ctor: 'Parser', _0: a};
-};
-var _elm_lang$navigation$Navigation$makeParser = _elm_lang$navigation$Navigation$Parser;
-var _elm_lang$navigation$Navigation$Modify = function (a) {
-	return {ctor: 'Modify', _0: a};
-};
-var _elm_lang$navigation$Navigation$modifyUrl = function (url) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$Modify(url));
-};
-var _elm_lang$navigation$Navigation$New = function (a) {
-	return {ctor: 'New', _0: a};
-};
-var _elm_lang$navigation$Navigation$newUrl = function (url) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$New(url));
-};
-var _elm_lang$navigation$Navigation$Jump = function (a) {
-	return {ctor: 'Jump', _0: a};
-};
-var _elm_lang$navigation$Navigation$back = function (n) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$Jump(0 - n));
-};
-var _elm_lang$navigation$Navigation$forward = function (n) {
-	return _elm_lang$navigation$Navigation$command(
-		_elm_lang$navigation$Navigation$Jump(n));
-};
-var _elm_lang$navigation$Navigation$cmdMap = F2(
-	function (_p11, myCmd) {
-		var _p12 = myCmd;
-		switch (_p12.ctor) {
-			case 'Jump':
-				return _elm_lang$navigation$Navigation$Jump(_p12._0);
-			case 'New':
-				return _elm_lang$navigation$Navigation$New(_p12._0);
-			default:
-				return _elm_lang$navigation$Navigation$Modify(_p12._0);
-		}
-	});
-var _elm_lang$navigation$Navigation$Monitor = function (a) {
-	return {ctor: 'Monitor', _0: a};
-};
-var _elm_lang$navigation$Navigation$programWithFlags = F2(
-	function (_p13, stuff) {
-		var _p14 = _p13;
-		var _p16 = _p14._0;
-		var location = _elm_lang$navigation$Native_Navigation.getLocation(
-			{ctor: '_Tuple0'});
-		var init = function (flags) {
-			return A2(
-				_elm_lang$navigation$Navigation$updateHelp,
-				_elm_lang$navigation$Navigation$UserMsg,
-				A2(
-					stuff.init,
-					flags,
-					_p16(location)));
-		};
-		var view = function (model) {
-			return A2(
-				_elm_lang$html$Html_App$map,
-				_elm_lang$navigation$Navigation$UserMsg,
-				stuff.view(model));
-		};
-		var subs = function (model) {
-			return _elm_lang$core$Platform_Sub$batch(
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$navigation$Navigation$subscription(
-						_elm_lang$navigation$Navigation$Monitor(_elm_lang$navigation$Navigation$Change)),
-						A2(
-						_elm_lang$core$Platform_Sub$map,
-						_elm_lang$navigation$Navigation$UserMsg,
-						stuff.subscriptions(model))
-					]));
-		};
-		var update = F2(
-			function (msg, model) {
-				return A2(
-					_elm_lang$navigation$Navigation$updateHelp,
-					_elm_lang$navigation$Navigation$UserMsg,
-					function () {
-						var _p15 = msg;
-						if (_p15.ctor === 'Change') {
-							return A2(
-								stuff.urlUpdate,
-								_p16(_p15._0),
-								model);
-						} else {
-							return A2(stuff.update, _p15._0, model);
-						}
-					}());
-			});
-		return _elm_lang$html$Html_App$programWithFlags(
-			{init: init, view: view, update: update, subscriptions: subs});
-	});
-var _elm_lang$navigation$Navigation$program = F2(
-	function (parser, stuff) {
-		return A2(
-			_elm_lang$navigation$Navigation$programWithFlags,
-			parser,
-			_elm_lang$core$Native_Utils.update(
-				stuff,
-				{
-					init: function (_p17) {
-						return stuff.init;
-					}
-				}));
-	});
-var _elm_lang$navigation$Navigation$subMap = F2(
-	function (func, _p18) {
-		var _p19 = _p18;
-		return _elm_lang$navigation$Navigation$Monitor(
-			function (_p20) {
-				return func(
-					_p19._0(_p20));
-			});
-	});
-_elm_lang$core$Native_Platform.effectManagers['Navigation'] = {pkg: 'elm-lang/navigation', init: _elm_lang$navigation$Navigation$init, onEffects: _elm_lang$navigation$Navigation$onEffects, onSelfMsg: _elm_lang$navigation$Navigation$onSelfMsg, tag: 'fx', cmdMap: _elm_lang$navigation$Navigation$cmdMap, subMap: _elm_lang$navigation$Navigation$subMap};
-
 var _evancz$url_parser$UrlParser$oneOfHelp = F3(
 	function (choices, chunks, formatter) {
 		oneOfHelp:
@@ -9942,7 +9593,716 @@ var _evancz$url_parser$UrlParser$format = F2(
 				}));
 	});
 
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$toElmUrl = function (route) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel = F2(
+	function (inner, model) {
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{model: inner});
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr = F3(
+	function (msg, err, model) {
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				err: _elm_lang$core$Maybe$Just(
+					{ctor: '_Tuple2', _0: msg, _1: err})
+			});
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$initExistingModel = F2(
+	function (mId, m) {
+		return {
+			id: _elm_lang$core$Maybe$Just(mId),
+			model: m,
+			err: _elm_lang$core$Maybe$Nothing
+		};
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$initNewModel = function (m) {
+	return {id: _elm_lang$core$Maybe$Nothing, model: m, err: _elm_lang$core$Maybe$Nothing};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$ModelPlus = F3(
+	function (a, b, c) {
+		return {id: a, model: b, err: c};
+	});
+
+var _rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonEncoder = function (thing) {
+	var list = _elm_lang$core$Native_List.fromArray(
+		[
+			{
+			ctor: '_Tuple2',
+			_0: 'name',
+			_1: _elm_lang$core$Json_Encode$string(thing.name)
+		},
+			{
+			ctor: '_Tuple2',
+			_0: 'description',
+			_1: _elm_lang$core$Json_Encode$string(thing.description)
+		}
+		]);
+	return _elm_lang$core$Json_Encode$object(list);
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Model$emptyThing = {name: '', description: '', userId: _elm_lang$core$Maybe$Nothing};
+var _rpeszek$crud_ex_frontend_elm$Thing_Model$ThingEntity = F2(
+	function (a, b) {
+		return {id: a, entity: b};
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Model$Thing = F3(
+	function (a, b, c) {
+		return {name: a, description: b, userId: c};
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'userId',
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$nullable(_elm_lang$core$Json_Decode$int),
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'description',
+		_elm_lang$core$Json_Decode$string,
+		A3(
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+			'name',
+			_elm_lang$core$Json_Decode$string,
+			_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_rpeszek$crud_ex_frontend_elm$Thing_Model$Thing))));
+var _rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder = A3(
+	_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+	'entity',
+	_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder,
+	A3(
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$required,
+		'id',
+		_elm_lang$core$Json_Decode$int,
+		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_rpeszek$crud_ex_frontend_elm$Thing_Model$ThingEntity)));
+
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$delete = function (url) {
+	var request = {
+		verb: 'DELETE',
+		headers: _elm_lang$core$Native_List.fromArray(
+			[
+				{ctor: '_Tuple2', _0: 'Content-Type', _1: 'application/json; charset=UTF-8'}
+			]),
+		url: url,
+		body: _evancz$elm_http$Http$empty
+	};
+	return A2(
+		_evancz$elm_http$Http$fromJson,
+		_elm_lang$core$Json_Decode$succeed(
+			{ctor: '_Tuple0'}),
+		A2(_evancz$elm_http$Http$send, _evancz$elm_http$Http$defaultSettings, request));
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$post = F3(
+	function (decoder, url, encoder) {
+		return A3(
+			_evancz$elm_http$Http$post,
+			decoder,
+			url,
+			_evancz$elm_http$Http$string(
+				A2(_elm_lang$core$Json_Encode$encode, 0, encoder)));
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$put = F3(
+	function (decoder, url, encoder) {
+		var request = {
+			verb: 'PUT',
+			headers: _elm_lang$core$Native_List.fromArray(
+				[
+					{ctor: '_Tuple2', _0: 'Origin', _1: 'http://localhost:8000/'},
+					{ctor: '_Tuple2', _0: 'Content-Type', _1: 'application/json; charset=UTF-8'}
+				]),
+			url: url,
+			body: _evancz$elm_http$Http$string(
+				A2(_elm_lang$core$Json_Encode$encode, 0, encoder))
+		};
+		return A2(
+			_evancz$elm_http$Http$fromJson,
+			decoder,
+			A2(_evancz$elm_http$Http$send, _evancz$elm_http$Http$defaultSettings, request));
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPUT = {ctor: 'HttpPUT'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET = {ctor: 'HttpGET'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPOST = {ctor: 'HttpPOST'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPATCH = {ctor: 'HttpPATCH'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpDELETE = {ctor: 'HttpDELETE'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr = F3(
+	function (a, b, c) {
+		return {ctor: 'HttpResErr', _0: a, _1: b, _2: c};
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk = F2(
+	function (a, b) {
+		return {ctor: 'HttpResOk', _0: a, _1: b};
+	});
+
+var _rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase = '';
+
+var _rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR = function (tId) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		_rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase,
+		A2(
+			_elm_lang$core$Basics_ops['++'],
+			'/things/',
+			_elm_lang$core$Basics$toString(tId)));
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Routes$thingsR = A2(_elm_lang$core$Basics_ops['++'], _rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase, '/things');
+
+var _rpeszek$crud_ex_frontend_elm$Thing_Http$deleteThing = function (tId) {
+	var request = _rpeszek$crud_ex_frontend_elm$Reuse_Http$delete(
+		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR(tId));
+	var errMsg = A2(
+		_elm_lang$core$Basics_ops['++'],
+		'Error Deleting Thing ',
+		_elm_lang$core$Basics$toString(tId));
+	return A3(
+		_elm_lang$core$Task$perform,
+		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpDELETE, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpDELETE),
+		request);
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Http$postThing = function (thing) {
+	var request = A3(
+		_rpeszek$crud_ex_frontend_elm$Reuse_Http$post,
+		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder,
+		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingsR,
+		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonEncoder(thing));
+	var errMsg = A2(
+		_elm_lang$core$Basics_ops['++'],
+		'Error Creating Thing ',
+		_elm_lang$core$Basics$toString(thing));
+	return A3(
+		_elm_lang$core$Task$perform,
+		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPOST, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPOST),
+		request);
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Http$putThing = F2(
+	function (tId, thing) {
+		var request = A3(
+			_rpeszek$crud_ex_frontend_elm$Reuse_Http$put,
+			_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder,
+			_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR(tId),
+			_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonEncoder(thing));
+		var errMsg = A2(
+			_elm_lang$core$Basics_ops['++'],
+			'Error Saving Thing ',
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(tId),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					': ',
+					_elm_lang$core$Basics$toString(thing))));
+		return A3(
+			_elm_lang$core$Task$perform,
+			A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPUT, errMsg),
+			_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPUT),
+			request);
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Http$getThings = function () {
+	var request = A2(
+		_evancz$elm_http$Http$get,
+		_elm_lang$core$Json_Decode$list(_rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder),
+		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingsR);
+	var errMsg = 'Error Retrieving Things ';
+	return A3(
+		_elm_lang$core$Task$perform,
+		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET),
+		request);
+}();
+var _rpeszek$crud_ex_frontend_elm$Thing_Http$getThing = function (tId) {
+	var request = A2(
+		_evancz$elm_http$Http$get,
+		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder,
+		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR(tId));
+	var errMsg = A2(
+		_elm_lang$core$Basics_ops['++'],
+		'Error Retrieving Thing ',
+		_elm_lang$core$Basics$toString(tId));
+	return A3(
+		_elm_lang$core$Task$perform,
+		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET),
+		request);
+};
+
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$setElements = F2(
+	function (newEls, model) {
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{elements: newEls});
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$setErr = F3(
+	function (msg, err, model) {
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{
+				err: _elm_lang$core$Maybe$Just(
+					{ctor: '_Tuple2', _0: msg, _1: err})
+			});
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$emptyModelEntityList = {
+	elements: _elm_lang$core$Native_List.fromArray(
+		[]),
+	err: _elm_lang$core$Maybe$Nothing
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$ModelEntity = F2(
+	function (a, b) {
+		return {id: a, entity: b};
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$ModelEntityList = F2(
+	function (a, b) {
+		return {elements: a, err: b};
+	});
+
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$UpdateConfig = F7(
+	function (a, b, c, d, e, f, g) {
+		return {innerUpdate: a, validate: b, empty: c, getModel: d, putModel: e, postModel: f, exitCmd: g};
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$PostHttpResult = function (a) {
+	return {ctor: 'PostHttpResult', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$PutHttpResult = function (a) {
+	return {ctor: 'PutHttpResult', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$GetHttpResult = function (a) {
+	return {ctor: 'GetHttpResult', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$updateEditModel = F3(
+	function (updateConf, msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'InitMsg':
+				var _p1 = _p0._0;
+				if (_p1.ctor === 'Just') {
+					var _p2 = _p1._0;
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$initExistingModel, _p2, updateConf.empty),
+						_1: A2(
+							_elm_lang$core$Platform_Cmd$map,
+							_rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$GetHttpResult,
+							updateConf.getModel(_p2))
+					};
+				} else {
+					return {
+						ctor: '_Tuple2',
+						_0: _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$initNewModel(updateConf.empty),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'GetHttpResult':
+				var _p3 = _p0._0;
+				if (_p3.ctor === 'HttpResOk') {
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p3._1, model),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					return {
+						ctor: '_Tuple2',
+						_0: A3(
+							_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr,
+							_p3._1,
+							_elm_lang$core$Maybe$Just(_p3._2),
+							model),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'PutHttpResult':
+				var _p4 = _p0._0;
+				if (_p4.ctor === 'HttpResOk') {
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p4._1, model),
+						_1: updateConf.exitCmd(model.id)
+					};
+				} else {
+					return {
+						ctor: '_Tuple2',
+						_0: A3(
+							_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr,
+							_p4._1,
+							_elm_lang$core$Maybe$Just(_p4._2),
+							model),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'PostHttpResult':
+				var _p5 = _p0._0;
+				if (_p5.ctor === 'HttpResOk') {
+					var _p6 = _p5._1;
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{
+								model: _p6.entity,
+								id: _elm_lang$core$Maybe$Just(_p6.id)
+							}),
+						_1: updateConf.exitCmd(model.id)
+					};
+				} else {
+					return {
+						ctor: '_Tuple2',
+						_0: A3(
+							_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr,
+							_p5._1,
+							_elm_lang$core$Maybe$Just(_p5._2),
+							model),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'SaveRequest':
+				var _p7 = updateConf.validate(model.model);
+				if (_p7.ctor === 'Ok') {
+					var _p9 = _p7._0;
+					var _p8 = model.id;
+					if (_p8.ctor === 'Just') {
+						return {
+							ctor: '_Tuple2',
+							_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p9, model),
+							_1: A2(
+								_elm_lang$core$Platform_Cmd$map,
+								_rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$PutHttpResult,
+								A2(updateConf.putModel, _p8._0, _p9))
+						};
+					} else {
+						return {
+							ctor: '_Tuple2',
+							_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p9, model),
+							_1: A2(
+								_elm_lang$core$Platform_Cmd$map,
+								_rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$PostHttpResult,
+								updateConf.postModel(_p9))
+						};
+					}
+				} else {
+					return A2(
+						_elm_lang$core$Debug$log,
+						'validation err',
+						{
+							ctor: '_Tuple2',
+							_0: A3(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr, _p7._0, _elm_lang$core$Maybe$Nothing, model),
+							_1: _elm_lang$core$Platform_Cmd$none
+						});
+				}
+			case 'CancelRequest':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: updateConf.exitCmd(model.id)
+				};
+			default:
+				var _p10 = A2(updateConf.innerUpdate, _p0._0, model.model);
+				var newInnerModel = _p10._0;
+				var cmd = _p10._1;
+				return {
+					ctor: '_Tuple2',
+					_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, newInnerModel, model),
+					_1: cmd
+				};
+		}
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$CancelRequest = {ctor: 'CancelRequest'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$SaveRequest = {ctor: 'SaveRequest'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$InnerMsg = function (a) {
+	return {ctor: 'InnerMsg', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$InitMsg = function (a) {
+	return {ctor: 'InitMsg', _0: a};
+};
+
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$updateThing = F2(
+	function (msg, thing) {
+		var _p0 = msg;
+		if (_p0.ctor === 'NameChange') {
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					thing,
+					{name: _p0._0}),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		} else {
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					thing,
+					{description: _p0._0}),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		}
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$validateDescription = function (thing) {
+	return _elm_lang$core$Native_Utils.eq(thing.description, '') ? _elm_lang$core$Result$Err('Please enter description') : _elm_lang$core$Result$Ok(thing);
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$validateName = function (thing) {
+	return _elm_lang$core$Native_Utils.eq(thing.name, '') ? _elm_lang$core$Result$Err('Please enter name') : _elm_lang$core$Result$Ok(thing);
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$validateThing = function (thing) {
+	return A2(
+		_elm_lang$core$Result$andThen,
+		A2(
+			_elm_lang$core$Result$andThen,
+			_elm_lang$core$Result$Ok(thing),
+			_rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$validateName),
+		_rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$validateDescription);
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$config = function (exitCmd) {
+	return {innerUpdate: _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$updateThing, validate: _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$validateThing, empty: _rpeszek$crud_ex_frontend_elm$Thing_Model$emptyThing, getModel: _rpeszek$crud_ex_frontend_elm$Thing_Http$getThing, putModel: _rpeszek$crud_ex_frontend_elm$Thing_Http$putThing, postModel: _rpeszek$crud_ex_frontend_elm$Thing_Http$postThing, exitCmd: exitCmd};
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$update = function (exitCmd) {
+	return _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$updateEditModel(
+		_rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$config(exitCmd));
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$initModel = _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$initNewModel(_rpeszek$crud_ex_frontend_elm$Thing_Model$emptyThing);
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$DescriptionChange = function (a) {
+	return {ctor: 'DescriptionChange', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$NameChange = function (a) {
+	return {ctor: 'NameChange', _0: a};
+};
+
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$UpdateConfig = F5(
+	function (a, b, c, d, e) {
+		return {empty: a, getModel: b, deleteModel: c, editCommand: d, exitCmd: e};
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$DeleteHttpResult = function (a) {
+	return {ctor: 'DeleteHttpResult', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$GetHttpResult = function (a) {
+	return {ctor: 'GetHttpResult', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$updateReadModel = F3(
+	function (updateConf, msg, model) {
+		var _p0 = model.id;
+		if (_p0.ctor === 'Nothing') {
+			return A2(
+				_elm_lang$core$Debug$log,
+				'Model Id not set ',
+				{
+					ctor: '_Tuple2',
+					_0: A3(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr, 'No ID configured', _elm_lang$core$Maybe$Nothing, model),
+					_1: _elm_lang$core$Platform_Cmd$none
+				});
+		} else {
+			var _p5 = _p0._0;
+			var _p1 = msg;
+			switch (_p1.ctor) {
+				case 'InitMsg':
+					var _p2 = _p1._0;
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$initExistingModel, _p2, updateConf.empty),
+						_1: A2(
+							_elm_lang$core$Platform_Cmd$map,
+							_rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$GetHttpResult,
+							updateConf.getModel(_p2))
+					};
+				case 'GetHttpResult':
+					var _p3 = _p1._0;
+					if (_p3.ctor === 'HttpResOk') {
+						return {
+							ctor: '_Tuple2',
+							_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p3._1, model),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					} else {
+						return {
+							ctor: '_Tuple2',
+							_0: A3(
+								_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr,
+								_p3._1,
+								_elm_lang$core$Maybe$Just(_p3._2),
+								model),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					}
+				case 'DeleteHttpResult':
+					var _p4 = _p1._0;
+					if (_p4.ctor === 'HttpResOk') {
+						return {
+							ctor: '_Tuple2',
+							_0: model,
+							_1: updateConf.exitCmd(_p5)
+						};
+					} else {
+						return {
+							ctor: '_Tuple2',
+							_0: A3(
+								_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr,
+								_p4._1,
+								_elm_lang$core$Maybe$Just(_p4._2),
+								model),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					}
+				case 'EditRequest':
+					return {
+						ctor: '_Tuple2',
+						_0: model,
+						_1: updateConf.editCommand(_p5)
+					};
+				case 'DeleteRequest':
+					return {
+						ctor: '_Tuple2',
+						_0: model,
+						_1: A2(
+							_elm_lang$core$Platform_Cmd$map,
+							_rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$DeleteHttpResult,
+							updateConf.deleteModel(_p5))
+					};
+				default:
+					return {
+						ctor: '_Tuple2',
+						_0: model,
+						_1: updateConf.exitCmd(_p5)
+					};
+			}
+		}
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$CancelRequest = {ctor: 'CancelRequest'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$DeleteRequest = {ctor: 'DeleteRequest'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$EditRequest = {ctor: 'EditRequest'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$InitMsg = function (a) {
+	return {ctor: 'InitMsg', _0: a};
+};
+
+var _rpeszek$crud_ex_frontend_elm$Thing_Read_Logic$config = F2(
+	function (editCmd, exitCmd) {
+		return {empty: _rpeszek$crud_ex_frontend_elm$Thing_Model$emptyThing, getModel: _rpeszek$crud_ex_frontend_elm$Thing_Http$getThing, deleteModel: _rpeszek$crud_ex_frontend_elm$Thing_Http$deleteThing, editCommand: editCmd, exitCmd: exitCmd};
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Read_Logic$update = F2(
+	function (editCmd, exitCmd) {
+		return _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$updateReadModel(
+			A2(_rpeszek$crud_ex_frontend_elm$Thing_Read_Logic$config, editCmd, exitCmd));
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Read_Logic$initModel = {
+	id: _elm_lang$core$Maybe$Just(-1),
+	model: _rpeszek$crud_ex_frontend_elm$Thing_Model$emptyThing,
+	err: _elm_lang$core$Maybe$Nothing
+};
+
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$UpdateConfig = F3(
+	function (a, b, c) {
+		return {getModels: a, viewCommand: b, createCommand: c};
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$GetHttpResult = function (a) {
+	return {ctor: 'GetHttpResult', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$updateListModel = F3(
+	function (updateConf, msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'InitMsg':
+				return {
+					ctor: '_Tuple2',
+					_0: _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$emptyModelEntityList,
+					_1: A2(_elm_lang$core$Platform_Cmd$map, _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$GetHttpResult, updateConf.getModels)
+				};
+			case 'GetHttpResult':
+				var _p1 = _p0._0;
+				if (_p1.ctor === 'HttpResOk') {
+					return {
+						ctor: '_Tuple2',
+						_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$setElements, _p1._1, model),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				} else {
+					return {
+						ctor: '_Tuple2',
+						_0: A3(
+							_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$setErr,
+							_p1._1,
+							_elm_lang$core$Maybe$Just(_p1._2),
+							model),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
+				}
+			case 'ViewRequest':
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: updateConf.viewCommand(_p0._0)
+				};
+			default:
+				return {ctor: '_Tuple2', _0: model, _1: updateConf.createCommand};
+		}
+	});
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$CreateRequest = {ctor: 'CreateRequest'};
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$ViewRequest = function (a) {
+	return {ctor: 'ViewRequest', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$InitMsg = {ctor: 'InitMsg'};
+
+var _rpeszek$crud_ex_frontend_elm$Thing_List_Logic$config = F2(
+	function (viewCmd, createCmd) {
+		return {getModels: _rpeszek$crud_ex_frontend_elm$Thing_Http$getThings, viewCommand: viewCmd, createCommand: createCmd};
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_List_Logic$update = F2(
+	function (viewCmd, createCmd) {
+		return _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$updateListModel(
+			A2(_rpeszek$crud_ex_frontend_elm$Thing_List_Logic$config, viewCmd, createCmd));
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_List_Logic$initModel = _rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelEntity$emptyModelEntityList;
+
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$initModel = {editM: _rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$initModel, readM: _rpeszek$crud_ex_frontend_elm$Thing_Read_Logic$initModel, listM: _rpeszek$crud_ex_frontend_elm$Thing_List_Logic$initModel};
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$Model = F3(
+	function (a, b, c) {
+		return {editM: a, readM: b, listM: c};
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$UpdateConf = F5(
+	function (a, b, c, d, e) {
+		return {editExitCmd: a, readToEditCmd: b, readToExitCmd: c, listToViewCmd: d, listToCreateCmd: e};
+	});
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ListMsg = function (a) {
+	return {ctor: 'ListMsg', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ReadMsg = function (a) {
+	return {ctor: 'ReadMsg', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$EditMsg = function (a) {
+	return {ctor: 'EditMsg', _0: a};
+};
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$update = F3(
+	function (config, msg, model) {
+		var _p0 = msg;
+		switch (_p0.ctor) {
+			case 'EditMsg':
+				var _p1 = A3(_rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$update, config.editExitCmd, _p0._0, model.editM);
+				var newInnerM = _p1._0;
+				var newCmd = _p1._1;
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{editM: newInnerM}),
+					_1: A2(_elm_lang$core$Platform_Cmd$map, _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$EditMsg, newCmd)
+				};
+			case 'ReadMsg':
+				var _p2 = A4(_rpeszek$crud_ex_frontend_elm$Thing_Read_Logic$update, config.readToEditCmd, config.readToExitCmd, _p0._0, model.readM);
+				var newInnerM = _p2._0;
+				var newCmd = _p2._1;
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{readM: newInnerM}),
+					_1: A2(_elm_lang$core$Platform_Cmd$map, _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ReadMsg, newCmd)
+				};
+			default:
+				var _p3 = A4(_rpeszek$crud_ex_frontend_elm$Thing_List_Logic$update, config.listToViewCmd, config.listToCreateCmd, _p0._0, model.listM);
+				var newInnerM = _p3._0;
+				var newCmd = _p3._1;
+				return {
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Native_Utils.update(
+						model,
+						{listM: newInnerM}),
+					_1: A2(_elm_lang$core$Platform_Cmd$map, _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ListMsg, newCmd)
+				};
+		}
+	});
+
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$toElmUrl = function (route) {
 	var _p0 = route;
 	switch (_p0.ctor) {
 		case 'ListThingsR':
@@ -9961,145 +10321,403 @@ var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$toElmUrl = function (ro
 				_elm_lang$core$Basics$toString(_p0._0));
 	}
 };
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$navigateTo = function (route) {
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo = function (route) {
 	return _elm_lang$navigation$Navigation$newUrl(
 		A2(
 			_elm_lang$core$Debug$log,
 			'navigateTo',
-			_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$toElmUrl(route)));
+			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$toElmUrl(route)));
 };
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$EditThingR = function (a) {
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$EditThingR = function (a) {
 	return {ctor: 'EditThingR', _0: a};
 };
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ViewThingR = function (a) {
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR = function (a) {
 	return {ctor: 'ViewThingR', _0: a};
 };
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$CreateThingR = {ctor: 'CreateThingR'};
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ListThingsR = {ctor: 'ListThingsR'};
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$defaultRoute = _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ListThingsR;
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$routeParser = _evancz$url_parser$UrlParser$oneOf(
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$CreateThingR = {ctor: 'CreateThingR'};
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR = {ctor: 'ListThingsR'};
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute = _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR;
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$routeParser = _evancz$url_parser$UrlParser$oneOf(
 	_elm_lang$core$Native_List.fromArray(
 		[
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ListThingsR,
+			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR,
 			_evancz$url_parser$UrlParser$s('')),
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$CreateThingR,
+			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$CreateThingR,
 			_evancz$url_parser$UrlParser$s('thingscreate')),
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ViewThingR,
+			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR,
 			A2(
 				_evancz$url_parser$UrlParser_ops['</>'],
 				_evancz$url_parser$UrlParser$s('thingsview'),
 				_evancz$url_parser$UrlParser$int)),
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$EditThingR,
+			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$EditThingR,
 			A2(
 				_evancz$url_parser$UrlParser_ops['</>'],
 				_evancz$url_parser$UrlParser$s('thingsedit'),
 				_evancz$url_parser$UrlParser$int))
 		]));
-var _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$parseElmRoute = function (location) {
+var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$parseElmRoute = function (location) {
 	return A3(
 		_evancz$url_parser$UrlParser$parse,
 		_elm_lang$core$Basics$identity,
-		_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$routeParser,
+		_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$routeParser,
 		A2(_elm_lang$core$String$dropLeft, 1, location.hash));
 };
 
-var _elm_lang$elm_architecture_tutorial$Routing_Logic$initModel = {route: _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$defaultRoute, err: _elm_lang$core$Maybe$Nothing};
-var _elm_lang$elm_architecture_tutorial$Routing_Logic$getRoute = function (model) {
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$initModel = {route: _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute, err: _elm_lang$core$Maybe$Nothing};
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$getRoute = function (model) {
 	return model.route;
 };
-var _elm_lang$elm_architecture_tutorial$Routing_Logic$setErr = F2(
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$setErr = F2(
 	function (url, model) {
 		return _elm_lang$core$Native_Utils.update(
 			model,
 			{
-				route: _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$defaultRoute,
+				route: _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute,
 				err: _elm_lang$core$Maybe$Just(
 					A2(_elm_lang$core$Basics_ops['++'], 'Invalid URL ', url))
 			});
 	});
-var _elm_lang$elm_architecture_tutorial$Routing_Logic$setRoute = F2(
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$setRoute = F2(
 	function (route, model) {
 		return _elm_lang$core$Native_Utils.update(
 			model,
 			{route: route, err: _elm_lang$core$Maybe$Nothing});
 	});
-var _elm_lang$elm_architecture_tutorial$Routing_Logic$Model = F2(
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$Model = F2(
 	function (a, b) {
 		return {route: a, err: b};
 	});
-var _elm_lang$elm_architecture_tutorial$Routing_Logic$UnknownRouteMsg = function (a) {
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$UnknownRouteMsg = function (a) {
 	return {ctor: 'UnknownRouteMsg', _0: a};
 };
-var _elm_lang$elm_architecture_tutorial$Routing_Logic$RouteMsg = function (a) {
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$RouteMsg = function (a) {
 	return {ctor: 'RouteMsg', _0: a};
 };
 
-var _elm_lang$elm_architecture_tutorial$App_Message$RoutingModuleMsg = function (a) {
+var _rpeszek$crud_ex_frontend_elm$App_Message$RoutingModuleMsg = function (a) {
 	return {ctor: 'RoutingModuleMsg', _0: a};
 };
-var _elm_lang$elm_architecture_tutorial$App_Message$ThingModuleMsg = function (a) {
+var _rpeszek$crud_ex_frontend_elm$App_Message$ThingModuleMsg = function (a) {
 	return {ctor: 'ThingModuleMsg', _0: a};
 };
 
-var _elm_lang$elm_architecture_tutorial$App_Dispatch$dispatch = function (elmRoute) {
+var _rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch = function (elmRoute) {
 	var _p0 = elmRoute;
 	switch (_p0.ctor) {
 		case 'ListThingsR':
-			return _elm_lang$elm_architecture_tutorial$App_Message$ThingModuleMsg(
-				_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$List(_elm_lang$elm_architecture_tutorial$Reuse_List_Message$Init));
+			return _rpeszek$crud_ex_frontend_elm$App_Message$ThingModuleMsg(
+				_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ListMsg(_rpeszek$crud_ex_frontend_elm$Reuse_List_Message$InitMsg));
 		case 'CreateThingR':
-			return _elm_lang$elm_architecture_tutorial$App_Message$ThingModuleMsg(
-				_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Edit(
-					_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$Init(_elm_lang$core$Maybe$Nothing)));
+			return _rpeszek$crud_ex_frontend_elm$App_Message$ThingModuleMsg(
+				_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$EditMsg(
+					_rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$InitMsg(_elm_lang$core$Maybe$Nothing)));
 		case 'ViewThingR':
-			return _elm_lang$elm_architecture_tutorial$App_Message$ThingModuleMsg(
-				_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Read(
-					_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$Init(_p0._0)));
+			return _rpeszek$crud_ex_frontend_elm$App_Message$ThingModuleMsg(
+				_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ReadMsg(
+					_rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$InitMsg(_p0._0)));
 		default:
-			return _elm_lang$elm_architecture_tutorial$App_Message$ThingModuleMsg(
-				_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Edit(
-					_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$Init(
+			return _rpeszek$crud_ex_frontend_elm$App_Message$ThingModuleMsg(
+				_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$EditMsg(
+					_rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$InitMsg(
 						_elm_lang$core$Maybe$Just(_p0._0))));
 	}
 };
 
-var _elm_lang$elm_architecture_tutorial$App_Model$initModel = {routeM: _elm_lang$elm_architecture_tutorial$Routing_Logic$initModel, thingM: _elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$initModel};
-var _elm_lang$elm_architecture_tutorial$App_Model$setThingM = F2(
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn = F3(
+	function (on, logMsg, x) {
+		return _elm_lang$core$Basics$not(on) ? x : A2(_elm_lang$core$Debug$log, logMsg, x);
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn = F3(
+	function (on, logic, x) {
+		return _elm_lang$core$Basics$not(on) ? x : logic(x);
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logHtml = F3(
+	function (config, txt, html) {
+		return config.logHtmlOn ? A2(
+			_elm_lang$core$Debug$log,
+			A2(_elm_lang$core$Basics_ops['++'], txt, ':html'),
+			html) : A2(
+			_elm_lang$html$Html_App$map,
+			_elm_lang$core$Debug$log(
+				A2(_elm_lang$core$Basics_ops['++'], txt, ':html.msg')),
+			html);
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logFlags = F2(
+	function (config, logMsg) {
+		return A2(
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
+			config.logFlagsOn,
+			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':flags'));
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logNavLoc = F2(
+	function (config, logMsg) {
+		return A2(
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
+			config.logNavLocOn,
+			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':navL'));
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logMsg = F2(
+	function (config, logMsg) {
+		return A2(
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
+			config.logMsgOn,
+			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':msg'));
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logModel = F2(
+	function (config, logMsg) {
+		return A2(
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
+			config.logModelOn,
+			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':model'));
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd = F3(
+	function (config, txt, _p0) {
+		var _p1 = _p0;
+		return {
+			ctor: '_Tuple2',
+			_0: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel, config, txt, _p1._0),
+			_1: A2(
+				_elm_lang$core$Platform_Cmd$map,
+				A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$logMsg, config, txt),
+				_p1._1)
+		};
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$navInitWithLogging = F2(
+	function (configF, txt_) {
+		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':init');
+		var logic = F3(
+			function (initF, flags, loc) {
+				var config = configF(flags);
+				return (config.on && config.logInitOn) ? A3(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+					config.logOutputOn,
+					A2(
+						_rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd,
+						config,
+						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
+					A2(
+						initF,
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logFlagsOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logFlags,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							flags),
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logInputOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logNavLoc,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							loc))) : A2(initF, flags, loc);
+			});
+		return logic;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$updateWithLogging = F2(
+	function (configF, txt_) {
+		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':update');
+		var logic = F3(
+			function (updateF, msg, model) {
+				var config = configF(model);
+				return (config.on && config.logUpdateOn) ? A3(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+					config.logOutputOn,
+					A2(
+						_rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd,
+						config,
+						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
+					A2(
+						updateF,
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logInputOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logMsg,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							msg),
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logInputOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							model))) : A2(updateF, msg, model);
+			});
+		return logic;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$viewWithLogging = F2(
+	function (configF, txt_) {
+		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':view');
+		var logic = F2(
+			function (viewF, model) {
+				var config = configF(model);
+				return (config.on && config.logViewOn) ? A3(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+					config.logOutputOn,
+					A2(
+						_rpeszek$crud_ex_frontend_elm$Util_Logger$logHtml,
+						config,
+						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
+					viewF(
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logInputOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							model))) : viewF(model);
+			});
+		return logic;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$navUpdateWithLogging = F2(
+	function (configF, txt_) {
+		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':urlUpdate');
+		var logic = F3(
+			function (updateF, msg, model) {
+				var config = configF(model);
+				return (config.on && config.logNavOn) ? A3(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+					config.logOutputOn,
+					A2(
+						_rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd,
+						config,
+						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
+					A2(
+						updateF,
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logInputOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logNavLoc,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							msg),
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logInputOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							model))) : A2(updateF, msg, model);
+			});
+		return logic;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$subWithLoging = F2(
+	function (configF, txt_) {
+		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':sub');
+		var logic = F2(
+			function (subF, model) {
+				var config = configF(model);
+				return (config.on && config.logSubOn) ? A3(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+					config.logOutputOn,
+					_elm_lang$core$Platform_Sub$map(
+						_elm_lang$core$Debug$log(
+							A2(_elm_lang$core$Basics_ops['++'], txt, '.msg'))),
+					subF(
+						A3(
+							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
+							config.logInputOn,
+							A2(
+								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
+								config,
+								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
+							model))) : subF(model);
+			});
+		return logic;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$defaultConfig = {on: true, logUpdateOn: true, logViewOn: false, logInitOn: true, logNavOn: false, logNavLocOn: true, logMsgOn: true, logModelOn: true, logInputOn: true, logOutputOn: true, logHtmlOn: false, logSubOn: false, logFlagsOn: true};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LoggerConfig = function (a) {
+	return function (b) {
+		return function (c) {
+			return function (d) {
+				return function (e) {
+					return function (f) {
+						return function (g) {
+							return function (h) {
+								return function (i) {
+									return function (j) {
+										return function (k) {
+											return function (l) {
+												return function (m) {
+													return {on: a, logUpdateOn: b, logViewOn: c, logInitOn: d, logNavOn: e, logNavLocOn: f, logMsgOn: g, logModelOn: h, logInputOn: i, logOutputOn: j, logHtmlOn: k, logSubOn: l, logFlagsOn: m};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+	};
+};
+
+var _rpeszek$crud_ex_frontend_elm$App_Model$getLoggerConfig = function (model) {
+	return model.appConfigM.logConfig;
+};
+var _rpeszek$crud_ex_frontend_elm$App_Model$initModel = function (appConfig) {
+	return {appConfigM: appConfig, routeM: _rpeszek$crud_ex_frontend_elm$Routing_Logic$initModel, thingM: _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$initModel};
+};
+var _rpeszek$crud_ex_frontend_elm$App_Model$setAppConfig = F2(
+	function (appConf, model) {
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{appConfigM: appConf});
+	});
+var _rpeszek$crud_ex_frontend_elm$App_Model$setThingM = F2(
 	function (thingM, model) {
 		return _elm_lang$core$Native_Utils.update(
 			model,
 			{thingM: thingM});
 	});
-var _elm_lang$elm_architecture_tutorial$App_Model$setRouteErr = F2(
+var _rpeszek$crud_ex_frontend_elm$App_Model$setRouteErr = F2(
 	function (url, model) {
 		return _elm_lang$core$Native_Utils.update(
 			model,
 			{
-				routeM: A2(_elm_lang$elm_architecture_tutorial$Routing_Logic$setErr, url, model.routeM)
+				routeM: A2(_rpeszek$crud_ex_frontend_elm$Routing_Logic$setErr, url, model.routeM)
 			});
 	});
-var _elm_lang$elm_architecture_tutorial$App_Model$setRoute = F2(
+var _rpeszek$crud_ex_frontend_elm$App_Model$setRoute = F2(
 	function (route, model) {
 		return _elm_lang$core$Native_Utils.update(
 			model,
 			{
-				routeM: A2(_elm_lang$elm_architecture_tutorial$Routing_Logic$setRoute, route, model.routeM)
+				routeM: A2(_rpeszek$crud_ex_frontend_elm$Routing_Logic$setRoute, route, model.routeM)
 			});
 	});
-var _elm_lang$elm_architecture_tutorial$App_Model$Model = F2(
+var _rpeszek$crud_ex_frontend_elm$App_Model$appConfigToLoggerConfig = function (m) {
+	return m.logConfig;
+};
+var _rpeszek$crud_ex_frontend_elm$App_Model$initAppConfig = {logConfig: _rpeszek$crud_ex_frontend_elm$Util_Logger$defaultConfig, layout: 'TODO'};
+var _rpeszek$crud_ex_frontend_elm$App_Model$AppConfig = F2(
 	function (a, b) {
-		return {routeM: a, thingM: b};
+		return {logConfig: a, layout: b};
+	});
+var _rpeszek$crud_ex_frontend_elm$App_Model$Model = F3(
+	function (a, b, c) {
+		return {appConfigM: a, routeM: b, thingM: c};
 	});
 
-var _elm_lang$elm_architecture_tutorial$Reuse_CmdExtras$pure = function (x) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure = function (x) {
 	return A3(
 		_elm_lang$core$Task$perform,
 		_elm_lang$core$Basics$identity,
@@ -10107,472 +10725,114 @@ var _elm_lang$elm_architecture_tutorial$Reuse_CmdExtras$pure = function (x) {
 		_elm_lang$core$Task$succeed(x));
 };
 
-var _elm_lang$elm_architecture_tutorial$App_Logic$resolveLocation = function (location) {
-	var parsed = _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$parseElmRoute(location);
+var _rpeszek$crud_ex_frontend_elm$App_Logic$resolveLocation = function (location) {
+	var parsed = _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$parseElmRoute(location);
 	var url = location.hash;
 	var _p0 = parsed;
 	if (_p0.ctor === 'Ok') {
-		return _elm_lang$elm_architecture_tutorial$App_Message$RoutingModuleMsg(
-			_elm_lang$elm_architecture_tutorial$Routing_Logic$RouteMsg(_p0._0));
+		return _rpeszek$crud_ex_frontend_elm$App_Message$RoutingModuleMsg(
+			_rpeszek$crud_ex_frontend_elm$Routing_Logic$RouteMsg(_p0._0));
 	} else {
-		return _elm_lang$elm_architecture_tutorial$App_Message$RoutingModuleMsg(
-			_elm_lang$elm_architecture_tutorial$Routing_Logic$UnknownRouteMsg(
+		return _rpeszek$crud_ex_frontend_elm$App_Message$RoutingModuleMsg(
+			_rpeszek$crud_ex_frontend_elm$Routing_Logic$UnknownRouteMsg(
 				A2(
 					_elm_lang$core$Debug$log,
 					A2(_elm_lang$core$Basics_ops['++'], 'error parsing location', _p0._0),
 					url)));
 	}
 };
-var _elm_lang$elm_architecture_tutorial$App_Logic$resolveParsedRoute = function (res) {
+var _rpeszek$crud_ex_frontend_elm$App_Logic$resolveParsedRoute = function (res) {
 	var _p1 = res;
 	if (_p1.ctor === 'Ok') {
-		return _elm_lang$elm_architecture_tutorial$App_Message$RoutingModuleMsg(
-			_elm_lang$elm_architecture_tutorial$Routing_Logic$RouteMsg(_p1._0));
+		return _rpeszek$crud_ex_frontend_elm$App_Message$RoutingModuleMsg(
+			_rpeszek$crud_ex_frontend_elm$Routing_Logic$RouteMsg(_p1._0));
 	} else {
-		return _elm_lang$elm_architecture_tutorial$App_Message$RoutingModuleMsg(
-			_elm_lang$elm_architecture_tutorial$Routing_Logic$UnknownRouteMsg(
+		return _rpeszek$crud_ex_frontend_elm$App_Message$RoutingModuleMsg(
+			_rpeszek$crud_ex_frontend_elm$Routing_Logic$UnknownRouteMsg(
 				A2(_elm_lang$core$Debug$log, 'invalid route', _p1._0)));
 	}
 };
-var _elm_lang$elm_architecture_tutorial$App_Logic$routeParser = _elm_lang$navigation$Navigation$makeParser(_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$parseElmRoute);
-var _elm_lang$elm_architecture_tutorial$App_Logic$isRouteTheSame = F2(
+var _rpeszek$crud_ex_frontend_elm$App_Logic$routeParser = _elm_lang$navigation$Navigation$makeParser(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$parseElmRoute);
+var _rpeszek$crud_ex_frontend_elm$App_Logic$isRouteTheSame = F2(
 	function (data, model) {
-		var currentRoute = _elm_lang$elm_architecture_tutorial$Routing_Logic$getRoute(model.routeM);
+		var currentRoute = _rpeszek$crud_ex_frontend_elm$Routing_Logic$getRoute(model.routeM);
 		var _p2 = data;
 		if (_p2.ctor === 'Ok') {
 			return _elm_lang$core$Native_Utils.eq(_p2._0, currentRoute);
 		} else {
-			return _elm_lang$core$Native_Utils.eq(currentRoute, _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$defaultRoute);
+			return _elm_lang$core$Native_Utils.eq(currentRoute, _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute);
 		}
 	});
-var _elm_lang$elm_architecture_tutorial$App_Logic$urlUpdate = F2(
+var _rpeszek$crud_ex_frontend_elm$App_Logic$urlUpdate = F2(
 	function (data, model) {
-		return A2(_elm_lang$elm_architecture_tutorial$App_Logic$isRouteTheSame, data, model) ? {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none} : {
+		return A2(_rpeszek$crud_ex_frontend_elm$App_Logic$isRouteTheSame, data, model) ? {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none} : {
 			ctor: '_Tuple2',
 			_0: model,
-			_1: _elm_lang$elm_architecture_tutorial$Reuse_CmdExtras$pure(
-				_elm_lang$elm_architecture_tutorial$App_Logic$resolveParsedRoute(data))
+			_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
+				_rpeszek$crud_ex_frontend_elm$App_Logic$resolveParsedRoute(data))
 		};
 	});
-var _elm_lang$elm_architecture_tutorial$App_Logic$thingConfig = {
+var _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig = {
 	editExitCmd: function (maybeTId) {
 		var _p3 = maybeTId;
 		if (_p3.ctor === 'Just') {
-			return _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$navigateTo(
-				_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ViewThingR(_p3._0));
+			return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(
+				_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR(_p3._0));
 		} else {
-			return _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$navigateTo(_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ListThingsR);
+			return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR);
 		}
 	},
 	readToEditCmd: function (tId) {
-		return _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$navigateTo(
-			_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$EditThingR(tId));
+		return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(
+			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$EditThingR(tId));
 	},
 	readToExitCmd: function (_p4) {
-		return _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$navigateTo(_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ListThingsR);
+		return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR);
 	},
 	listToViewCmd: function (tId) {
-		return _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$navigateTo(
-			_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$ViewThingR(tId));
+		return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(
+			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR(tId));
 	},
-	listToCreateCmd: _elm_lang$elm_architecture_tutorial$Routing_ElmRoute$navigateTo(_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$CreateThingR)
+	listToCreateCmd: _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$CreateThingR)
 };
-var _elm_lang$elm_architecture_tutorial$App_Logic$update = F2(
+var _rpeszek$crud_ex_frontend_elm$App_Logic$update = F2(
 	function (msg, model) {
-		var _p5 = A2(_elm_lang$core$Debug$log, 'App Msg', msg);
+		var _p5 = msg;
 		if (_p5.ctor === 'RoutingModuleMsg') {
 			var _p6 = _p5._0;
 			if (_p6.ctor === 'RouteMsg') {
 				var _p7 = _p6._0;
 				return {
 					ctor: '_Tuple2',
-					_0: A2(_elm_lang$elm_architecture_tutorial$App_Model$setRoute, _p7, model),
-					_1: _elm_lang$elm_architecture_tutorial$Reuse_CmdExtras$pure(
-						A2(
-							_elm_lang$core$Debug$log,
-							'dispatchTo',
-							_elm_lang$elm_architecture_tutorial$App_Dispatch$dispatch(_p7)))
+					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRoute, _p7, model),
+					_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
+						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_p7))
 				};
 			} else {
 				return {
 					ctor: '_Tuple2',
-					_0: A2(_elm_lang$elm_architecture_tutorial$App_Model$setRouteErr, _p6._0, model),
-					_1: _elm_lang$elm_architecture_tutorial$Reuse_CmdExtras$pure(
-						A2(
-							_elm_lang$core$Debug$log,
-							'dispatchErr',
-							_elm_lang$elm_architecture_tutorial$App_Dispatch$dispatch(_elm_lang$elm_architecture_tutorial$Routing_ElmRoute$defaultRoute)))
+					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRouteErr, _p6._0, model),
+					_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
+						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute))
 				};
 			}
 		} else {
-			var _p8 = A3(_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$update, _elm_lang$elm_architecture_tutorial$App_Logic$thingConfig, _p5._0, model.thingM);
+			var _p8 = A3(_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$update, _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig, _p5._0, model.thingM);
 			var thingModel = _p8._0;
 			var thingCmd = _p8._1;
 			return {
 				ctor: '_Tuple2',
-				_0: A2(_elm_lang$elm_architecture_tutorial$App_Model$setThingM, thingModel, model),
-				_1: A2(_elm_lang$core$Platform_Cmd$map, _elm_lang$elm_architecture_tutorial$App_Message$ThingModuleMsg, thingCmd)
+				_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setThingM, thingModel, model),
+				_1: A2(_elm_lang$core$Platform_Cmd$map, _rpeszek$crud_ex_frontend_elm$App_Message$ThingModuleMsg, thingCmd)
 			};
 		}
 	});
 
-var _elm_lang$html$Html_Attributes$attribute = _elm_lang$virtual_dom$VirtualDom$attribute;
-var _elm_lang$html$Html_Attributes$contextmenu = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$attribute, 'contextmenu', value);
-};
-var _elm_lang$html$Html_Attributes$draggable = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$attribute, 'draggable', value);
-};
-var _elm_lang$html$Html_Attributes$list = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$attribute, 'list', value);
-};
-var _elm_lang$html$Html_Attributes$maxlength = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$attribute,
-		'maxlength',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$datetime = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$attribute, 'datetime', value);
-};
-var _elm_lang$html$Html_Attributes$pubdate = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$attribute, 'pubdate', value);
-};
-var _elm_lang$html$Html_Attributes$colspan = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$attribute,
-		'colspan',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$rowspan = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$attribute,
-		'rowspan',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$property = _elm_lang$virtual_dom$VirtualDom$property;
-var _elm_lang$html$Html_Attributes$stringProperty = F2(
-	function (name, string) {
-		return A2(
-			_elm_lang$html$Html_Attributes$property,
-			name,
-			_elm_lang$core$Json_Encode$string(string));
-	});
-var _elm_lang$html$Html_Attributes$class = function (name) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'className', name);
-};
-var _elm_lang$html$Html_Attributes$id = function (name) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'id', name);
-};
-var _elm_lang$html$Html_Attributes$title = function (name) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'title', name);
-};
-var _elm_lang$html$Html_Attributes$accesskey = function ($char) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'accessKey',
-		_elm_lang$core$String$fromChar($char));
-};
-var _elm_lang$html$Html_Attributes$dir = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'dir', value);
-};
-var _elm_lang$html$Html_Attributes$dropzone = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'dropzone', value);
-};
-var _elm_lang$html$Html_Attributes$itemprop = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'itemprop', value);
-};
-var _elm_lang$html$Html_Attributes$lang = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'lang', value);
-};
-var _elm_lang$html$Html_Attributes$tabindex = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'tabIndex',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$charset = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'charset', value);
-};
-var _elm_lang$html$Html_Attributes$content = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'content', value);
-};
-var _elm_lang$html$Html_Attributes$httpEquiv = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'httpEquiv', value);
-};
-var _elm_lang$html$Html_Attributes$language = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'language', value);
-};
-var _elm_lang$html$Html_Attributes$src = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'src', value);
-};
-var _elm_lang$html$Html_Attributes$height = function (value) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'height',
-		_elm_lang$core$Basics$toString(value));
-};
-var _elm_lang$html$Html_Attributes$width = function (value) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'width',
-		_elm_lang$core$Basics$toString(value));
-};
-var _elm_lang$html$Html_Attributes$alt = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'alt', value);
-};
-var _elm_lang$html$Html_Attributes$preload = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'preload', value);
-};
-var _elm_lang$html$Html_Attributes$poster = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'poster', value);
-};
-var _elm_lang$html$Html_Attributes$kind = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'kind', value);
-};
-var _elm_lang$html$Html_Attributes$srclang = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'srclang', value);
-};
-var _elm_lang$html$Html_Attributes$sandbox = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'sandbox', value);
-};
-var _elm_lang$html$Html_Attributes$srcdoc = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'srcdoc', value);
-};
-var _elm_lang$html$Html_Attributes$type$ = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'type', value);
-};
-var _elm_lang$html$Html_Attributes$value = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'value', value);
-};
-var _elm_lang$html$Html_Attributes$defaultValue = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'defaultValue', value);
-};
-var _elm_lang$html$Html_Attributes$placeholder = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'placeholder', value);
-};
-var _elm_lang$html$Html_Attributes$accept = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'accept', value);
-};
-var _elm_lang$html$Html_Attributes$acceptCharset = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'acceptCharset', value);
-};
-var _elm_lang$html$Html_Attributes$action = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'action', value);
-};
-var _elm_lang$html$Html_Attributes$autocomplete = function (bool) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'autocomplete',
-		bool ? 'on' : 'off');
-};
-var _elm_lang$html$Html_Attributes$autosave = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'autosave', value);
-};
-var _elm_lang$html$Html_Attributes$enctype = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'enctype', value);
-};
-var _elm_lang$html$Html_Attributes$formaction = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'formAction', value);
-};
-var _elm_lang$html$Html_Attributes$minlength = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'minLength',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$method = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'method', value);
-};
-var _elm_lang$html$Html_Attributes$name = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'name', value);
-};
-var _elm_lang$html$Html_Attributes$pattern = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'pattern', value);
-};
-var _elm_lang$html$Html_Attributes$size = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'size',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$for = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'htmlFor', value);
-};
-var _elm_lang$html$Html_Attributes$form = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'form', value);
-};
-var _elm_lang$html$Html_Attributes$max = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'max', value);
-};
-var _elm_lang$html$Html_Attributes$min = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'min', value);
-};
-var _elm_lang$html$Html_Attributes$step = function (n) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'step', n);
-};
-var _elm_lang$html$Html_Attributes$cols = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'cols',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$rows = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'rows',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$wrap = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'wrap', value);
-};
-var _elm_lang$html$Html_Attributes$usemap = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'useMap', value);
-};
-var _elm_lang$html$Html_Attributes$shape = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'shape', value);
-};
-var _elm_lang$html$Html_Attributes$coords = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'coords', value);
-};
-var _elm_lang$html$Html_Attributes$challenge = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'challenge', value);
-};
-var _elm_lang$html$Html_Attributes$keytype = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'keytype', value);
-};
-var _elm_lang$html$Html_Attributes$align = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'align', value);
-};
-var _elm_lang$html$Html_Attributes$cite = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'cite', value);
-};
-var _elm_lang$html$Html_Attributes$href = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'href', value);
-};
-var _elm_lang$html$Html_Attributes$target = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'target', value);
-};
-var _elm_lang$html$Html_Attributes$downloadAs = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'download', value);
-};
-var _elm_lang$html$Html_Attributes$hreflang = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'hreflang', value);
-};
-var _elm_lang$html$Html_Attributes$media = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'media', value);
-};
-var _elm_lang$html$Html_Attributes$ping = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'ping', value);
-};
-var _elm_lang$html$Html_Attributes$rel = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'rel', value);
-};
-var _elm_lang$html$Html_Attributes$start = function (n) {
-	return A2(
-		_elm_lang$html$Html_Attributes$stringProperty,
-		'start',
-		_elm_lang$core$Basics$toString(n));
-};
-var _elm_lang$html$Html_Attributes$headers = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'headers', value);
-};
-var _elm_lang$html$Html_Attributes$scope = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'scope', value);
-};
-var _elm_lang$html$Html_Attributes$manifest = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$stringProperty, 'manifest', value);
-};
-var _elm_lang$html$Html_Attributes$boolProperty = F2(
-	function (name, bool) {
-		return A2(
-			_elm_lang$html$Html_Attributes$property,
-			name,
-			_elm_lang$core$Json_Encode$bool(bool));
-	});
-var _elm_lang$html$Html_Attributes$hidden = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'hidden', bool);
-};
-var _elm_lang$html$Html_Attributes$contenteditable = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'contentEditable', bool);
-};
-var _elm_lang$html$Html_Attributes$spellcheck = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'spellcheck', bool);
-};
-var _elm_lang$html$Html_Attributes$async = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'async', bool);
-};
-var _elm_lang$html$Html_Attributes$defer = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'defer', bool);
-};
-var _elm_lang$html$Html_Attributes$scoped = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'scoped', bool);
-};
-var _elm_lang$html$Html_Attributes$autoplay = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'autoplay', bool);
-};
-var _elm_lang$html$Html_Attributes$controls = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'controls', bool);
-};
-var _elm_lang$html$Html_Attributes$loop = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'loop', bool);
-};
-var _elm_lang$html$Html_Attributes$default = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'default', bool);
-};
-var _elm_lang$html$Html_Attributes$seamless = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'seamless', bool);
-};
-var _elm_lang$html$Html_Attributes$checked = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'checked', bool);
-};
-var _elm_lang$html$Html_Attributes$selected = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'selected', bool);
-};
-var _elm_lang$html$Html_Attributes$autofocus = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'autofocus', bool);
-};
-var _elm_lang$html$Html_Attributes$disabled = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'disabled', bool);
-};
-var _elm_lang$html$Html_Attributes$multiple = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'multiple', bool);
-};
-var _elm_lang$html$Html_Attributes$novalidate = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'noValidate', bool);
-};
-var _elm_lang$html$Html_Attributes$readonly = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'readOnly', bool);
-};
-var _elm_lang$html$Html_Attributes$required = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'required', bool);
-};
-var _elm_lang$html$Html_Attributes$ismap = function (value) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'isMap', value);
-};
-var _elm_lang$html$Html_Attributes$download = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'download', bool);
-};
-var _elm_lang$html$Html_Attributes$reversed = function (bool) {
-	return A2(_elm_lang$html$Html_Attributes$boolProperty, 'reversed', bool);
-};
-var _elm_lang$html$Html_Attributes$classList = function (list) {
-	return _elm_lang$html$Html_Attributes$class(
-		A2(
-			_elm_lang$core$String$join,
-			' ',
-			A2(
-				_elm_lang$core$List$map,
-				_elm_lang$core$Basics$fst,
-				A2(_elm_lang$core$List$filter, _elm_lang$core$Basics$snd, list))));
-};
-var _elm_lang$html$Html_Attributes$style = _elm_lang$virtual_dom$VirtualDom$style;
-
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$errorBox = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$errorBox = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$class('error')
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElementLink = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$listElementLink = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
@@ -10580,7 +10840,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElementLink = _e
 				{ctor: '_Tuple2', _0: 'left-marging-medium', _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElement = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$listElement = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
@@ -10588,7 +10848,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElement = _elm_l
 				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonSet = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonSet = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
@@ -10596,7 +10856,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonSet = _elm_lan
 				{ctor: '_Tuple2', _0: 'top-padding-medium', _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLongContent = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readLongContent = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
@@ -10606,7 +10866,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLongContent = _e
 				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readContent = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readContent = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
@@ -10615,7 +10875,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readContent = _elm_l
 				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLabel = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readLabel = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
@@ -10624,23 +10884,23 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLabel = _elm_lan
 				{ctor: '_Tuple2', _0: 'bottom-padding-small', _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readGrid = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readGrid = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$class(_benthepoet$elm_purecss$Pure$grid)
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formMsg = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formMsg = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$class('pure-controls')
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formButtons = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formButtons = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$class('pure-controls')
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formRowDefault = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formRowDefault = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$class(_benthepoet$elm_purecss$Pure$controlGroup)
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formDefault = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formDefault = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
@@ -10649,49 +10909,49 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formDefault = _elm_l
 				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$formAligned, _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$lBox = 'l-box';
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$lBox = 'l-box';
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonDefault = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
 			[
-				{ctor: '_Tuple2', _0: _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$lBox, _1: true},
+				{ctor: '_Tuple2', _0: _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$lBox, _1: true},
 				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$button, _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonPrimary = _elm_lang$core$Native_List.fromArray(
 	[
 		_elm_lang$html$Html_Attributes$classList(
 		_elm_lang$core$Native_List.fromArray(
 			[
-				{ctor: '_Tuple2', _0: _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$lBox, _1: true},
+				{ctor: '_Tuple2', _0: _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$lBox, _1: true},
 				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$button, _1: true},
 				{ctor: '_Tuple2', _0: _benthepoet$elm_purecss$Pure$buttonPrimary, _1: true}
 			]))
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$stdStyle = 'std';
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textInputDefault = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$stdStyle = 'std';
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$textInputDefault = _elm_lang$core$Native_List.fromArray(
 	[
-		_elm_lang$html$Html_Attributes$class(_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$stdStyle)
+		_elm_lang$html$Html_Attributes$class(_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$stdStyle)
 	]);
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textAreaDefault = _elm_lang$core$Native_List.fromArray(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$textAreaDefault = _elm_lang$core$Native_List.fromArray(
 	[
-		_elm_lang$html$Html_Attributes$class(_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$stdStyle)
+		_elm_lang$html$Html_Attributes$class(_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$stdStyle)
 	]);
 
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt = function (txt) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_View$viewErrorTxt = function (txt) {
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$errorBox,
+		_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$errorBox,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				_elm_lang$html$Html$text(txt)
 			]));
 };
-var _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewError = function (model) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Common_View$viewError = function (model) {
 	var _p0 = model.err;
 	if (_p0.ctor === 'Just') {
-		return _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt(_p0._0._0);
+		return _rpeszek$crud_ex_frontend_elm$Reuse_Common_View$viewErrorTxt(_p0._0._0);
 	} else {
 		return A2(
 			_elm_lang$html$Html$div,
@@ -10702,7 +10962,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewError = function (
 	}
 };
 
-var _elm_lang$elm_architecture_tutorial$Routing_View$viewRouteErr = function (maybeErr) {
+var _rpeszek$crud_ex_frontend_elm$Routing_View$viewRouteErr = function (maybeErr) {
 	var _p0 = maybeErr;
 	if (_p0.ctor === 'Nothing') {
 		return _elm_lang$core$Native_List.fromArray(
@@ -10710,11 +10970,11 @@ var _elm_lang$elm_architecture_tutorial$Routing_View$viewRouteErr = function (ma
 	} else {
 		return _elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt(_p0._0)
+				_rpeszek$crud_ex_frontend_elm$Reuse_Common_View$viewErrorTxt(_p0._0)
 			]);
 	}
 };
-var _elm_lang$elm_architecture_tutorial$Routing_View$viewRoute = function (route) {
+var _rpeszek$crud_ex_frontend_elm$Routing_View$viewRoute = function (route) {
 	var header = function () {
 		var _p1 = route;
 		switch (_p1.ctor) {
@@ -10747,123 +11007,22 @@ var _elm_lang$elm_architecture_tutorial$Routing_View$viewRoute = function (route
 				]))
 		]);
 };
-var _elm_lang$elm_architecture_tutorial$Routing_View$view = function (model) {
+var _rpeszek$crud_ex_frontend_elm$Routing_View$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
 			[]),
 		A2(
 			_elm_lang$core$Basics_ops['++'],
-			_elm_lang$elm_architecture_tutorial$Routing_View$viewRoute(model.route),
-			_elm_lang$elm_architecture_tutorial$Routing_View$viewRouteErr(model.err)));
+			_rpeszek$crud_ex_frontend_elm$Routing_View$viewRoute(model.route),
+			_rpeszek$crud_ex_frontend_elm$Routing_View$viewRouteErr(model.err)));
 };
 
-var _elm_lang$html$Html_Events$keyCode = A2(_elm_lang$core$Json_Decode_ops[':='], 'keyCode', _elm_lang$core$Json_Decode$int);
-var _elm_lang$html$Html_Events$targetChecked = A2(
-	_elm_lang$core$Json_Decode$at,
-	_elm_lang$core$Native_List.fromArray(
-		['target', 'checked']),
-	_elm_lang$core$Json_Decode$bool);
-var _elm_lang$html$Html_Events$targetValue = A2(
-	_elm_lang$core$Json_Decode$at,
-	_elm_lang$core$Native_List.fromArray(
-		['target', 'value']),
-	_elm_lang$core$Json_Decode$string);
-var _elm_lang$html$Html_Events$defaultOptions = _elm_lang$virtual_dom$VirtualDom$defaultOptions;
-var _elm_lang$html$Html_Events$onWithOptions = _elm_lang$virtual_dom$VirtualDom$onWithOptions;
-var _elm_lang$html$Html_Events$on = _elm_lang$virtual_dom$VirtualDom$on;
-var _elm_lang$html$Html_Events$onFocus = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'focus',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onBlur = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'blur',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onSubmitOptions = _elm_lang$core$Native_Utils.update(
-	_elm_lang$html$Html_Events$defaultOptions,
-	{preventDefault: true});
-var _elm_lang$html$Html_Events$onSubmit = function (msg) {
-	return A3(
-		_elm_lang$html$Html_Events$onWithOptions,
-		'submit',
-		_elm_lang$html$Html_Events$onSubmitOptions,
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onCheck = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'change',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetChecked));
-};
-var _elm_lang$html$Html_Events$onInput = function (tagger) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'input',
-		A2(_elm_lang$core$Json_Decode$map, tagger, _elm_lang$html$Html_Events$targetValue));
-};
-var _elm_lang$html$Html_Events$onMouseOut = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseout',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseOver = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseover',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseLeave = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseleave',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseEnter = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseenter',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseUp = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mouseup',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onMouseDown = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'mousedown',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onDoubleClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'dblclick',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$onClick = function (msg) {
-	return A2(
-		_elm_lang$html$Html_Events$on,
-		'click',
-		_elm_lang$core$Json_Decode$succeed(msg));
-};
-var _elm_lang$html$Html_Events$Options = F2(
-	function (a, b) {
-		return {stopPropagation: a, preventDefault: b};
-	});
-
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewFormRow = function (_p0) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewFormRow = function (_p0) {
 	var _p1 = _p0;
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formRowDefault,
+		_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formRowDefault,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
@@ -10877,20 +11036,20 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewFormRow = function (
 				_p1._1
 			]));
 };
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewButtons = function (model) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewButtons = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formButtons,
+		_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formButtons,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
 				_elm_lang$html$Html$button,
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonPrimary,
 					_elm_lang$core$Native_List.fromArray(
 						[
-							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$SaveRequest)
+							_elm_lang$html$Html_Events$onClick(_rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$SaveRequest)
 						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -10900,10 +11059,10 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewButtons = function (
 				_elm_lang$html$Html$button,
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonDefault,
 					_elm_lang$core$Native_List.fromArray(
 						[
-							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$CancelRequest)
+							_elm_lang$html$Html_Events$onClick(_rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$CancelRequest)
 						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -10911,20 +11070,20 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewButtons = function (
 					]))
 			]));
 };
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewError = function (model) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewError = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formMsg,
+		_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formMsg,
 		_elm_lang$core$Native_List.fromArray(
 			[
-				_elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewError(model)
+				_rpeszek$crud_ex_frontend_elm$Reuse_Common_View$viewError(model)
 			]));
 };
-var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewReuse = F2(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewReuse = F2(
 	function (fieldSetElements, model) {
 		return A2(
 			_elm_lang$html$Html$form,
-			_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$formDefault,
+			_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formDefault,
 			_elm_lang$core$Native_List.fromArray(
 				[
 					A2(
@@ -10935,17 +11094,17 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewReuse = F2(
 						_elm_lang$core$Basics_ops['++'],
 						A2(
 							_elm_lang$core$List$map,
-							_elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewFormRow,
+							_rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewFormRow,
 							fieldSetElements(model.model)),
 						_elm_lang$core$Native_List.fromArray(
 							[
-								_elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewError(model),
-								_elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewButtons(model)
+								_rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewError(model),
+								_rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewButtons(model)
 							])))
 				]));
 	});
 
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_View$viewThing = function (thing) {
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_View$viewThing = function (thing) {
 	return _elm_lang$core$Native_List.fromArray(
 		[
 			{
@@ -10955,15 +11114,15 @@ var _elm_lang$elm_architecture_tutorial$Thing_Edit_View$viewThing = function (th
 				_elm_lang$html$Html$input,
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textInputDefault,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$textInputDefault,
 					_elm_lang$core$Native_List.fromArray(
 						[
 							_elm_lang$html$Html_Attributes$type$('text'),
 							_elm_lang$html$Html_Attributes$value(thing.name),
 							_elm_lang$html$Html_Events$onInput(
 							function (_p0) {
-								return _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$InnerMsg(
-									_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$NameChange(_p0));
+								return _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$InnerMsg(
+									_rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$NameChange(_p0));
 							})
 						])),
 				_elm_lang$core$Native_List.fromArray(
@@ -10976,14 +11135,14 @@ var _elm_lang$elm_architecture_tutorial$Thing_Edit_View$viewThing = function (th
 				_elm_lang$html$Html$textarea,
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$textAreaDefault,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$textAreaDefault,
 					_elm_lang$core$Native_List.fromArray(
 						[
 							_elm_lang$html$Html_Attributes$value(thing.description),
 							_elm_lang$html$Html_Events$onInput(
 							function (_p1) {
-								return _elm_lang$elm_architecture_tutorial$Reuse_Edit_Message$InnerMsg(
-									_elm_lang$elm_architecture_tutorial$Thing_Edit_Logic$DescriptionChange(_p1));
+								return _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$InnerMsg(
+									_rpeszek$crud_ex_frontend_elm$Thing_Edit_Logic$DescriptionChange(_p1));
 							})
 						])),
 				_elm_lang$core$Native_List.fromArray(
@@ -10991,15 +11150,15 @@ var _elm_lang$elm_architecture_tutorial$Thing_Edit_View$viewThing = function (th
 		}
 		]);
 };
-var _elm_lang$elm_architecture_tutorial$Thing_Edit_View$view = _elm_lang$elm_architecture_tutorial$Reuse_Edit_View$viewReuse(_elm_lang$elm_architecture_tutorial$Thing_Edit_View$viewThing);
+var _rpeszek$crud_ex_frontend_elm$Thing_Edit_View$view = _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewReuse(_rpeszek$crud_ex_frontend_elm$Thing_Edit_View$viewThing);
 
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewRow = function (_p0) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewRow = function (_p0) {
 	var _p1 = _p0;
 	return _elm_lang$core$Native_List.fromArray(
 		[
 			A2(
 			_elm_lang$html$Html$div,
-			_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLabel,
+			_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readLabel,
 			_elm_lang$core$Native_List.fromArray(
 				[
 					_elm_lang$html$Html$text(_p1._0)
@@ -11007,20 +11166,20 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewRow = function (_p0)
 			_p1._1
 		]);
 };
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons = function (model) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewButtons = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
-		_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonSet,
+		_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonSet,
 		_elm_lang$core$Native_List.fromArray(
 			[
 				A2(
 				_elm_lang$html$Html$button,
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonPrimary,
 					_elm_lang$core$Native_List.fromArray(
 						[
-							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$EditRequest)
+							_elm_lang$html$Html_Events$onClick(_rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$EditRequest)
 						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -11030,10 +11189,10 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons = function (
 				_elm_lang$html$Html$button,
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonDefault,
 					_elm_lang$core$Native_List.fromArray(
 						[
-							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$DeleteRequest)
+							_elm_lang$html$Html_Events$onClick(_rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$DeleteRequest)
 						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -11043,10 +11202,10 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons = function (
 				_elm_lang$html$Html$button,
 				A2(
 					_elm_lang$core$Basics_ops['++'],
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonDefault,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonDefault,
 					_elm_lang$core$Native_List.fromArray(
 						[
-							_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_Read_Message$CancelRequest)
+							_elm_lang$html$Html_Events$onClick(_rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$CancelRequest)
 						])),
 				_elm_lang$core$Native_List.fromArray(
 					[
@@ -11054,27 +11213,27 @@ var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons = function (
 					]))
 			]));
 };
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewError = _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewError;
-var _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewReuse = F2(
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewError = _rpeszek$crud_ex_frontend_elm$Reuse_Common_View$viewError;
+var _rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewReuse = F2(
 	function (fieldList, model) {
 		return A2(
 			_elm_lang$html$Html$div,
-			_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readGrid,
+			_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readGrid,
 			A2(
 				_elm_lang$core$Basics_ops['++'],
 				_elm_lang$core$List$concat(
 					A2(
 						_elm_lang$core$List$map,
-						_elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewRow,
+						_rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewRow,
 						fieldList(model.model))),
 				_elm_lang$core$Native_List.fromArray(
 					[
-						_elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewError(model),
-						_elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewButtons(model)
+						_rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewError(model),
+						_rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewButtons(model)
 					])));
 	});
 
-var _elm_lang$elm_architecture_tutorial$Thing_Read_View$viewThing = function (thing) {
+var _rpeszek$crud_ex_frontend_elm$Thing_Read_View$viewThing = function (thing) {
 	return _elm_lang$core$Native_List.fromArray(
 		[
 			{
@@ -11082,7 +11241,7 @@ var _elm_lang$elm_architecture_tutorial$Thing_Read_View$viewThing = function (th
 			_0: 'Name:',
 			_1: A2(
 				_elm_lang$html$Html$div,
-				_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readContent,
+				_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readContent,
 				_elm_lang$core$Native_List.fromArray(
 					[
 						_elm_lang$html$Html$text(thing.name)
@@ -11093,7 +11252,7 @@ var _elm_lang$elm_architecture_tutorial$Thing_Read_View$viewThing = function (th
 			_0: 'Description:',
 			_1: A2(
 				_elm_lang$html$Html$div,
-				_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$readLongContent,
+				_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$readLongContent,
 				_elm_lang$core$Native_List.fromArray(
 					[
 						_elm_lang$html$Html$text(thing.description)
@@ -11101,12 +11260,12 @@ var _elm_lang$elm_architecture_tutorial$Thing_Read_View$viewThing = function (th
 		}
 		]);
 };
-var _elm_lang$elm_architecture_tutorial$Thing_Read_View$view = _elm_lang$elm_architecture_tutorial$Reuse_Read_View$viewReuse(_elm_lang$elm_architecture_tutorial$Thing_Read_View$viewThing);
+var _rpeszek$crud_ex_frontend_elm$Thing_Read_View$view = _rpeszek$crud_ex_frontend_elm$Reuse_Read_View$viewReuse(_rpeszek$crud_ex_frontend_elm$Thing_Read_View$viewThing);
 
-var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewError = function (model) {
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_View$viewError = function (model) {
 	var _p0 = model.err;
 	if (_p0.ctor === 'Just') {
-		return _elm_lang$elm_architecture_tutorial$Reuse_Common_View$viewErrorTxt(_p0._0._0);
+		return _rpeszek$crud_ex_frontend_elm$Reuse_Common_View$viewErrorTxt(_p0._0._0);
 	} else {
 		return A2(
 			_elm_lang$html$Html$div,
@@ -11116,11 +11275,11 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewError = function (mo
 				[]));
 	}
 };
-var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewListElement = F2(
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_View$viewListElement = F2(
 	function (elementView, element) {
 		return A2(
 			_elm_lang$html$Html$div,
-			_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElement,
+			_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$listElement,
 			_elm_lang$core$Native_List.fromArray(
 				[
 					elementView(element.entity),
@@ -11128,11 +11287,11 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewListElement = F2(
 					_elm_lang$html$Html$a,
 					A2(
 						_elm_lang$core$Basics_ops['++'],
-						_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$listElementLink,
+						_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$listElementLink,
 						_elm_lang$core$Native_List.fromArray(
 							[
 								_elm_lang$html$Html_Events$onClick(
-								_elm_lang$elm_architecture_tutorial$Reuse_List_Message$ViewRequest(element.id))
+								_rpeszek$crud_ex_frontend_elm$Reuse_List_Message$ViewRequest(element.id))
 							])),
 					_elm_lang$core$Native_List.fromArray(
 						[
@@ -11140,7 +11299,7 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewListElement = F2(
 						]))
 				]));
 	});
-var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewReuse = F2(
+var _rpeszek$crud_ex_frontend_elm$Reuse_List_View$viewReuse = F2(
 	function (elementView, listModel) {
 		return A2(
 			_elm_lang$html$Html$div,
@@ -11148,28 +11307,28 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewReuse = F2(
 				[]),
 			_elm_lang$core$Native_List.fromArray(
 				[
-					_elm_lang$elm_architecture_tutorial$Reuse_List_View$viewError(listModel),
+					_rpeszek$crud_ex_frontend_elm$Reuse_List_View$viewError(listModel),
 					A2(
 					_elm_lang$html$Html$div,
 					_elm_lang$core$Native_List.fromArray(
 						[]),
 					A2(
 						_elm_lang$core$List$map,
-						_elm_lang$elm_architecture_tutorial$Reuse_List_View$viewListElement(elementView),
+						_rpeszek$crud_ex_frontend_elm$Reuse_List_View$viewListElement(elementView),
 						listModel.elements)),
 					A2(
 					_elm_lang$html$Html$div,
-					_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonSet,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonSet,
 					_elm_lang$core$Native_List.fromArray(
 						[
 							A2(
 							_elm_lang$html$Html$button,
 							A2(
 								_elm_lang$core$Basics_ops['++'],
-								_elm_lang$elm_architecture_tutorial$Reuse_Common_Styles$buttonPrimary,
+								_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$buttonPrimary,
 								_elm_lang$core$Native_List.fromArray(
 									[
-										_elm_lang$html$Html_Events$onClick(_elm_lang$elm_architecture_tutorial$Reuse_List_Message$CreateRequest)
+										_elm_lang$html$Html_Events$onClick(_rpeszek$crud_ex_frontend_elm$Reuse_List_Message$CreateRequest)
 									])),
 							_elm_lang$core$Native_List.fromArray(
 								[
@@ -11179,39 +11338,39 @@ var _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewReuse = F2(
 				]));
 	});
 
-var _elm_lang$elm_architecture_tutorial$Thing_List_View$viewThing = function (thing) {
+var _rpeszek$crud_ex_frontend_elm$Thing_List_View$viewThing = function (thing) {
 	return _elm_lang$html$Html$text(thing.name);
 };
-var _elm_lang$elm_architecture_tutorial$Thing_List_View$view = _elm_lang$elm_architecture_tutorial$Reuse_List_View$viewReuse(_elm_lang$elm_architecture_tutorial$Thing_List_View$viewThing);
+var _rpeszek$crud_ex_frontend_elm$Thing_List_View$view = _rpeszek$crud_ex_frontend_elm$Reuse_List_View$viewReuse(_rpeszek$crud_ex_frontend_elm$Thing_List_View$viewThing);
 
-var _elm_lang$elm_architecture_tutorial$Thing_Combined_View$viewForRoute = F2(
+var _rpeszek$crud_ex_frontend_elm$Thing_Combined_View$viewForRoute = F2(
 	function (route, model) {
 		var _p0 = route;
 		switch (_p0.ctor) {
 			case 'ListThingsR':
 				return A2(
 					_elm_lang$html$Html_App$map,
-					_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$List,
-					_elm_lang$elm_architecture_tutorial$Thing_List_View$view(model.listM));
+					_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ListMsg,
+					_rpeszek$crud_ex_frontend_elm$Thing_List_View$view(model.listM));
 			case 'CreateThingR':
 				return A2(
 					_elm_lang$html$Html_App$map,
-					_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Edit,
-					_elm_lang$elm_architecture_tutorial$Thing_Edit_View$view(model.editM));
+					_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$EditMsg,
+					_rpeszek$crud_ex_frontend_elm$Thing_Edit_View$view(model.editM));
 			case 'ViewThingR':
 				return A2(
 					_elm_lang$html$Html_App$map,
-					_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Read,
-					_elm_lang$elm_architecture_tutorial$Thing_Read_View$view(model.readM));
+					_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$ReadMsg,
+					_rpeszek$crud_ex_frontend_elm$Thing_Read_View$view(model.readM));
 			default:
 				return A2(
 					_elm_lang$html$Html_App$map,
-					_elm_lang$elm_architecture_tutorial$Thing_Combined_Logic$Edit,
-					_elm_lang$elm_architecture_tutorial$Thing_Edit_View$view(model.editM));
+					_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$EditMsg,
+					_rpeszek$crud_ex_frontend_elm$Thing_Edit_View$view(model.editM));
 		}
 	});
 
-var _elm_lang$elm_architecture_tutorial$App_View$view = function (model) {
+var _rpeszek$crud_ex_frontend_elm$App_View$view = function (model) {
 	return A2(
 		_elm_lang$html$Html$div,
 		_elm_lang$core$Native_List.fromArray(
@@ -11220,40 +11379,142 @@ var _elm_lang$elm_architecture_tutorial$App_View$view = function (model) {
 			[
 				A2(
 				_elm_lang$html$Html_App$map,
-				_elm_lang$elm_architecture_tutorial$App_Message$RoutingModuleMsg,
-				_elm_lang$elm_architecture_tutorial$Routing_View$view(model.routeM)),
+				_rpeszek$crud_ex_frontend_elm$App_Message$RoutingModuleMsg,
+				_rpeszek$crud_ex_frontend_elm$Routing_View$view(model.routeM)),
 				A2(
 				_elm_lang$html$Html_App$map,
-				_elm_lang$elm_architecture_tutorial$App_Message$ThingModuleMsg,
-				A2(_elm_lang$elm_architecture_tutorial$Thing_Combined_View$viewForRoute, model.routeM.route, model.thingM))
+				_rpeszek$crud_ex_frontend_elm$App_Message$ThingModuleMsg,
+				A2(_rpeszek$crud_ex_frontend_elm$Thing_Combined_View$viewForRoute, model.routeM.route, model.thingM))
 			]));
 };
 
-var _elm_lang$elm_architecture_tutorial$App_Main$init = function (data) {
-	return {
-		ctor: '_Tuple2',
-		_0: _elm_lang$elm_architecture_tutorial$App_Model$initModel,
-		_1: _elm_lang$elm_architecture_tutorial$Reuse_CmdExtras$pure(
-			_elm_lang$elm_architecture_tutorial$App_Logic$resolveParsedRoute(data))
-	};
-};
-var _elm_lang$elm_architecture_tutorial$App_Main$main = {
+var _rpeszek$crud_ex_frontend_elm$Util_Logger_NavProgram$programWithFlags = F2(
+	function (parser, logic) {
+		return A2(
+			_elm_lang$navigation$Navigation$programWithFlags,
+			parser,
+			{
+				init: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$navInitWithLogging, logic.flagsToLoggerConf, 'app', logic.init),
+				view: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$viewWithLogging, logic.modelToLoggerConf, 'app', logic.view),
+				update: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$updateWithLogging, logic.modelToLoggerConf, 'app', logic.update),
+				urlUpdate: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$navUpdateWithLogging, logic.modelToLoggerConf, 'app', logic.urlUpdate),
+				subscriptions: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$subWithLoging, logic.modelToLoggerConf, 'app', logic.subscriptions)
+			});
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger_NavProgram$ProgramLogic = F7(
+	function (a, b, c, d, e, f, g) {
+		return {modelToLoggerConf: a, flagsToLoggerConf: b, init: c, update: d, urlUpdate: e, view: f, subscriptions: g};
+	});
+
+var _rpeszek$crud_ex_frontend_elm$App_Main$init = F2(
+	function (appConf, data) {
+		return {
+			ctor: '_Tuple2',
+			_0: _rpeszek$crud_ex_frontend_elm$App_Model$initModel(appConf),
+			_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
+				_rpeszek$crud_ex_frontend_elm$App_Logic$resolveParsedRoute(data))
+		};
+	});
+var _rpeszek$crud_ex_frontend_elm$App_Main$main = {
 	main: A2(
-		_elm_lang$navigation$Navigation$program,
-		_elm_lang$elm_architecture_tutorial$App_Logic$routeParser,
+		_rpeszek$crud_ex_frontend_elm$Util_Logger_NavProgram$programWithFlags,
+		_rpeszek$crud_ex_frontend_elm$App_Logic$routeParser,
 		{
-			init: _elm_lang$elm_architecture_tutorial$App_Main$init,
-			view: _elm_lang$elm_architecture_tutorial$App_View$view,
-			update: _elm_lang$elm_architecture_tutorial$App_Logic$update,
-			urlUpdate: _elm_lang$elm_architecture_tutorial$App_Logic$urlUpdate,
+			flagsToLoggerConf: _rpeszek$crud_ex_frontend_elm$App_Model$appConfigToLoggerConfig,
+			modelToLoggerConf: _rpeszek$crud_ex_frontend_elm$App_Model$getLoggerConfig,
+			init: _rpeszek$crud_ex_frontend_elm$App_Main$init,
+			view: _rpeszek$crud_ex_frontend_elm$App_View$view,
+			update: _rpeszek$crud_ex_frontend_elm$App_Logic$update,
+			urlUpdate: _rpeszek$crud_ex_frontend_elm$App_Logic$urlUpdate,
 			subscriptions: _elm_lang$core$Basics$always(_elm_lang$core$Platform_Sub$none)
+		}),
+	flags: A2(
+		_elm_lang$core$Json_Decode$andThen,
+		A2(_elm_lang$core$Json_Decode_ops[':='], 'layout', _elm_lang$core$Json_Decode$string),
+		function (layout) {
+			return A2(
+				_elm_lang$core$Json_Decode$andThen,
+				A2(
+					_elm_lang$core$Json_Decode_ops[':='],
+					'logConfig',
+					A2(
+						_elm_lang$core$Json_Decode$andThen,
+						A2(_elm_lang$core$Json_Decode_ops[':='], 'logFlagsOn', _elm_lang$core$Json_Decode$bool),
+						function (logFlagsOn) {
+							return A2(
+								_elm_lang$core$Json_Decode$andThen,
+								A2(_elm_lang$core$Json_Decode_ops[':='], 'logHtmlOn', _elm_lang$core$Json_Decode$bool),
+								function (logHtmlOn) {
+									return A2(
+										_elm_lang$core$Json_Decode$andThen,
+										A2(_elm_lang$core$Json_Decode_ops[':='], 'logInitOn', _elm_lang$core$Json_Decode$bool),
+										function (logInitOn) {
+											return A2(
+												_elm_lang$core$Json_Decode$andThen,
+												A2(_elm_lang$core$Json_Decode_ops[':='], 'logInputOn', _elm_lang$core$Json_Decode$bool),
+												function (logInputOn) {
+													return A2(
+														_elm_lang$core$Json_Decode$andThen,
+														A2(_elm_lang$core$Json_Decode_ops[':='], 'logModelOn', _elm_lang$core$Json_Decode$bool),
+														function (logModelOn) {
+															return A2(
+																_elm_lang$core$Json_Decode$andThen,
+																A2(_elm_lang$core$Json_Decode_ops[':='], 'logMsgOn', _elm_lang$core$Json_Decode$bool),
+																function (logMsgOn) {
+																	return A2(
+																		_elm_lang$core$Json_Decode$andThen,
+																		A2(_elm_lang$core$Json_Decode_ops[':='], 'logNavLocOn', _elm_lang$core$Json_Decode$bool),
+																		function (logNavLocOn) {
+																			return A2(
+																				_elm_lang$core$Json_Decode$andThen,
+																				A2(_elm_lang$core$Json_Decode_ops[':='], 'logNavOn', _elm_lang$core$Json_Decode$bool),
+																				function (logNavOn) {
+																					return A2(
+																						_elm_lang$core$Json_Decode$andThen,
+																						A2(_elm_lang$core$Json_Decode_ops[':='], 'logOutputOn', _elm_lang$core$Json_Decode$bool),
+																						function (logOutputOn) {
+																							return A2(
+																								_elm_lang$core$Json_Decode$andThen,
+																								A2(_elm_lang$core$Json_Decode_ops[':='], 'logSubOn', _elm_lang$core$Json_Decode$bool),
+																								function (logSubOn) {
+																									return A2(
+																										_elm_lang$core$Json_Decode$andThen,
+																										A2(_elm_lang$core$Json_Decode_ops[':='], 'logUpdateOn', _elm_lang$core$Json_Decode$bool),
+																										function (logUpdateOn) {
+																											return A2(
+																												_elm_lang$core$Json_Decode$andThen,
+																												A2(_elm_lang$core$Json_Decode_ops[':='], 'logViewOn', _elm_lang$core$Json_Decode$bool),
+																												function (logViewOn) {
+																													return A2(
+																														_elm_lang$core$Json_Decode$andThen,
+																														A2(_elm_lang$core$Json_Decode_ops[':='], 'on', _elm_lang$core$Json_Decode$bool),
+																														function (on) {
+																															return _elm_lang$core$Json_Decode$succeed(
+																																{logFlagsOn: logFlagsOn, logHtmlOn: logHtmlOn, logInitOn: logInitOn, logInputOn: logInputOn, logModelOn: logModelOn, logMsgOn: logMsgOn, logNavLocOn: logNavLocOn, logNavOn: logNavOn, logOutputOn: logOutputOn, logSubOn: logSubOn, logUpdateOn: logUpdateOn, logViewOn: logViewOn, on: on});
+																														});
+																												});
+																										});
+																								});
+																						});
+																				});
+																		});
+																});
+														});
+												});
+										});
+								});
+						})),
+				function (logConfig) {
+					return _elm_lang$core$Json_Decode$succeed(
+						{layout: layout, logConfig: logConfig});
+				});
 		})
 };
 
 var Elm = {};
 Elm['App'] = Elm['App'] || {};
 Elm['App']['Main'] = Elm['App']['Main'] || {};
-_elm_lang$core$Native_Platform.addPublicModule(Elm['App']['Main'], 'App.Main', typeof _elm_lang$elm_architecture_tutorial$App_Main$main === 'undefined' ? null : _elm_lang$elm_architecture_tutorial$App_Main$main);
+_elm_lang$core$Native_Platform.addPublicModule(Elm['App']['Main'], 'App.Main', typeof _rpeszek$crud_ex_frontend_elm$App_Main$main === 'undefined' ? null : _rpeszek$crud_ex_frontend_elm$App_Main$main);
 
 if (typeof define === "function" && define['amd'])
 {

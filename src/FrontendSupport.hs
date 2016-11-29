@@ -1,4 +1,4 @@
-module ElmSupport (EmbeddedElm (..)) where 
+module FrontendSupport (EmbeddedElm (..)) where 
 
 import ClassyPrelude.Yesod
 

@@ -17,3 +17,4 @@ Thing json -- Adding "json" causes ToJSON and FromJSON instances to be derived.
     deriving Show
 
  -- By default this file is used in Model.hs (which is imported by Foundation.hs)
+-- TODO had to touch this file when GHC would not compile not relevant name refactoring!
