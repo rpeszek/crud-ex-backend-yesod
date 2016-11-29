@@ -4,7 +4,7 @@ import Import
 import Text.Julius (RawJS (..))
 import qualified BuzLogic.Thing as Bzl
 import qualified FrontendSupport.Thing.FrontendRoutes as ERoute
-import qualified FrontendSupport as Elm
+import qualified FrontendSupport.Elm as Elm
 --TODO error handling
 
 postThingsR :: Handler Value
@@ -30,7 +30,7 @@ getThingsR =  selectRep $ do
            fmap thingEntitiesToJSON $ runDB $ Bzl.findAllThings
    provideRep $  defaultLayout $ do
            master <- getYesod
-           let appConfig = frontendAppSettings $ appSettings master
+           let appConfig = elmAppSettings $ appSettings master
            liftIO $ print $ toJSON appConfig
            let elmProg = thingsElmProg
            addScript $ StaticR js_elm_app_js

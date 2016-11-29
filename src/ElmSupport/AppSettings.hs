@@ -1,5 +1,5 @@
 {-# LANGUAGE DeriveGeneric #-} 
-module FrontendSupport.AppSettings where
+module FrontendSupport.Elm.AppSettings where
 
 import ClassyPrelude.Yesod
 import Data.Aeson ()

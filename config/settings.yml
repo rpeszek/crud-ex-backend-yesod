@@ -31,7 +31,7 @@ database:
 copyright: (c) Robert Peszek, MIT License
 #analytics: UA-YOURCODE
 
-frontendAppSettings:
+elmAppSettings:
    logConfig:
       on: true
       logUpdateOn: true

@@ -20,8 +20,8 @@ library
                      Model
                      Settings
                      Settings.StaticFiles
-                     FrontendSupport
-                     FrontendSupport.AppSettings
+                     FrontendSupport.Elm
+                     FrontendSupport.Elm.AppSettings
                      FrontendSupport.Thing.FrontendRoutes
                      BuzLogic.Thing
                      Handler.Common

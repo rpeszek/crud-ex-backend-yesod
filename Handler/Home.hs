@@ -5,7 +5,7 @@ import Import
 getHomeR :: Handler Html
 getHomeR = do
     -- master <- getYesod
-    -- liftIO (print $ frontendAppSettings $ appSettings master)
+    -- liftIO (print $ elmAppSettings $ appSettings master)
     defaultLayout $ do
         setTitle "Simple Crud Home"
         $(widgetFile "homepage")

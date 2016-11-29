@@ -10,7 +10,7 @@ database:
 
 auth-dummy-login: true
 
-frontendAppSettings:
+elmAppSettings:
    logConfig:
       on: true
       logUpdateOn: true
