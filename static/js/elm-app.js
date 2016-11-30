@@ -9672,7 +9672,7 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder = A3(
 		_elm_lang$core$Json_Decode$int,
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_rpeszek$crud_ex_frontend_elm$Thing_Model$ThingEntity)));
 
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$delete = function (url) {
+var _rpeszek$crud_ex_frontend_elm$Util_Http$delete = function (url) {
 	var request = {
 		verb: 'DELETE',
 		headers: _elm_lang$core$Native_List.fromArray(
@@ -9688,7 +9688,7 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_Http$delete = function (url) {
 			{ctor: '_Tuple0'}),
 		A2(_evancz$elm_http$Http$send, _evancz$elm_http$Http$defaultSettings, request));
 };
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$post = F3(
+var _rpeszek$crud_ex_frontend_elm$Util_Http$post = F3(
 	function (decoder, url, encoder) {
 		return A3(
 			_evancz$elm_http$Http$post,
@@ -9697,7 +9697,7 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_Http$post = F3(
 			_evancz$elm_http$Http$string(
 				A2(_elm_lang$core$Json_Encode$encode, 0, encoder)));
 	});
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$put = F3(
+var _rpeszek$crud_ex_frontend_elm$Util_Http$put = F3(
 	function (decoder, url, encoder) {
 		var request = {
 			verb: 'PUT',
@@ -9715,23 +9715,23 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_Http$put = F3(
 			decoder,
 			A2(_evancz$elm_http$Http$send, _evancz$elm_http$Http$defaultSettings, request));
 	});
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPUT = {ctor: 'HttpPUT'};
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET = {ctor: 'HttpGET'};
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPOST = {ctor: 'HttpPOST'};
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPATCH = {ctor: 'HttpPATCH'};
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpDELETE = {ctor: 'HttpDELETE'};
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr = F3(
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPUT = {ctor: 'HttpPUT'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpGET = {ctor: 'HttpGET'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPOST = {ctor: 'HttpPOST'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPATCH = {ctor: 'HttpPATCH'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpDELETE = {ctor: 'HttpDELETE'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr = F3(
 	function (a, b, c) {
 		return {ctor: 'HttpResErr', _0: a, _1: b, _2: c};
 	});
-var _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk = F2(
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk = F2(
 	function (a, b) {
 		return {ctor: 'HttpResOk', _0: a, _1: b};
 	});
 
 var _rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase = '';
 
-var _rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR = function (tId) {
+var _rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR = function (tId) {
 	return A2(
 		_elm_lang$core$Basics_ops['++'],
 		_rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase,
@@ -9740,26 +9740,26 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR = function (tId) {
 			'/things/',
 			_elm_lang$core$Basics$toString(tId)));
 };
-var _rpeszek$crud_ex_frontend_elm$Thing_Routes$thingsR = A2(_elm_lang$core$Basics_ops['++'], _rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase, '/things');
+var _rpeszek$crud_ex_frontend_elm$ServerRoutes$thingsR = A2(_elm_lang$core$Basics_ops['++'], _rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase, '/things');
 
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$deleteThing = function (tId) {
-	var request = _rpeszek$crud_ex_frontend_elm$Reuse_Http$delete(
-		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR(tId));
+	var request = _rpeszek$crud_ex_frontend_elm$Util_Http$delete(
+		_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR(tId));
 	var errMsg = A2(
 		_elm_lang$core$Basics_ops['++'],
 		'Error Deleting Thing ',
 		_elm_lang$core$Basics$toString(tId));
 	return A3(
 		_elm_lang$core$Task$perform,
-		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpDELETE, errMsg),
-		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpDELETE),
+		A2(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Util_Http$HttpDELETE, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpDELETE),
 		request);
 };
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$postThing = function (thing) {
 	var request = A3(
-		_rpeszek$crud_ex_frontend_elm$Reuse_Http$post,
+		_rpeszek$crud_ex_frontend_elm$Util_Http$post,
 		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder,
-		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingsR,
+		_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingsR,
 		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonEncoder(thing));
 	var errMsg = A2(
 		_elm_lang$core$Basics_ops['++'],
@@ -9767,16 +9767,16 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Http$postThing = function (thing) {
 		_elm_lang$core$Basics$toString(thing));
 	return A3(
 		_elm_lang$core$Task$perform,
-		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPOST, errMsg),
-		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPOST),
+		A2(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPOST, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpPOST),
 		request);
 };
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$putThing = F2(
 	function (tId, thing) {
 		var request = A3(
-			_rpeszek$crud_ex_frontend_elm$Reuse_Http$put,
+			_rpeszek$crud_ex_frontend_elm$Util_Http$put,
 			_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder,
-			_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR(tId),
+			_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR(tId),
 			_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonEncoder(thing));
 		var errMsg = A2(
 			_elm_lang$core$Basics_ops['++'],
@@ -9790,35 +9790,35 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Http$putThing = F2(
 					_elm_lang$core$Basics$toString(thing))));
 		return A3(
 			_elm_lang$core$Task$perform,
-			A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPUT, errMsg),
-			_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpPUT),
+			A2(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPUT, errMsg),
+			_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpPUT),
 			request);
 	});
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$getThings = function () {
 	var request = A2(
 		_evancz$elm_http$Http$get,
 		_elm_lang$core$Json_Decode$list(_rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder),
-		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingsR);
+		_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingsR);
 	var errMsg = 'Error Retrieving Things ';
 	return A3(
 		_elm_lang$core$Task$perform,
-		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET, errMsg),
-		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET),
+		A2(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Util_Http$HttpGET, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpGET),
 		request);
 }();
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$getThing = function (tId) {
 	var request = A2(
 		_evancz$elm_http$Http$get,
 		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder,
-		_rpeszek$crud_ex_frontend_elm$Thing_Routes$thingR(tId));
+		_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR(tId));
 	var errMsg = A2(
 		_elm_lang$core$Basics_ops['++'],
 		'Error Retrieving Thing ',
 		_elm_lang$core$Basics$toString(tId));
 	return A3(
 		_elm_lang$core$Task$perform,
-		A2(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET, errMsg),
-		_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Reuse_Http$HttpGET),
+		A2(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr, _rpeszek$crud_ex_frontend_elm$Util_Http$HttpGET, errMsg),
+		_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpGET),
 		request);
 };
 
@@ -10224,7 +10224,12 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$updateListModel = F3(
 					_1: updateConf.viewCommand(_p0._0)
 				};
 			default:
-				return {ctor: '_Tuple2', _0: model, _1: updateConf.createCommand};
+				return {
+					ctor: '_Tuple2',
+					_0: model,
+					_1: updateConf.createCommand(
+						{ctor: '_Tuple0'})
+				};
 		}
 	});
 var _rpeszek$crud_ex_frontend_elm$Reuse_List_Message$CreateRequest = {ctor: 'CreateRequest'};
@@ -10302,7 +10307,7 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$update = F3(
 		}
 	});
 
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$toElmUrl = function (route) {
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$toElmUrl = function (route) {
 	var _p0 = route;
 	switch (_p0.ctor) {
 		case 'ListThingsR':
@@ -10321,57 +10326,57 @@ var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$toElmUrl = function (route) {
 				_elm_lang$core$Basics$toString(_p0._0));
 	}
 };
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo = function (route) {
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo = function (route) {
 	return _elm_lang$navigation$Navigation$newUrl(
 		A2(
 			_elm_lang$core$Debug$log,
 			'navigateTo',
-			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$toElmUrl(route)));
+			_rpeszek$crud_ex_frontend_elm$ElmRoutes$toElmUrl(route)));
 };
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$EditThingR = function (a) {
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$EditThingR = function (a) {
 	return {ctor: 'EditThingR', _0: a};
 };
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR = function (a) {
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$ViewThingR = function (a) {
 	return {ctor: 'ViewThingR', _0: a};
 };
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$CreateThingR = {ctor: 'CreateThingR'};
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR = {ctor: 'ListThingsR'};
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute = _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR;
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$routeParser = _evancz$url_parser$UrlParser$oneOf(
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$CreateThingR = {ctor: 'CreateThingR'};
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$ListThingsR = {ctor: 'ListThingsR'};
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$defaultRoute = _rpeszek$crud_ex_frontend_elm$ElmRoutes$ListThingsR;
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$routeParser = _evancz$url_parser$UrlParser$oneOf(
 	_elm_lang$core$Native_List.fromArray(
 		[
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR,
+			_rpeszek$crud_ex_frontend_elm$ElmRoutes$ListThingsR,
 			_evancz$url_parser$UrlParser$s('')),
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$CreateThingR,
+			_rpeszek$crud_ex_frontend_elm$ElmRoutes$CreateThingR,
 			_evancz$url_parser$UrlParser$s('thingscreate')),
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR,
+			_rpeszek$crud_ex_frontend_elm$ElmRoutes$ViewThingR,
 			A2(
 				_evancz$url_parser$UrlParser_ops['</>'],
 				_evancz$url_parser$UrlParser$s('thingsview'),
 				_evancz$url_parser$UrlParser$int)),
 			A2(
 			_evancz$url_parser$UrlParser$format,
-			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$EditThingR,
+			_rpeszek$crud_ex_frontend_elm$ElmRoutes$EditThingR,
 			A2(
 				_evancz$url_parser$UrlParser_ops['</>'],
 				_evancz$url_parser$UrlParser$s('thingsedit'),
 				_evancz$url_parser$UrlParser$int))
 		]));
-var _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$parseElmRoute = function (location) {
+var _rpeszek$crud_ex_frontend_elm$ElmRoutes$parseElmRoute = function (location) {
 	return A3(
 		_evancz$url_parser$UrlParser$parse,
 		_elm_lang$core$Basics$identity,
-		_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$routeParser,
+		_rpeszek$crud_ex_frontend_elm$ElmRoutes$routeParser,
 		A2(_elm_lang$core$String$dropLeft, 1, location.hash));
 };
 
-var _rpeszek$crud_ex_frontend_elm$Routing_Logic$initModel = {route: _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute, err: _elm_lang$core$Maybe$Nothing};
+var _rpeszek$crud_ex_frontend_elm$Routing_Logic$initModel = {route: _rpeszek$crud_ex_frontend_elm$ElmRoutes$defaultRoute, err: _elm_lang$core$Maybe$Nothing};
 var _rpeszek$crud_ex_frontend_elm$Routing_Logic$getRoute = function (model) {
 	return model.route;
 };
@@ -10380,7 +10385,7 @@ var _rpeszek$crud_ex_frontend_elm$Routing_Logic$setErr = F2(
 		return _elm_lang$core$Native_Utils.update(
 			model,
 			{
-				route: _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute,
+				route: _rpeszek$crud_ex_frontend_elm$ElmRoutes$defaultRoute,
 				err: _elm_lang$core$Maybe$Just(
 					A2(_elm_lang$core$Basics_ops['++'], 'Invalid URL ', url))
 			});
@@ -10717,7 +10722,7 @@ var _rpeszek$crud_ex_frontend_elm$App_Model$Model = F3(
 		return {appConfigM: a, routeM: b, thingM: c};
 	});
 
-var _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure = function (x) {
+var _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure = function (x) {
 	return A3(
 		_elm_lang$core$Task$perform,
 		_elm_lang$core$Basics$identity,
@@ -10726,7 +10731,7 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure = function (x) {
 };
 
 var _rpeszek$crud_ex_frontend_elm$App_Logic$resolveLocation = function (location) {
-	var parsed = _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$parseElmRoute(location);
+	var parsed = _rpeszek$crud_ex_frontend_elm$ElmRoutes$parseElmRoute(location);
 	var url = location.hash;
 	var _p0 = parsed;
 	if (_p0.ctor === 'Ok') {
@@ -10752,7 +10757,7 @@ var _rpeszek$crud_ex_frontend_elm$App_Logic$resolveParsedRoute = function (res) 
 				A2(_elm_lang$core$Debug$log, 'invalid route', _p1._0)));
 	}
 };
-var _rpeszek$crud_ex_frontend_elm$App_Logic$routeParser = _elm_lang$navigation$Navigation$makeParser(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$parseElmRoute);
+var _rpeszek$crud_ex_frontend_elm$App_Logic$routeParser = _elm_lang$navigation$Navigation$makeParser(_rpeszek$crud_ex_frontend_elm$ElmRoutes$parseElmRoute);
 var _rpeszek$crud_ex_frontend_elm$App_Logic$isRouteTheSame = F2(
 	function (data, model) {
 		var currentRoute = _rpeszek$crud_ex_frontend_elm$Routing_Logic$getRoute(model.routeM);
@@ -10760,7 +10765,7 @@ var _rpeszek$crud_ex_frontend_elm$App_Logic$isRouteTheSame = F2(
 		if (_p2.ctor === 'Ok') {
 			return _elm_lang$core$Native_Utils.eq(_p2._0, currentRoute);
 		} else {
-			return _elm_lang$core$Native_Utils.eq(currentRoute, _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute);
+			return _elm_lang$core$Native_Utils.eq(currentRoute, _rpeszek$crud_ex_frontend_elm$ElmRoutes$defaultRoute);
 		}
 	});
 var _rpeszek$crud_ex_frontend_elm$App_Logic$urlUpdate = F2(
@@ -10768,7 +10773,7 @@ var _rpeszek$crud_ex_frontend_elm$App_Logic$urlUpdate = F2(
 		return A2(_rpeszek$crud_ex_frontend_elm$App_Logic$isRouteTheSame, data, model) ? {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none} : {
 			ctor: '_Tuple2',
 			_0: model,
-			_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
+			_1: _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure(
 				_rpeszek$crud_ex_frontend_elm$App_Logic$resolveParsedRoute(data))
 		};
 	});
@@ -10776,50 +10781,52 @@ var _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig = {
 	editExitCmd: function (maybeTId) {
 		var _p3 = maybeTId;
 		if (_p3.ctor === 'Just') {
-			return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(
-				_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR(_p3._0));
+			return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(
+				_rpeszek$crud_ex_frontend_elm$ElmRoutes$ViewThingR(_p3._0));
 		} else {
-			return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR);
+			return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(_rpeszek$crud_ex_frontend_elm$ElmRoutes$ListThingsR);
 		}
 	},
 	readToEditCmd: function (tId) {
-		return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(
-			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$EditThingR(tId));
+		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(
+			_rpeszek$crud_ex_frontend_elm$ElmRoutes$EditThingR(tId));
 	},
 	readToExitCmd: function (_p4) {
-		return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ListThingsR);
+		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(_rpeszek$crud_ex_frontend_elm$ElmRoutes$ListThingsR);
 	},
 	listToViewCmd: function (tId) {
-		return _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(
-			_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$ViewThingR(tId));
+		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(
+			_rpeszek$crud_ex_frontend_elm$ElmRoutes$ViewThingR(tId));
 	},
-	listToCreateCmd: _rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$navigateTo(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$CreateThingR)
+	listToCreateCmd: function (_p5) {
+		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(_rpeszek$crud_ex_frontend_elm$ElmRoutes$CreateThingR);
+	}
 };
 var _rpeszek$crud_ex_frontend_elm$App_Logic$update = F2(
 	function (msg, model) {
-		var _p5 = msg;
-		if (_p5.ctor === 'RoutingModuleMsg') {
-			var _p6 = _p5._0;
-			if (_p6.ctor === 'RouteMsg') {
-				var _p7 = _p6._0;
+		var _p6 = msg;
+		if (_p6.ctor === 'RoutingModuleMsg') {
+			var _p7 = _p6._0;
+			if (_p7.ctor === 'RouteMsg') {
+				var _p8 = _p7._0;
 				return {
 					ctor: '_Tuple2',
-					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRoute, _p7, model),
-					_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
-						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_p7))
+					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRoute, _p8, model),
+					_1: _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure(
+						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_p8))
 				};
 			} else {
 				return {
 					ctor: '_Tuple2',
-					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRouteErr, _p6._0, model),
-					_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
-						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_rpeszek$crud_ex_frontend_elm$Routing_ElmRoute$defaultRoute))
+					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRouteErr, _p7._0, model),
+					_1: _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure(
+						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_rpeszek$crud_ex_frontend_elm$ElmRoutes$defaultRoute))
 				};
 			}
 		} else {
-			var _p8 = A3(_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$update, _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig, _p5._0, model.thingM);
-			var thingModel = _p8._0;
-			var thingCmd = _p8._1;
+			var _p9 = A3(_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$update, _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig, _p6._0, model.thingM);
+			var thingModel = _p9._0;
+			var thingCmd = _p9._1;
 			return {
 				ctor: '_Tuple2',
 				_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setThingM, thingModel, model),
@@ -11411,7 +11418,7 @@ var _rpeszek$crud_ex_frontend_elm$App_Main$init = F2(
 		return {
 			ctor: '_Tuple2',
 			_0: _rpeszek$crud_ex_frontend_elm$App_Model$initModel(appConf),
-			_1: _rpeszek$crud_ex_frontend_elm$Reuse_CmdExtras$pure(
+			_1: _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure(
 				_rpeszek$crud_ex_frontend_elm$App_Logic$resolveParsedRoute(data))
 		};
 	});
