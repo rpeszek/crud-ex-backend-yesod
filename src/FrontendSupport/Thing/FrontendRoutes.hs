@@ -4,9 +4,9 @@ import Import
 import Database.Persist.Sql (fromSqlKey)  
 
 data FrontendRoute = ListThingsR | 
-                CreateThingR |
-                ViewThingR ThingId | 
-                EditThingR ThingId 
+                     CreateThingR |
+                     ViewThingR ThingId | 
+                     EditThingR ThingId 
               deriving Show
 
 toHashUrlFragment :: FrontendRoute -> Text

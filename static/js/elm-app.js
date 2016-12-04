@@ -10436,250 +10436,282 @@ var _rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch = function (elmRoute) {
 	}
 };
 
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn = F3(
-	function (on, logMsg, x) {
-		return _elm_lang$core$Basics$not(on) ? x : A2(_elm_lang$core$Debug$log, logMsg, x);
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn = F3(
-	function (on, logic, x) {
-		return _elm_lang$core$Basics$not(on) ? x : logic(x);
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logHtml = F3(
-	function (config, txt, html) {
-		return config.logHtmlOn ? A2(
-			_elm_lang$core$Debug$log,
-			A2(_elm_lang$core$Basics_ops['++'], txt, ':html'),
-			html) : A2(
-			_elm_lang$html$Html_App$map,
-			_elm_lang$core$Debug$log(
-				A2(_elm_lang$core$Basics_ops['++'], txt, ':html.msg')),
-			html);
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logFlags = F2(
-	function (config, logMsg) {
-		return A2(
-			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
-			config.logFlagsOn,
-			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':flags'));
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logNavLoc = F2(
-	function (config, logMsg) {
-		return A2(
-			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
-			config.logNavLocOn,
-			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':navL'));
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logMsg = F2(
-	function (config, logMsg) {
-		return A2(
-			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
-			config.logMsgOn,
-			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':msg'));
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logModel = F2(
-	function (config, logMsg) {
-		return A2(
-			_rpeszek$crud_ex_frontend_elm$Util_Logger$logIfOn,
-			config.logModelOn,
-			A2(_elm_lang$core$Basics_ops['++'], logMsg, ':model'));
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd = F3(
-	function (config, txt, _p0) {
-		var _p1 = _p0;
-		return {
-			ctor: '_Tuple2',
-			_0: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel, config, txt, _p1._0),
-			_1: A2(
-				_elm_lang$core$Platform_Cmd$map,
-				A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$logMsg, config, txt),
-				_p1._1)
-		};
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$navInitWithLogging = F2(
-	function (configF, txt_) {
-		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':init');
-		var logic = F3(
-			function (initF, flags, loc) {
-				var config = configF(flags);
-				return (config.on && config.logInitOn) ? A3(
-					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-					config.logOutputOn,
-					A2(
-						_rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd,
-						config,
-						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
-					A2(
-						initF,
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logFlagsOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logFlags,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							flags),
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logInputOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logNavLoc,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							loc))) : A2(initF, flags, loc);
-			});
-		return logic;
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$updateWithLogging = F2(
-	function (configF, txt_) {
-		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':update');
-		var logic = F3(
-			function (updateF, msg, model) {
-				var config = configF(model);
-				return (config.on && config.logUpdateOn) ? A3(
-					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-					config.logOutputOn,
-					A2(
-						_rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd,
-						config,
-						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
-					A2(
-						updateF,
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logInputOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logMsg,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							msg),
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logInputOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							model))) : A2(updateF, msg, model);
-			});
-		return logic;
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$viewWithLogging = F2(
-	function (configF, txt_) {
-		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':view');
-		var logic = F2(
-			function (viewF, model) {
-				var config = configF(model);
-				return (config.on && config.logViewOn) ? A3(
-					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-					config.logOutputOn,
-					A2(
-						_rpeszek$crud_ex_frontend_elm$Util_Logger$logHtml,
-						config,
-						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
-					viewF(
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logInputOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							model))) : viewF(model);
-			});
-		return logic;
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$navUpdateWithLogging = F2(
-	function (configF, txt_) {
-		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':urlUpdate');
-		var logic = F3(
-			function (updateF, msg, model) {
-				var config = configF(model);
-				return (config.on && config.logNavOn) ? A3(
-					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-					config.logOutputOn,
-					A2(
-						_rpeszek$crud_ex_frontend_elm$Util_Logger$logModelAndCmd,
-						config,
-						A2(_elm_lang$core$Basics_ops['++'], txt, ':out')),
-					A2(
-						updateF,
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logInputOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logNavLoc,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							msg),
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logInputOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							model))) : A2(updateF, msg, model);
-			});
-		return logic;
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$subWithLoging = F2(
-	function (configF, txt_) {
-		var txt = A2(_elm_lang$core$Basics_ops['++'], txt_, ':sub');
-		var logic = F2(
-			function (subF, model) {
-				var config = configF(model);
-				return (config.on && config.logSubOn) ? A3(
-					_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-					config.logOutputOn,
-					_elm_lang$core$Platform_Sub$map(
-						_elm_lang$core$Debug$log(
-							A2(_elm_lang$core$Basics_ops['++'], txt, '.msg'))),
-					subF(
-						A3(
-							_rpeszek$crud_ex_frontend_elm$Util_Logger$logicIfOn,
-							config.logInputOn,
-							A2(
-								_rpeszek$crud_ex_frontend_elm$Util_Logger$logModel,
-								config,
-								A2(_elm_lang$core$Basics_ops['++'], txt, ':in')),
-							model))) : subF(model);
-			});
-		return logic;
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$defaultConfig = {on: true, logUpdateOn: true, logViewOn: false, logInitOn: true, logNavOn: false, logNavLocOn: true, logMsgOn: true, logModelOn: true, logInputOn: true, logOutputOn: true, logHtmlOn: false, logSubOn: false, logFlagsOn: true};
-var _rpeszek$crud_ex_frontend_elm$Util_Logger$LoggerConfig = function (a) {
-	return function (b) {
-		return function (c) {
-			return function (d) {
-				return function (e) {
-					return function (f) {
-						return function (g) {
-							return function (h) {
-								return function (i) {
-									return function (j) {
-										return function (k) {
-											return function (l) {
-												return function (m) {
-													return {on: a, logUpdateOn: b, logViewOn: c, logInitOn: d, logNavOn: e, logNavLocOn: f, logMsgOn: g, logModelOn: h, logInputOn: i, logOutputOn: j, logHtmlOn: k, logSubOn: l, logFlagsOn: m};
-												};
-											};
-										};
-									};
-								};
-							};
-						};
-					};
-				};
-			};
-		};
-	};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$loggerFlagDisplay = function (_p0) {
+	return A2(
+		_elm_lang$core$String$dropLeft,
+		1,
+		_elm_lang$core$Basics$toString(_p0));
 };
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$logMsgP = function (stack) {
+	var _p1 = stack;
+	if (_p1.ctor === '[]') {
+		return '';
+	} else {
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$logMsgP(_p1._1),
+			A2(
+				_elm_lang$core$Basics_ops['++'],
+				':',
+				_rpeszek$crud_ex_frontend_elm$Util_Logger$loggerFlagDisplay(_p1._0)));
+	}
+};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem = F2(
+	function (logFlags_, config) {
+		return A2(
+			_elm_lang$core$List$all,
+			function (it) {
+				return A2(_elm_lang$core$List$member, it, config.logFlags);
+			},
+			logFlags_);
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$describeElement = F3(
+	function (logFlags_, stack, config) {
+		return A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem, logFlags_, config) ? _elm_lang$core$Debug$log(
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$logMsgP(
+				A2(_elm_lang$core$Basics_ops['++'], logFlags_, stack))) : _elm_lang$core$Basics$identity;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$levelToInt = function (level) {
+	var _p2 = level;
+	switch (_p2.ctor) {
+		case 'Info':
+			return 1;
+		case 'Std':
+			return 2;
+		default:
+			return 3;
+	}
+};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogLevel = F2(
+	function (level, config) {
+		return _elm_lang$core$Native_Utils.cmp(
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$levelToInt(level),
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$levelToInt(config.logLevel)) > -1;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LoggerConfig = F2(
+	function (a, b) {
+		return {logLevel: a, logFlags: b};
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LFlags = {ctor: 'LFlags'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LSub = {ctor: 'LSub'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LHtml = {ctor: 'LHtml'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LNavLoc = {ctor: 'LNavLoc'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LModel = {ctor: 'LModel'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LMsg = {ctor: 'LMsg'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LNav = {ctor: 'LNav'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LInit = {ctor: 'LInit'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LView = {ctor: 'LView'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LUpdate = {ctor: 'LUpdate'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LOut = {ctor: 'LOut'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutput = function (flag) {
+	return _rpeszek$crud_ex_frontend_elm$Util_Logger$describeElement(
+		_elm_lang$core$Native_List.fromArray(
+			[flag, _rpeszek$crud_ex_frontend_elm$Util_Logger$LOut]));
+};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputModelAndCmd = F3(
+	function (stack, config, _p3) {
+		var _p4 = _p3;
+		var _p6 = _p4._0;
+		var _p5 = _p4._1;
+		var logFlags_ = _elm_lang$core$Native_List.fromArray(
+			[_rpeszek$crud_ex_frontend_elm$Util_Logger$LOut]);
+		if (A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem, logFlags_, config)) {
+			var allFlags = A2(_elm_lang$core$Basics_ops['++'], logFlags_, stack);
+			return {
+				ctor: '_Tuple2',
+				_0: A4(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeElement,
+					_elm_lang$core$Native_List.fromArray(
+						[_rpeszek$crud_ex_frontend_elm$Util_Logger$LModel]),
+					allFlags,
+					config,
+					_p6),
+				_1: A2(
+					_elm_lang$core$Platform_Cmd$map,
+					A3(
+						_rpeszek$crud_ex_frontend_elm$Util_Logger$describeElement,
+						_elm_lang$core$Native_List.fromArray(
+							[_rpeszek$crud_ex_frontend_elm$Util_Logger$LMsg]),
+						allFlags,
+						config),
+					_p5)
+			};
+		} else {
+			return {ctor: '_Tuple2', _0: _p6, _1: _p5};
+		}
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputSubscription = F3(
+	function (stack, config, sub) {
+		var logFlags_ = _elm_lang$core$Native_List.fromArray(
+			[_rpeszek$crud_ex_frontend_elm$Util_Logger$LOut]);
+		if (A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem, logFlags_, config)) {
+			var allFlags = A2(_elm_lang$core$Basics_ops['++'], logFlags_, stack);
+			return A2(
+				_elm_lang$core$Platform_Sub$map,
+				A3(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeElement,
+					_elm_lang$core$Native_List.fromArray(
+						[_rpeszek$crud_ex_frontend_elm$Util_Logger$LSub]),
+					allFlags,
+					config),
+				sub);
+		} else {
+			return sub;
+		}
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputHtml = F3(
+	function (stack, config, sub) {
+		var logFlags_ = _elm_lang$core$Native_List.fromArray(
+			[_rpeszek$crud_ex_frontend_elm$Util_Logger$LOut]);
+		if (A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem, logFlags_, config)) {
+			var allFlags = A2(_elm_lang$core$Basics_ops['++'], logFlags_, stack);
+			return A2(
+				_elm_lang$html$Html_App$map,
+				A3(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeElement,
+					_elm_lang$core$Native_List.fromArray(
+						[_rpeszek$crud_ex_frontend_elm$Util_Logger$LSub]),
+					allFlags,
+					config),
+				sub);
+		} else {
+			return sub;
+		}
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LIn = {ctor: 'LIn'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput = function (flag) {
+	return _rpeszek$crud_ex_frontend_elm$Util_Logger$describeElement(
+		_elm_lang$core$Native_List.fromArray(
+			[flag, _rpeszek$crud_ex_frontend_elm$Util_Logger$LIn]));
+};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$LApp = {ctor: 'LApp'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$log1 = F5(
+	function (level, flag, configF, aWithLog, a) {
+		var config = configF(a);
+		var logFlags_ = _elm_lang$core$Native_List.fromArray(
+			[flag, _rpeszek$crud_ex_frontend_elm$Util_Logger$LApp]);
+		return (A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogLevel, level, config) && A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem, logFlags_, config)) ? A2(
+			_elm_lang$core$Debug$log,
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$logMsgP(logFlags_),
+			a) : a;
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$log2 = F7(
+	function (level, flag, configF, aWithLog, bWithLog, fn, a) {
+		var config = configF(a);
+		var logFlags_ = _elm_lang$core$Native_List.fromArray(
+			[flag, _rpeszek$crud_ex_frontend_elm$Util_Logger$LApp]);
+		return (A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogLevel, level, config) && A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem, logFlags_, config)) ? A3(
+			bWithLog,
+			logFlags_,
+			config,
+			fn(
+				A3(aWithLog, logFlags_, config, a))) : fn(a);
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$log3a = F8(
+	function (level, flag, configF, aWithLog, bWithLog, cWithLog, fn, a) {
+		var config = configF(a);
+		var logFlags_ = _elm_lang$core$Native_List.fromArray(
+			[flag, _rpeszek$crud_ex_frontend_elm$Util_Logger$LApp]);
+		var aLogged = (A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogLevel, level, config) && A2(_rpeszek$crud_ex_frontend_elm$Util_Logger$shouldLogItem, logFlags_, config)) ? A3(aWithLog, logFlags_, config, a) : a;
+		return A6(
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$log2,
+			level,
+			flag,
+			_elm_lang$core$Basics$always(config),
+			bWithLog,
+			cWithLog,
+			fn(aLogged));
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$log3b = F7(
+	function (level, flag, configF, aWithLog, bWithLog, cWithLog, fn) {
+		return _elm_lang$core$Basics$flip(
+			A7(
+				_rpeszek$crud_ex_frontend_elm$Util_Logger$log3a,
+				level,
+				flag,
+				configF,
+				bWithLog,
+				aWithLog,
+				cWithLog,
+				_elm_lang$core$Basics$flip(fn)));
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$Crit = {ctor: 'Crit'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$Std = {ctor: 'Std'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$defaultLoggerConf = {
+	logLevel: _rpeszek$crud_ex_frontend_elm$Util_Logger$Std,
+	logFlags: _elm_lang$core$Native_List.fromArray(
+		[_rpeszek$crud_ex_frontend_elm$Util_Logger$LApp, _rpeszek$crud_ex_frontend_elm$Util_Logger$LInit, _rpeszek$crud_ex_frontend_elm$Util_Logger$LOut, _rpeszek$crud_ex_frontend_elm$Util_Logger$LIn])
+};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$Info = {ctor: 'Info'};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger$testLoggerConf = {
+	logLevel: _rpeszek$crud_ex_frontend_elm$Util_Logger$Info,
+	logFlags: _elm_lang$core$Native_List.fromArray(
+		[_rpeszek$crud_ex_frontend_elm$Util_Logger$LApp, _rpeszek$crud_ex_frontend_elm$Util_Logger$LInit, _rpeszek$crud_ex_frontend_elm$Util_Logger$LUpdate, _rpeszek$crud_ex_frontend_elm$Util_Logger$LOut, _rpeszek$crud_ex_frontend_elm$Util_Logger$LIn, _rpeszek$crud_ex_frontend_elm$Util_Logger$LMsg, _rpeszek$crud_ex_frontend_elm$Util_Logger$LModel])
+};
+
+var _rpeszek$crud_ex_frontend_elm$Util_Logger_Json$loggerLevelDecoder = function (tag) {
+	var _p0 = tag;
+	switch (_p0) {
+		case 'Info':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$Info);
+		case 'Std':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$Std);
+		case 'Crit':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$Crit);
+		default:
+			return _elm_lang$core$Json_Decode$fail(
+				A2(_elm_lang$core$Basics_ops['++'], tag, ' is not a recognized tag for LoggerLevel'));
+	}
+};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger_Json$loggerFlagDecoder = function (tag) {
+	var _p1 = tag;
+	switch (_p1) {
+		case 'LApp':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LApp);
+		case 'LIn':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LIn);
+		case 'LOut':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LOut);
+		case 'LUpdate':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LUpdate);
+		case 'LView':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LView);
+		case 'LInit':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LInit);
+		case 'LNav':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LNav);
+		case 'LMsg':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LMsg);
+		case 'LModel':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LModel);
+		case 'LNavLoc':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LNavLoc);
+		case 'LHtml':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LHtml);
+		case 'LSub':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LSub);
+		case 'LFlags':
+			return _elm_lang$core$Json_Decode$succeed(_rpeszek$crud_ex_frontend_elm$Util_Logger$LFlags);
+		default:
+			return _elm_lang$core$Json_Decode$fail(
+				A2(_elm_lang$core$Basics_ops['++'], tag, ' is not a recognized tag for LoggerFlag'));
+	}
+};
+var _rpeszek$crud_ex_frontend_elm$Util_Logger_Json$loggerConfigDecoder = A3(
+	_elm_lang$core$Json_Decode$object2,
+	_rpeszek$crud_ex_frontend_elm$Util_Logger$LoggerConfig,
+	A2(
+		_elm_lang$core$Json_Decode$andThen,
+		A2(_elm_lang$core$Json_Decode_ops[':='], 'logLevel', _elm_lang$core$Json_Decode$string),
+		_rpeszek$crud_ex_frontend_elm$Util_Logger_Json$loggerLevelDecoder),
+	A2(
+		_elm_lang$core$Json_Decode_ops[':='],
+		'logFlags',
+		_elm_lang$core$Json_Decode$list(
+			A2(_elm_lang$core$Json_Decode$andThen, _elm_lang$core$Json_Decode$string, _rpeszek$crud_ex_frontend_elm$Util_Logger_Json$loggerFlagDecoder))));
 
 var _rpeszek$crud_ex_frontend_elm$App_Model$getLoggerConfig = function (model) {
 	return model.appConfigM.logConfig;
-};
-var _rpeszek$crud_ex_frontend_elm$App_Model$initModel = function (appConfig) {
-	return {appConfigM: appConfig, routeM: _rpeszek$crud_ex_frontend_elm$Routing_Logic$initModel, thingM: _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$initModel};
 };
 var _rpeszek$crud_ex_frontend_elm$App_Model$setAppConfig = F2(
 	function (appConf, model) {
@@ -10709,11 +10741,37 @@ var _rpeszek$crud_ex_frontend_elm$App_Model$setRoute = F2(
 				routeM: A2(_rpeszek$crud_ex_frontend_elm$Routing_Logic$setRoute, route, model.routeM)
 			});
 	});
-var _rpeszek$crud_ex_frontend_elm$App_Model$appConfigToLoggerConfig = function (m) {
-	return m.logConfig;
+var _rpeszek$crud_ex_frontend_elm$App_Model$appFlagsToLoggerConfig = function (flags) {
+	var result = A2(_elm_lang$core$Json_Decode$decodeValue, _rpeszek$crud_ex_frontend_elm$Util_Logger_Json$loggerConfigDecoder, flags.logConfig);
+	var _p0 = result;
+	if (_p0.ctor === 'Ok') {
+		return _p0._0;
+	} else {
+		return A2(
+			_elm_lang$core$Debug$log,
+			A2(_elm_lang$core$Basics_ops['++'], 'Error Parsing Flags', _p0._0),
+			_rpeszek$crud_ex_frontend_elm$Util_Logger$defaultLoggerConf);
+	}
 };
-var _rpeszek$crud_ex_frontend_elm$App_Model$initAppConfig = {logConfig: _rpeszek$crud_ex_frontend_elm$Util_Logger$defaultConfig, layout: 'TODO'};
+var _rpeszek$crud_ex_frontend_elm$App_Model$appFlagsToAppConfig = function (flags) {
+	return {
+		logConfig: _rpeszek$crud_ex_frontend_elm$App_Model$appFlagsToLoggerConfig(flags),
+		layout: flags.layout
+	};
+};
+var _rpeszek$crud_ex_frontend_elm$App_Model$initModel = function (appFlags) {
+	return {
+		appConfigM: _rpeszek$crud_ex_frontend_elm$App_Model$appFlagsToAppConfig(appFlags),
+		routeM: _rpeszek$crud_ex_frontend_elm$Routing_Logic$initModel,
+		thingM: _rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$initModel
+	};
+};
+var _rpeszek$crud_ex_frontend_elm$App_Model$initAppConfig = {logConfig: _rpeszek$crud_ex_frontend_elm$Util_Logger$defaultLoggerConf, layout: 'TODO'};
 var _rpeszek$crud_ex_frontend_elm$App_Model$AppConfig = F2(
+	function (a, b) {
+		return {logConfig: a, layout: b};
+	});
+var _rpeszek$crud_ex_frontend_elm$App_Model$AppFlags = F2(
 	function (a, b) {
 		return {logConfig: a, layout: b};
 	});
@@ -11401,11 +11459,49 @@ var _rpeszek$crud_ex_frontend_elm$Util_Logger_NavProgram$programWithFlags = F2(
 			_elm_lang$navigation$Navigation$programWithFlags,
 			parser,
 			{
-				init: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$navInitWithLogging, logic.flagsToLoggerConf, 'app', logic.init),
-				view: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$viewWithLogging, logic.modelToLoggerConf, 'app', logic.view),
-				update: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$updateWithLogging, logic.modelToLoggerConf, 'app', logic.update),
-				urlUpdate: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$navUpdateWithLogging, logic.modelToLoggerConf, 'app', logic.urlUpdate),
-				subscriptions: A3(_rpeszek$crud_ex_frontend_elm$Util_Logger$subWithLoging, logic.modelToLoggerConf, 'app', logic.subscriptions)
+				init: A7(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$log3a,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$Std,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$LInit,
+					logic.flagsToLoggerConf,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LFlags),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LNavLoc),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputModelAndCmd,
+					logic.init),
+				view: A6(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$log2,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$Std,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$LView,
+					logic.modelToLoggerConf,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LModel),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputHtml,
+					logic.view),
+				update: A7(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$log3b,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$Std,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$LUpdate,
+					logic.modelToLoggerConf,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LModel),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LMsg),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputModelAndCmd,
+					logic.update),
+				urlUpdate: A7(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$log3b,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$Std,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$LNav,
+					logic.modelToLoggerConf,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LNavLoc),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LModel),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputModelAndCmd,
+					logic.urlUpdate),
+				subscriptions: A6(
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$log2,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$Std,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$LSub,
+					logic.modelToLoggerConf,
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeInput(_rpeszek$crud_ex_frontend_elm$Util_Logger$LModel),
+					_rpeszek$crud_ex_frontend_elm$Util_Logger$describeOutputSubscription,
+					logic.subscriptions)
 			});
 	});
 var _rpeszek$crud_ex_frontend_elm$Util_Logger_NavProgram$ProgramLogic = F7(
@@ -11414,10 +11510,10 @@ var _rpeszek$crud_ex_frontend_elm$Util_Logger_NavProgram$ProgramLogic = F7(
 	});
 
 var _rpeszek$crud_ex_frontend_elm$App_Main$init = F2(
-	function (appConf, data) {
+	function (appFlags, data) {
 		return {
 			ctor: '_Tuple2',
-			_0: _rpeszek$crud_ex_frontend_elm$App_Model$initModel(appConf),
+			_0: _rpeszek$crud_ex_frontend_elm$App_Model$initModel(appFlags),
 			_1: _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure(
 				_rpeszek$crud_ex_frontend_elm$App_Logic$resolveParsedRoute(data))
 		};
@@ -11427,7 +11523,7 @@ var _rpeszek$crud_ex_frontend_elm$App_Main$main = {
 		_rpeszek$crud_ex_frontend_elm$Util_Logger_NavProgram$programWithFlags,
 		_rpeszek$crud_ex_frontend_elm$App_Logic$routeParser,
 		{
-			flagsToLoggerConf: _rpeszek$crud_ex_frontend_elm$App_Model$appConfigToLoggerConfig,
+			flagsToLoggerConf: _rpeszek$crud_ex_frontend_elm$App_Model$appFlagsToLoggerConfig,
 			modelToLoggerConf: _rpeszek$crud_ex_frontend_elm$App_Model$getLoggerConfig,
 			init: _rpeszek$crud_ex_frontend_elm$App_Main$init,
 			view: _rpeszek$crud_ex_frontend_elm$App_View$view,
@@ -11441,76 +11537,7 @@ var _rpeszek$crud_ex_frontend_elm$App_Main$main = {
 		function (layout) {
 			return A2(
 				_elm_lang$core$Json_Decode$andThen,
-				A2(
-					_elm_lang$core$Json_Decode_ops[':='],
-					'logConfig',
-					A2(
-						_elm_lang$core$Json_Decode$andThen,
-						A2(_elm_lang$core$Json_Decode_ops[':='], 'logFlagsOn', _elm_lang$core$Json_Decode$bool),
-						function (logFlagsOn) {
-							return A2(
-								_elm_lang$core$Json_Decode$andThen,
-								A2(_elm_lang$core$Json_Decode_ops[':='], 'logHtmlOn', _elm_lang$core$Json_Decode$bool),
-								function (logHtmlOn) {
-									return A2(
-										_elm_lang$core$Json_Decode$andThen,
-										A2(_elm_lang$core$Json_Decode_ops[':='], 'logInitOn', _elm_lang$core$Json_Decode$bool),
-										function (logInitOn) {
-											return A2(
-												_elm_lang$core$Json_Decode$andThen,
-												A2(_elm_lang$core$Json_Decode_ops[':='], 'logInputOn', _elm_lang$core$Json_Decode$bool),
-												function (logInputOn) {
-													return A2(
-														_elm_lang$core$Json_Decode$andThen,
-														A2(_elm_lang$core$Json_Decode_ops[':='], 'logModelOn', _elm_lang$core$Json_Decode$bool),
-														function (logModelOn) {
-															return A2(
-																_elm_lang$core$Json_Decode$andThen,
-																A2(_elm_lang$core$Json_Decode_ops[':='], 'logMsgOn', _elm_lang$core$Json_Decode$bool),
-																function (logMsgOn) {
-																	return A2(
-																		_elm_lang$core$Json_Decode$andThen,
-																		A2(_elm_lang$core$Json_Decode_ops[':='], 'logNavLocOn', _elm_lang$core$Json_Decode$bool),
-																		function (logNavLocOn) {
-																			return A2(
-																				_elm_lang$core$Json_Decode$andThen,
-																				A2(_elm_lang$core$Json_Decode_ops[':='], 'logNavOn', _elm_lang$core$Json_Decode$bool),
-																				function (logNavOn) {
-																					return A2(
-																						_elm_lang$core$Json_Decode$andThen,
-																						A2(_elm_lang$core$Json_Decode_ops[':='], 'logOutputOn', _elm_lang$core$Json_Decode$bool),
-																						function (logOutputOn) {
-																							return A2(
-																								_elm_lang$core$Json_Decode$andThen,
-																								A2(_elm_lang$core$Json_Decode_ops[':='], 'logSubOn', _elm_lang$core$Json_Decode$bool),
-																								function (logSubOn) {
-																									return A2(
-																										_elm_lang$core$Json_Decode$andThen,
-																										A2(_elm_lang$core$Json_Decode_ops[':='], 'logUpdateOn', _elm_lang$core$Json_Decode$bool),
-																										function (logUpdateOn) {
-																											return A2(
-																												_elm_lang$core$Json_Decode$andThen,
-																												A2(_elm_lang$core$Json_Decode_ops[':='], 'logViewOn', _elm_lang$core$Json_Decode$bool),
-																												function (logViewOn) {
-																													return A2(
-																														_elm_lang$core$Json_Decode$andThen,
-																														A2(_elm_lang$core$Json_Decode_ops[':='], 'on', _elm_lang$core$Json_Decode$bool),
-																														function (on) {
-																															return _elm_lang$core$Json_Decode$succeed(
-																																{logFlagsOn: logFlagsOn, logHtmlOn: logHtmlOn, logInitOn: logInitOn, logInputOn: logInputOn, logModelOn: logModelOn, logMsgOn: logMsgOn, logNavLocOn: logNavLocOn, logNavOn: logNavOn, logOutputOn: logOutputOn, logSubOn: logSubOn, logUpdateOn: logUpdateOn, logViewOn: logViewOn, on: on});
-																														});
-																												});
-																										});
-																								});
-																						});
-																				});
-																		});
-																});
-														});
-												});
-										});
-								});
-						})),
+				A2(_elm_lang$core$Json_Decode_ops[':='], 'logConfig', _elm_lang$core$Json_Decode$value),
 				function (logConfig) {
 					return _elm_lang$core$Json_Decode$succeed(
 						{layout: layout, logConfig: logConfig});

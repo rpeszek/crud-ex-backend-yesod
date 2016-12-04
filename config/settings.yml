@@ -31,19 +31,9 @@ database:
 copyright: (c) Robert Peszek, MIT License
 #analytics: UA-YOURCODE
 
+# Layout is TODO
 elmAppSettings:
    logConfig:
-      on: true
-      logUpdateOn: true
-      logViewOn: false
-      logInitOn: true
-      logNavOn: true
-      logNavLocOn: true
-      logMsgOn: true
-      logModelOn: false
-      logInputOn: true
-      logOutputOn: true
-      logHtmlOn: false
-      logSubOn: false
-      logFlagsOn: true
+      logLevel: Std
+      logFlags: [LApp, LUpdate, LOut, LMsg]
    layout : "TEST0"

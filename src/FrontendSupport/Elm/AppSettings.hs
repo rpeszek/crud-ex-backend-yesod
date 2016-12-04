@@ -5,20 +5,37 @@ import ClassyPrelude.Yesod
 import Data.Aeson ()
 import GHC.Generics ()
 
+data LoggerFlag = 
+     LApp 
+   | LIn 
+   | LOut 
+   | LUpdate
+   | LView
+   | LInit 
+   | LNav 
+   | LMsg 
+   | LModel 
+   | LNavLoc  -- like Nav model
+   | LHtml 
+   | LSub 
+   | LFlags 
+ deriving (Show, Generic)
+
+instance FromJSON LoggerFlag
+instance ToJSON LoggerFlag
+
+data LoggerLevel = 
+      Info
+    | Std
+    | Crit
+ deriving (Show, Generic)
+
+instance FromJSON LoggerLevel
+instance ToJSON LoggerLevel
+
 data LoggerConfig = LoggerConfig {
-    on:: Bool
-  , logUpdateOn:: Bool
-  , logViewOn:: Bool
-  , logInitOn:: Bool
-  , logNavOn:: Bool
-  , logNavLocOn:: Bool -- like Nav model
-  , logMsgOn:: Bool
-  , logModelOn:: Bool
-  , logInputOn:: Bool
-  , logOutputOn:: Bool
-  , logHtmlOn:: Bool
-  , logSubOn:: Bool
-  , logFlagsOn:: Bool
+    logLevel :: LoggerLevel
+  , logFlags :: [LoggerFlag]
 } deriving (Show, Generic)
 
 instance FromJSON LoggerConfig
