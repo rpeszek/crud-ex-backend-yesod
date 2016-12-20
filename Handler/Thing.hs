@@ -37,6 +37,12 @@ getThingsR =  selectRep $ do
            setTitle "Things"
            $(widgetFile "elmpage")
 
+optionsThingsR :: Handler RepPlain
+optionsThingsR = do
+    corsSupport
+    addHeader "Access-Control-Allow-Methods" "GET, PUT, DELETE, OPTIONS"
+    return $ RepPlain $ toContent ("" :: Text)
+
 
 getThingR :: ThingId -> Handler TypedContent
 getThingR thingId = selectRep $ do        

@@ -8,5 +8,5 @@
 /profile ProfileR GET
 
 
-/things          ThingsR  GET POST
+/things          ThingsR  GET POST OPTIONS
 /things/#ThingId ThingR   GET PUT DELETE OPTIONS

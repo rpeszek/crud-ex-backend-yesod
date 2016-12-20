@@ -1,3 +1,5 @@
+This is unmaintained branch that accompanies crud-ex-frontend-elm elm-v017 branch. 
+
 Backend support for polyglot CRUD examples/experiments. (That currently is only elm 
 [crud-ex-frontend-elm](https://github.com/rpeszek/crud-ex-frontend-elm.git)).   
 
