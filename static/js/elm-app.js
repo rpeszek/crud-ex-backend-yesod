@@ -11214,47 +11214,55 @@ var _rpeszek$crud_ex_frontend_elm$App_Logic$resolveLocation = function (location
 	}
 };
 var _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig = {
-	editExitCmd: _elm_lang$core$Basics$always(
-		_elm_lang$navigation$Navigation$back(1)),
+	editExitCmd: function (maybeTId) {
+		var _p1 = maybeTId;
+		if (_p1.ctor === 'Just') {
+			return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(
+				_rpeszek$crud_ex_frontend_elm$ElmRoutes$ViewThingR(_p1._0));
+		} else {
+			return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(_rpeszek$crud_ex_frontend_elm$ElmRoutes$ListThingsR);
+		}
+	},
 	readToEditCmd: function (tId) {
 		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(
 			_rpeszek$crud_ex_frontend_elm$ElmRoutes$EditThingR(tId));
 	},
-	readToExitCmd: _elm_lang$core$Basics$always(
-		_elm_lang$navigation$Navigation$back(1)),
+	readToExitCmd: function (_p2) {
+		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(_rpeszek$crud_ex_frontend_elm$ElmRoutes$ListThingsR);
+	},
 	listToViewCmd: function (tId) {
 		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(
 			_rpeszek$crud_ex_frontend_elm$ElmRoutes$ViewThingR(tId));
 	},
-	listToCreateCmd: function (_p1) {
+	listToCreateCmd: function (_p3) {
 		return _rpeszek$crud_ex_frontend_elm$ElmRoutes$navigateTo(_rpeszek$crud_ex_frontend_elm$ElmRoutes$CreateThingR);
 	}
 };
 var _rpeszek$crud_ex_frontend_elm$App_Logic$update = F2(
 	function (msg, model) {
-		var _p2 = msg;
-		if (_p2.ctor === 'RoutingModuleMsg') {
-			var _p3 = _p2._0;
-			if (_p3.ctor === 'RouteMsg') {
-				var _p4 = _p3._0;
+		var _p4 = msg;
+		if (_p4.ctor === 'RoutingModuleMsg') {
+			var _p5 = _p4._0;
+			if (_p5.ctor === 'RouteMsg') {
+				var _p6 = _p5._0;
 				return {
 					ctor: '_Tuple2',
-					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRoute, _p4, model),
+					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRoute, _p6, model),
 					_1: _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure(
-						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_p4))
+						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_p6))
 				};
 			} else {
 				return {
 					ctor: '_Tuple2',
-					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRouteErr, _p3._0, model),
+					_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setRouteErr, _p5._0, model),
 					_1: _rpeszek$crud_ex_frontend_elm$Util_CmdExtras$pure(
 						_rpeszek$crud_ex_frontend_elm$App_Dispatch$dispatch(_rpeszek$crud_ex_frontend_elm$ElmRoutes$defaultRoute))
 				};
 			}
 		} else {
-			var _p5 = A3(_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$update, _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig, _p2._0, model.thingM);
-			var thingModel = _p5._0;
-			var thingCmd = _p5._1;
+			var _p7 = A3(_rpeszek$crud_ex_frontend_elm$Thing_Combined_Logic$update, _rpeszek$crud_ex_frontend_elm$App_Logic$thingConfig, _p4._0, model.thingM);
+			var thingModel = _p7._0;
+			var thingCmd = _p7._1;
 			return {
 				ctor: '_Tuple2',
 				_0: A2(_rpeszek$crud_ex_frontend_elm$App_Model$setThingM, thingModel, model),
@@ -11850,19 +11858,29 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewError = function (model) {
 var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewReuse = F2(
 	function (fieldSetElements, model) {
 		return A2(
-			_elm_lang$html$Html$form,
-			_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formDefault,
+			_elm_lang$html$Html$div,
+			{ctor: '[]'},
 			{
 				ctor: '::',
 				_0: A2(
-					_elm_lang$html$Html$fieldset,
-					{ctor: '[]'},
-					A2(
-						_elm_lang$core$Basics_ops['++'],
-						A2(
-							_elm_lang$core$List$map,
-							_rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewFormRow,
-							fieldSetElements(model.model)),
+					_elm_lang$html$Html$form,
+					_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formDefault,
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$fieldset,
+							{ctor: '[]'},
+							A2(
+								_elm_lang$core$List$map,
+								_rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewFormRow,
+								fieldSetElements(model.model))),
+						_1: {ctor: '[]'}
+					}),
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						_rpeszek$crud_ex_frontend_elm$Reuse_Common_Styles$formDefault,
 						{
 							ctor: '::',
 							_0: _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewError(model),
@@ -11871,8 +11889,9 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewReuse = F2(
 								_0: _rpeszek$crud_ex_frontend_elm$Reuse_Edit_View$viewButtons(model),
 								_1: {ctor: '[]'}
 							}
-						})),
-				_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
 			});
 	});
 
