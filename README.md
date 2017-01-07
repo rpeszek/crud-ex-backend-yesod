@@ -1,9 +1,8 @@
-This is unmaintained branch that accompanies crud-ex-frontend-elm elm-v017 branch. 
 
 Backend support for polyglot CRUD examples/experiments. (That currently is only elm 
 [crud-ex-frontend-elm](https://github.com/rpeszek/crud-ex-frontend-elm.git)).   
 
-See alsoparent umbrella project: [typesafe-web-polyglot](https://github.com/rpeszek/typesafe-web-polyglot.git).
+See also parent umbrella project: [typesafe-web-polyglot](https://github.com/rpeszek/typesafe-web-polyglot.git).
 
 __GOALS:__
 * Uses standard (i.e. scaffolded) Yesod project structure.  
@@ -12,7 +11,7 @@ __GOALS:__
 
 __TODO List:__  
 
-* Integrate wai-cors middleware instead of handcoded cors logic
+* Integrate wai-cors middleware instead of hardcoded cors logic
 * Improve JSON code
 * Improve error messages (duplicate key errors)
 * Login/Authorization security
