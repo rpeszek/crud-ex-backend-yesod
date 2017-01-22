@@ -9939,7 +9939,30 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder = A3(
 		_elm_lang$core$Json_Decode$int,
 		_NoRedInk$elm_decode_pipeline$Json_Decode_Pipeline$decode(_rpeszek$crud_ex_frontend_elm$Thing_Model$ThingEntity)));
 
-var _rpeszek$crud_ex_frontend_elm$Util_Http$delete = function (url) {
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPUT = {ctor: 'HttpPUT'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpGET = {ctor: 'HttpGET'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPOST = {ctor: 'HttpPOST'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPATCH = {ctor: 'HttpPATCH'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpDELETE = {ctor: 'HttpDELETE'};
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr = F3(
+	function (a, b, c) {
+		return {ctor: 'HttpResErr', _0: a, _1: b, _2: c};
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk = F2(
+	function (a, b) {
+		return {ctor: 'HttpResOk', _0: a, _1: b};
+	});
+var _rpeszek$crud_ex_frontend_elm$Util_Http$resultConverter = F3(
+	function (method, errMsg, res) {
+		var _p0 = res;
+		if (_p0.ctor === 'Ok') {
+			return A2(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk, method, _p0._0);
+		} else {
+			return A3(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr, method, errMsg, _p0._0);
+		}
+	});
+
+var _rpeszek$crud_ex_frontend_elm$Util_Http_Methods$delete = function (url) {
 	var requestParams = {
 		method: 'DELETE',
 		headers: {
@@ -9959,7 +9982,7 @@ var _rpeszek$crud_ex_frontend_elm$Util_Http$delete = function (url) {
 	};
 	return _elm_lang$http$Http$request(requestParams);
 };
-var _rpeszek$crud_ex_frontend_elm$Util_Http$post = F3(
+var _rpeszek$crud_ex_frontend_elm$Util_Http_Methods$post = F3(
 	function (url, encoder, decoder) {
 		return A3(
 			_elm_lang$http$Http$post,
@@ -9967,7 +9990,7 @@ var _rpeszek$crud_ex_frontend_elm$Util_Http$post = F3(
 			_elm_lang$http$Http$jsonBody(encoder),
 			decoder);
 	});
-var _rpeszek$crud_ex_frontend_elm$Util_Http$put = F3(
+var _rpeszek$crud_ex_frontend_elm$Util_Http_Methods$put = F3(
 	function (url, encoder, decoder) {
 		var requestParams = {
 			method: 'PUT',
@@ -9984,28 +10007,6 @@ var _rpeszek$crud_ex_frontend_elm$Util_Http$put = F3(
 		};
 		return _elm_lang$http$Http$request(requestParams);
 	});
-var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPUT = {ctor: 'HttpPUT'};
-var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpGET = {ctor: 'HttpGET'};
-var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPOST = {ctor: 'HttpPOST'};
-var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpPATCH = {ctor: 'HttpPATCH'};
-var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpDELETE = {ctor: 'HttpDELETE'};
-var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr = F3(
-	function (a, b, c) {
-		return {ctor: 'HttpResErr', _0: a, _1: b, _2: c};
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk = F2(
-	function (a, b) {
-		return {ctor: 'HttpResOk', _0: a, _1: b};
-	});
-var _rpeszek$crud_ex_frontend_elm$Util_Http$resultConverter = F3(
-	function (method, errMsg, res) {
-		var _p1 = res;
-		if (_p1.ctor === 'Ok') {
-			return A2(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResOk, method, _p1._0);
-		} else {
-			return A3(_rpeszek$crud_ex_frontend_elm$Util_Http$HttpResErr, method, errMsg, _p1._0);
-		}
-	});
 
 var _rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase = '';
 
@@ -10021,7 +10022,7 @@ var _rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR = function (tId) {
 var _rpeszek$crud_ex_frontend_elm$ServerRoutes$thingsR = A2(_elm_lang$core$Basics_ops['++'], _rpeszek$crud_ex_frontend_elm$StaticConfig$serverBase, '/things');
 
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$deleteThing = function (tId) {
-	var request = _rpeszek$crud_ex_frontend_elm$Util_Http$delete(
+	var request = _rpeszek$crud_ex_frontend_elm$Util_Http_Methods$delete(
 		_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR(tId));
 	var errMsg = A2(
 		_elm_lang$core$Basics_ops['++'],
@@ -10034,7 +10035,7 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Http$deleteThing = function (tId) {
 };
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$postThing = function (thing) {
 	var request = A3(
-		_rpeszek$crud_ex_frontend_elm$Util_Http$post,
+		_rpeszek$crud_ex_frontend_elm$Util_Http_Methods$post,
 		_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingsR,
 		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonEncoder(thing),
 		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingEntityJsonDecoder);
@@ -10050,7 +10051,7 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Http$postThing = function (thing) {
 var _rpeszek$crud_ex_frontend_elm$Thing_Http$putThing = F2(
 	function (tId, thing) {
 		var request = A3(
-			_rpeszek$crud_ex_frontend_elm$Util_Http$put,
+			_rpeszek$crud_ex_frontend_elm$Util_Http_Methods$put,
 			_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR(tId),
 			_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonEncoder(thing),
 			_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder);
@@ -10084,7 +10085,7 @@ var _rpeszek$crud_ex_frontend_elm$Thing_Http$getThing = function (tId) {
 	var request = A2(
 		_elm_lang$http$Http$get,
 		_rpeszek$crud_ex_frontend_elm$ServerRoutes$thingR(tId),
-		_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder);
+		_elm_lang$core$Json_Decode$maybe(_rpeszek$crud_ex_frontend_elm$Thing_Model$thingJsonDecoder));
 	var errMsg = A2(
 		_elm_lang$core$Basics_ops['++'],
 		'Error Retrieving Thing ',
@@ -10162,11 +10163,19 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_Edit_Message$updateEditModel = F3(
 			case 'GetHttpResult':
 				var _p3 = _p0._0;
 				if (_p3.ctor === 'HttpResOk') {
-					return {
-						ctor: '_Tuple2',
-						_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p3._1, model),
-						_1: _elm_lang$core$Platform_Cmd$none
-					};
+					if (_p3._1.ctor === 'Just') {
+						return {
+							ctor: '_Tuple2',
+							_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p3._1._0, model),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					} else {
+						return {
+							ctor: '_Tuple2',
+							_0: A3(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr, 'Invalid id', _elm_lang$core$Maybe$Nothing, model),
+							_1: _elm_lang$core$Platform_Cmd$none
+						};
+					}
 				} else {
 					return {
 						ctor: '_Tuple2',
@@ -10372,11 +10381,19 @@ var _rpeszek$crud_ex_frontend_elm$Reuse_Read_Message$updateReadModel = F3(
 				case 'GetHttpResult':
 					var _p3 = _p1._0;
 					if (_p3.ctor === 'HttpResOk') {
-						return {
-							ctor: '_Tuple2',
-							_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p3._1, model),
-							_1: _elm_lang$core$Platform_Cmd$none
-						};
+						if (_p3._1.ctor === 'Just') {
+							return {
+								ctor: '_Tuple2',
+								_0: A2(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setModel, _p3._1._0, model),
+								_1: _elm_lang$core$Platform_Cmd$none
+							};
+						} else {
+							return {
+								ctor: '_Tuple2',
+								_0: A3(_rpeszek$crud_ex_frontend_elm$Reuse_Model_ModelPlus$setErr, 'Invalid id', _elm_lang$core$Maybe$Nothing, model),
+								_1: _elm_lang$core$Platform_Cmd$none
+							};
+						}
 					} else {
 						return {
 							ctor: '_Tuple2',

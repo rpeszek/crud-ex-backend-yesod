@@ -69,14 +69,11 @@ optionsThingR _ = do
     addHeader "Access-Control-Allow-Methods" "GET, PUT, DELETE, OPTIONS"
     return $ RepPlain $ toContent ("" :: Text)
 
-deleteThingR :: ThingId -> Handler Value
+deleteThingR :: ThingId -> Handler ()
 deleteThingR thingId = do
    corsSupport
    runDB $ Bzl.deleteThing thingId
-   return $ object [ 
-            "status" .= ("success" :: Text),
-            "id" .= thingId
-          ]
+   return ()
 
 
 -- helpers
