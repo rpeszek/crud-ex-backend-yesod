@@ -2,7 +2,7 @@
 Backend support for polyglot CRUD examples/experiments. (That currently is only elm 
 [crud-ex-frontend-elm](https://github.com/rpeszek/crud-ex-frontend-elm.git)).   
 
-See also parent umbrella project: [typesafe-web-polyglot](https://github.com/rpeszek/typesafe-web-polyglot.git).
+See also my umbrella project: [typesafe-web-polyglot](https://github.com/rpeszek/typesafe-web-polyglot.git).
 
 __GOALS:__
 * Uses standard (i.e. scaffolded) Yesod project structure.  
